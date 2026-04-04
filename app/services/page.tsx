@@ -7,228 +7,172 @@ import { motion, useReducedMotion } from 'framer-motion';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import { useI18n } from '../../lib/i18n/context';
+import { LightningBg } from '../../components/ui/lightning-bg';
 
-export default function Services() {
+export default function ServicesHub() {
   const { ts } = useI18n();
   const prefersReducedMotion = useReducedMotion();
 
   const fadeInUp = prefersReducedMotion
     ? { initial: {}, animate: {}, transition: { duration: 0 } }
-    : { initial: { opacity: 0, y: 60 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.6 } };
-
-  const fadeInLeft = prefersReducedMotion
-    ? { initial: {}, animate: {}, transition: { duration: 0 } }
-    : { initial: { opacity: 0, x: -60 }, animate: { opacity: 1, x: 0 }, transition: { duration: 0.6 } };
-
-  const fadeInRight = prefersReducedMotion
-    ? { initial: {}, animate: {}, transition: { duration: 0 } }
-    : { initial: { opacity: 0, x: 60 }, animate: { opacity: 1, x: 0 }, transition: { duration: 0.6 } };
+    : { initial: { opacity: 0, y: 40 }, animate: { opacity: 1, y: 0 }, transition: { type: "spring", stiffness: 100, damping: 15 } };
 
   const staggerChildren = prefersReducedMotion
     ? { animate: {} }
-    : { animate: { transition: { staggerChildren: 0.1 } } };
+    : { animate: { transition: { staggerChildren: 0.12 } } };
   
-  const services = [
+  const servicesList = [
     {
       title: ts('home.services.autoRefinance.title'),
       description: ts('home.services.autoRefinance.description'),
-      features: [ts('services.features.lowerRates'), ts('services.features.quickApproval'), ts('services.features.noPenalties'), ts('services.features.flexibleTerms')],
       image: "/auto/svc-auto-refinance.jpg",
-      reverse: false
+      href: "/services/auto-refinance",
+      category: "Auto Refinance"
     },
     {
       title: ts('home.services.vehicleCoverage.title'),
       description: ts('home.services.vehicleCoverage.description'),
-      features: [ts('services.features.fullCoverage'), ts('services.features.roadsideAssistance'), ts('services.features.customizablePlans'), ts('services.features.beyondWarranty'), ts('services.features.manufacturerProtection'), ts('services.features.financialSecurity')],
       image: "/auto/svc-vehicle-coverage.jpg",
-      reverse: true
+      href: "/services/vehicle-coverage",
+      category: "Coverage & Protection"
     },
     {
       title: ts('home.services.homeRefinance.title'),
       description: ts('home.services.homeRefinance.description'),
-      features: [ts('services.features.lowerPayments'), ts('services.features.betterRates'), ts('services.features.equityAccess'), ts('services.features.flexibleOptions')],
       image: "/auto/svc-home-refinance.jpg",
-      reverse: false
+      href: "/services/home-refinance",
+      category: "Home Loans"
     },
     {
       title: ts('home.services.insuranceConsultation.title'),
       description: ts('home.services.insuranceConsultation.description'),
-      features: [ts('services.features.expertGuidance'), ts('services.features.budgetFriendly'), ts('services.features.comprehensiveCoverage'), ts('services.features.personalizedService')],
       image: "/auto/svc-auto-insurance.jpg",
-      reverse: true
+      href: "/services/auto-insurance",
+      category: "Consulting"
     },
     {
       title: ts('home.services.lifeInsurance.title'),
       description: ts('home.services.lifeInsurance.description'),
-      features: [ts('services.features.familyProtection'), ts('services.features.affordablePremiums'), ts('services.features.tailoredCoverage'), ts('services.features.longTermSecurity')],
       image: "/auto/svc-life-insurance.jpg",
-      reverse: false
+      href: "/services/life-insurance",
+      category: "Consulting"
     },
     {
       title: ts('home.services.creditSavings.title'),
       description: ts('home.services.creditSavings.description'),
-      features: [ts('services.features.creditImprovement'), ts('services.features.savingsStrategies'), ts('services.features.debtReduction'), ts('services.features.financialPlanning')],
       image: "/auto/svc-credit-consultations.jpg",
-      reverse: true
+      href: "/services/credit-consultations",
+      category: "Financial"
     }
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-dpe-bg">
       <Navigation overlay />
       
-      {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/auto/car.jpg"
-            alt="Professional financial services"
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+      {/* ─── ENHANCED HERO HUB ─── */}
+      <section className="relative h-[65vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        {/* Deep Navy/Gradient Background matching Home Page aesthetic */}
+        <div className="absolute inset-0 bg-dpe-navy-deep">
+          {/* Subtle image blend */}
+          <div className="absolute inset-0 opacity-30 mix-blend-screen">
+             <Image src="/auto/car.jpg" alt="Drive Point Exchange Services" fill className="object-cover" priority />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-dpe-bg via-transparent to-transparent z-10" />
         </div>
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8 md:pt-0">
-          <motion.div
-            initial="initial"
-            animate="animate"
-            variants={staggerChildren}
-          >
-            <motion.h1 variants={fadeInUp} className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+        
+        {/* DPE Green & Blue Ambient Lightning */}
+        <div className="absolute top-0 left-0 w-full z-[4] mix-blend-screen pointer-events-none opacity-80 animate-lightning-blue">
+          <LightningBg hue={230} xOffset={0.2} intensity={0.6} speed={0.4} size={4} />
+        </div>
+        <div className="absolute bottom-0 right-0 w-full z-[5] mix-blend-screen pointer-events-none opacity-40 animate-lightning-red">
+           <LightningBg hue={140} xOffset={0.8} intensity={0.3} speed={0.3} size={2.5} />
+        </div>
+
+        <div className="relative z-20 max-w-5xl mx-auto px-4 text-center mt-10">
+          <motion.div initial="initial" animate="animate" variants={staggerChildren}>
+            <motion.p variants={fadeInUp} className="text-dpe-green font-semibold tracking-[0.2em] uppercase mb-4 text-sm md:text-base">
+              Comprehensive Financial Solutions
+            </motion.p>
+            <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 font-saira leading-tight">
               {ts('services.hero.title')}
             </motion.h1>
-            <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto">
-              {ts('services.hero.subtitle')}
+            <motion.p variants={fadeInUp} className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto font-light">
+               {ts('services.hero.subtitle')}
             </motion.p>
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/calculator"
-                className="bg-apex-navy hover:bg-apex-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
-              >
-                {ts('services.hero.getQuote')}
-              </Link>
-              <Link
-                href="/contact"
-                className="bg-transparent hover:bg-white/10 text-white font-semibold py-4 px-8 rounded-lg border border-white/30 hover:border-white/50 transition-all duration-200"
-              >
-                {ts('services.hero.contactUs')}
-              </Link>
-            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-white">
+      {/* Grid Hub Section */}
+      <section className="py-24 bg-dpe-bg relative z-30 -mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             variants={staggerChildren}
-            className="text-center mb-16"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            <motion.h2 variants={fadeInUp} className="text-4xl font-bold text-gray-900 mb-4 font-saira">
-              {ts('services.section.title')}
-            </motion.h2>
-            <motion.p variants={fadeInUp} className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {ts('services.section.subtitle')}
-            </motion.p>
-          </motion.div>
-
-          <div className="space-y-20">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                variants={staggerChildren}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                  service.reverse ? 'lg:grid-flow-col-dense' : ''
-                }`}
-              >
-                <motion.div 
-                  variants={service.reverse ? fadeInRight : fadeInLeft}
-                  className={service.reverse ? 'lg:col-start-2' : ''}
+            {servicesList.map((service, index) => (
+              <Link href={service.href} key={index} className="block group">
+                <motion.div
+                  variants={fadeInUp}
+                  className="bg-white rounded-2xl overflow-hidden shadow-dpe border border-gray-100 hover:shadow-dpe-lg hover:-translate-y-2 transition-all duration-300 h-full flex flex-col"
                 >
-                  <div className="relative h-64 sm:h-96 rounded-2xl overflow-hidden shadow-2xl">
+                  <div className="relative h-60 w-full overflow-hidden">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
-                      sizes="(min-width: 1024px) 50vw, 100vw"
-                      className="object-cover"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
-                  </div>
-                </motion.div>
-                
-                <motion.div 
-                  variants={service.reverse ? fadeInLeft : fadeInRight}
-                  className={service.reverse ? 'lg:col-start-1 lg:row-start-1' : ''}
-                >
-                  <div className="space-y-6">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">{service.title}</h3>
-                    <p className="text-xl text-gray-600 leading-relaxed">{service.description}</p>
-                    
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-3">
-                          <div className="w-2 h-2 bg-apex-navy rounded-full"></div>
-                          <span className="text-gray-700 font-medium">{feature}</span>
-                        </div>
-                      ))}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div className="absolute inset-x-0 bottom-0 p-6">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-dpe-green mb-2 block">
+                        {service.category}
+                      </span>
+                      <h3 className="text-2xl font-bold text-white font-saira">
+                        {service.title}
+                      </h3>
                     </div>
-                    
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center w-full sm:w-auto text-center bg-apex-navy hover:bg-apex-navy-deep text-white font-semibold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
-                    >
-                      {ts('services.learnMore')}
-                      <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </div>
+                  
+                  <div className="p-6 flex-grow flex flex-col justify-between">
+                    <p className="text-gray-600 line-clamp-3 mb-6">
+                      {service.description}
+                    </p>
+                    <div className="flex items-center text-dpe-blue font-semibold group-hover:text-dpe-blue-light transition-colors">
+                      Learn More
+                      <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
-                    </Link>
+                    </div>
                   </div>
                 </motion.div>
-              </motion.div>
+              </Link>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-apex-navy">
+      <section className="py-20 bg-dpe-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={staggerChildren}
-          >
-            <motion.h2 variants={fadeInUp} className="text-4xl font-bold text-white mb-6 font-saira">
+             <h2 className="text-4xl font-bold text-white mb-6 font-saira">
               {ts('services.cta.title')}
-            </motion.h2>
-            <motion.p variants={fadeInUp} className="text-xl text-blue-100 mb-8">
-              {ts('services.cta.subtitle')}
-            </motion.p>
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Contact us today to learn more about our services and how we can help you achieve your financial goals.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-white text-apex-navy hover:bg-apex-navy-deep hover:text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="bg-dpe-green hover:bg-green-600 text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all text-center"
               >
                 {ts('services.cta.contactUs')}
               </Link>
-              <Link
-                href="/calculator"
-                className="bg-transparent hover:bg-white/10 text-white font-semibold py-4 px-8 rounded-lg border border-white/30 hover:border-white/50 transition-all duration-200"
-              >
-                {ts('services.cta.getQuote')}
-              </Link>
-            </motion.div>
-          </motion.div>
+            </div>
         </div>
       </section>
       

@@ -180,7 +180,7 @@ export default function EmailModal({
         <h2 id="modal-title" className="font-saira text-2xl font-bold text-[#0a1628] mb-2">
           Get Your FREE {calculatorType === 'home' ? 'Home Loan' : 'Auto Loan'} Quote
         </h2>
-        <p className="text-base text-apex-slate">
+        <p className="text-base text-dpe-slate">
           Fill out the information below and we will follow up fast with your free no-obligation quote.
         </p>
         <p className="text-xs text-gray-500 mt-2">Fields marked with * are required.</p>
@@ -198,7 +198,7 @@ export default function EmailModal({
                 type="text"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
-                className="w-full h-10 px-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-apex-blue focus:border-transparent text-base text-gray-900"
+                className="w-full h-10 px-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-gray-900"
                 placeholder="First Name"
                 disabled={isSubmitting}
                 aria-required="true"
@@ -214,7 +214,7 @@ export default function EmailModal({
                 type="text"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
-                className="w-full h-10 px-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-apex-blue focus:border-transparent text-base text-gray-900"
+                className="w-full h-10 px-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-gray-900"
                 placeholder="Last Name"
                 disabled={isSubmitting}
                 aria-required="true"
@@ -232,7 +232,7 @@ export default function EmailModal({
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full h-10 px-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-apex-blue focus:border-transparent text-base text-gray-900"
+              className="w-full h-10 px-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-gray-900"
               placeholder="Email Address"
               disabled={isSubmitting}
               aria-required="true"
@@ -249,7 +249,7 @@ export default function EmailModal({
               type="tel"
               value={mobileNumber}
               onChange={(e) => setMobileNumber(e.target.value)}
-              className="w-full h-10 px-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-apex-blue focus:border-transparent text-base text-gray-900"
+              className="w-full h-10 px-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-gray-900"
               placeholder="Mobile Number (Optional)"
               disabled={isSubmitting}
               aria-describedby="form-error"
@@ -263,7 +263,7 @@ export default function EmailModal({
               type="checkbox"
               checked={isAgent}
               onChange={(e) => handleAgentChange(e.target.checked)}
-              className="mt-1 h-4 w-4 text-apex-blue focus:ring-apex-blue border-gray-300 rounded"
+              className="mt-1 h-4 w-4 text-dpe-blue focus:ring-dpe-blue border-gray-300 rounded"
               disabled={isSubmitting}
             />
             <label htmlFor="isAgent" className="text-xs text-gray-600 leading-relaxed">
@@ -278,12 +278,12 @@ export default function EmailModal({
               type="checkbox"
               checked={smsConsent}
               onChange={(e) => setSmsConsent(e.target.checked)}
-              className="mt-1 h-4 w-4 text-apex-blue focus:ring-apex-blue border-gray-300 rounded"
+              className="mt-1 h-4 w-4 text-dpe-blue focus:ring-dpe-blue border-gray-300 rounded"
               disabled={isSubmitting || isAgent}
             />
             <label htmlFor="smsConsent" className="text-xs text-gray-500 leading-relaxed">
-              By checking this box and signing up for texts, you consent to receive Account Notification messages from Apex Auto Solutions Inc at the number provided, including messages sent by autodialer. Consent is not a condition of purchase. Msg &amp; data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP or clicking the unsubscribe link (where available). Reply HELP for help.{' '}
-              <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-apex-blue hover:text-apex-navy underline">Privacy Policy</a>.
+              By checking this box and signing up for texts, you consent to receive Account Notification messages from Drive Point Exchange at the number provided, including messages sent by autodialer. Consent is not a condition of purchase. Msg &amp; data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP or clicking the unsubscribe link (where available). Reply HELP for help.{' '}
+              <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-dpe-blue hover:text-dpe-navy underline">Privacy Policy</a>.
             </label>
           </div>
 

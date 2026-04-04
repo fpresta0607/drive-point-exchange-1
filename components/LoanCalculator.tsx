@@ -376,7 +376,7 @@ export default function LoanCalculator() {
           <h2 className="font-saira text-2xl font-bold text-[#0a1628] mb-2">
             {ts('calculator.title')}
           </h2>
-          <p className="text-base text-apex-slate">
+          <p className="text-base text-dpe-slate">
             {ts('calculator.subtitle')}
           </p>
         </div>
@@ -418,7 +418,7 @@ export default function LoanCalculator() {
                     type="number"
                     value={inputs.currentApr}
                     onChange={(e) => handleNumberInput('currentApr', e.target.value)}
-                    className="w-full h-10 px-3 pr-14 rounded-lg border border-gray-300 focus:ring-2 focus:ring-apex-blue focus:border-transparent text-base text-gray-900"
+                    className="w-full h-10 px-3 pr-14 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-gray-900"
                     min="0"
                     max="30"
                     step="any"
@@ -444,7 +444,7 @@ export default function LoanCalculator() {
                     type="number"
                     value={inputs.newApr}
                     onChange={(e) => handleNumberInput('newApr', e.target.value)}
-                    className="w-full h-10 px-3 pr-14 rounded-lg border border-gray-300 focus:ring-2 focus:ring-apex-blue focus:border-transparent text-base text-gray-900"
+                    className="w-full h-10 px-3 pr-14 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-gray-900"
                     min="0"
                     max="30"
                     step="any"
@@ -473,7 +473,7 @@ export default function LoanCalculator() {
                     type="number"
                     value={inputs.remainingTermYears}
                     onChange={(e) => handleNumberInput('remainingTermYears', e.target.value)}
-                    className="w-full h-10 px-3 pr-8 rounded-lg border border-gray-300 focus:ring-2 focus:ring-apex-blue focus:border-transparent text-base text-gray-900"
+                    className="w-full h-10 px-3 pr-8 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-gray-900"
                     min="0.1"
                     max="30"
                     step="any"
@@ -497,7 +497,7 @@ export default function LoanCalculator() {
                     type="number"
                     value={inputs.newTermYears}
                     onChange={(e) => handleNumberInput('newTermYears', e.target.value)}
-                    className="w-full h-10 px-3 pr-8 rounded-lg border border-gray-300 focus:ring-2 focus:ring-apex-blue focus:border-transparent text-base text-gray-900"
+                    className="w-full h-10 px-3 pr-8 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-gray-900"
                     min="0.1"
                     max="30"
                     step="any"
@@ -519,7 +519,7 @@ export default function LoanCalculator() {
             <div className="bg-gray-50 rounded-lg p-6 border-2 border-gray-300">
               <div className="text-center mb-4">
                 <div className="text-sm font-medium text-gray-600 mb-2">{ts('calculator.newMonthlyPayment')}</div>
-                <div className="text-4xl font-bold text-apex-blue">
+                <div className="text-4xl font-bold text-dpe-blue">
                   ${formatCurrency(result.newMonthlyPayment)}
                 </div>
               </div>
@@ -547,7 +547,7 @@ export default function LoanCalculator() {
             {/* Helper Message if Monthly Savings < 0 */}
             {result.monthlySavings < 0 && (
               <div className="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <p className="text-sm text-apex-navy">
+                <p className="text-sm text-dpe-navy">
                   {ts('calculator.monthlyPaymentWarning')}
                 </p>
               </div>

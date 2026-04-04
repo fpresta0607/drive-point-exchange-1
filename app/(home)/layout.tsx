@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     "Michigan car financing"
   ],
   openGraph: {
-    title: "Auto Loan Calculator & Refinancing Services | Apex Auto Solutions",
+    title: "Auto Loan Calculator & Refinancing Services | Drive Point Exchange",
     description: "Get instant auto loan estimates with our free calculator. Lower rates, flexible terms, fast approval.",
     images: [
       {
         url: "/auto/car-hero.jpg",
         width: 1200,
         height: 630,
-        alt: "Apex Auto Solutions - Professional auto financing consultation",
+        alt: "Drive Point Exchange - Professional auto financing consultation",
       },
     ],
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: "Get instant auto loan estimates with our free calculator. Lower rates, flexible terms, fast approval.",
   },
   alternates: {
-    canonical: "https://www.apexautosolutionsinc.com",
+    canonical: "https://www.drivepointexchange.com",
   },
 };
 

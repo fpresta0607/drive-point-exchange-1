@@ -26,7 +26,7 @@
       "subtitle": "Nous ne sommes pas là seulement pour vous faire économiser — nous sommes là pour vous éduquer. De la compréhension de ce que couvre réellement votre protection à la réduction de vos tarifs, nous vous aidons à prendre des décisions financières éclairées.",
       "autoRefinance": {
         "title": "Refinancement de Prêt Auto",
-        "description": "Profitez de taux d'intérêt plus bas et de conditions flexibles en refinançant votre prêt auto avec Apex Auto Solutions Inc."
+        "description": "Profitez de taux d'intérêt plus bas et de conditions flexibles en refinançant votre prêt auto avec Drive Point Exchange."
       },
       "vehicleCoverage": {
         "title": "Couverture et Certifications Véhicule",
@@ -56,7 +56,7 @@
     },
     "cta": {
       "title": "Prêt à Prendre le Contrôle de Vos Finances ?",
-      "subtitle": "Rejoignez la famille Apex Auto Solutions Inc. aujourd'hui et sécurisez un avenir financier plus brillant.",
+      "subtitle": "Rejoignez la famille Drive Point Exchange. aujourd'hui et sécurisez un avenir financier plus brillant.",
       "getStarted": "Commencez Aujourd'hui",
       "learnMore": "En Savoir Plus"
     }
@@ -185,9 +185,9 @@
   },
   "email": {
     "autoLoanEstimate": {
-      "subject": "Votre Estimation de Prêt Auto - Apex Auto Solutions Inc.",
+      "subject": "Votre Estimation de Prêt Auto - Drive Point Exchange.",
       "title": "ESTIMATION DE PRÊT AUTO",
-      "company": "Apex Auto Solutions Inc.",
+      "company": "Drive Point Exchange.",
       "subtitle": "Services Professionnels de Financement Auto",
       "greeting": "Cher/Chère {name},",
       "thankYou": "Merci d'avoir utilisé notre calculateur avancé de prêts auto ! Voici votre estimation de financement personnalisée :",
@@ -204,7 +204,7 @@
         "Obtenez une pré-approbation et commencez à chercher votre véhicule parfait"
       ],
       "bestRegards": "Cordialement,",
-      "teamSignature": "L'Équipe Apex Auto Solutions",
+      "teamSignature": "L'Équipe Drive Point Exchange",
       "disclaimer": "Important : Ceci est une estimation automatisée basée sur les informations fournies. Les termes finaux peuvent varier selon l'approbation de crédit, l'évaluation du véhicule et d'autres facteurs. Contactez-nous pour des taux et termes personnalisés.",
       "fields": {
         "vehiclePrice": "Prix du Véhicule",
@@ -223,7 +223,7 @@
       }
     },
     "homeLoanEstimate": {
-      "subject": "Votre Estimation de Prêt Immobilier - Apex Auto Solutions Inc.",
+      "subject": "Votre Estimation de Prêt Immobilier - Drive Point Exchange.",
       "title": "ESTIMATION DE PRÊT IMMOBILIER",
       "greeting": "Cher/Chère {firstName} {lastName},",
       "thankYou": "Merci d'avoir utilisé notre calculateur de prêts immobiliers ! Voici les détails de votre prêt personnalisé :",
@@ -248,7 +248,7 @@
       }
     },
     "refinanceEstimate": {
-      "subject": "Comparaison de Refinancement Auto - Apex Auto Solutions",
+      "subject": "Comparaison de Refinancement Auto - Drive Point Exchange",
       "greeting": "Cher/Chère {name},",
       "thankYou": "Merci d'avoir utilisé notre calculateur de refinancement auto ! Voici votre comparaison personnalisée :",
       "currentLoanTitle": "Votre Prêt Actuel",
@@ -258,7 +258,7 @@
       "readyToRefinance": "Prêt à Refinancer ?",
       "teamReady": "Notre équipe est prête à vous aider à obtenir de meilleurs taux et économiser de l'argent !",
       "bestRegards": "Meilleures salutations,",
-      "teamSignature": "L'Équipe Apex Auto Solutions",
+      "teamSignature": "L'Équipe Drive Point Exchange",
       "disclaimer": "Ceci est une estimation automatique. Les termes finaux peuvent varier selon l'approbation de crédit et d'autres facteurs. Les économies réelles peuvent varier.",
       "fields": {
         "loanBalance": "Solde du Prêt",
@@ -276,11 +276,11 @@
     "contactForm": {
       "subject": "Nouvelle Soumission de Formulaire de Contact - {name}",
       "ownerSubject": "Nouvelle Soumission de Formulaire de Contact - {name}",
-      "customerSubject": "Merci d'Avoir Contacté Apex Auto Solutions Inc.",
+      "customerSubject": "Merci d'Avoir Contacté Drive Point Exchange.",
       "title": "NOUVELLE SOUMISSION DE FORMULAIRE DE CONTACT",
       "customerTitle": "MERCI DE NOUS AVOIR CONTACTÉS",
       "greeting": "Cher/Chère {name},",
-      "thankYou": "Merci d'avoir contacté Apex Auto Solutions Inc. Nous avons reçu votre message et vous répondrons dans les 24 heures.",
+      "thankYou": "Merci d'avoir contacté Drive Point Exchange. Nous avons reçu votre message et vous répondrons dans les 24 heures.",
       "meanwhile": "En attendant, n'hésitez pas à :",
       "meanwhileItems": [
         "Utiliser notre calculateur de prêts auto pour obtenir une estimation instantanée",
@@ -289,7 +289,7 @@
       ],
       "lookForward": "Nous avons hâte de vous aider à atteindre vos objectifs financiers !",
       "bestRegards": "Cordialement,",
-      "teamSignature": "L'Équipe Apex Auto Solutions",
+      "teamSignature": "L'Équipe Drive Point Exchange",
       "followUp": "Veuillez suivre avec ce client dans les 24 heures.",
       "fields": {
         "name": "Nom",
@@ -315,7 +315,7 @@
       "emailAddress": "Adresse Email",
       "mobileNumber": "Numéro Mobile",
       "mobileNumberOptional": "Numéro Mobile (Optionnel)",
-      "termsText": "En soumettant ce formulaire et en vous inscrivant aux textos, vous consentez à recevoir des messages de service client d'Apex Auto Solutions au numéro fourni, y compris des messages envoyés par composeur automatique. Le consentement n'est pas une condition d'achat. Des frais de message et de données peuvent s'appliquer. La fréquence des messages varie. Désabonnez-vous à tout moment en répondant STOP ou en cliquant sur le lien de désabonnement (où disponible). Répondez HELP pour de l'aide.",
+      "termsText": "En soumettant ce formulaire et en vous inscrivant aux textos, vous consentez à recevoir des messages de service client d'Drive Point Exchange au numéro fourni, y compris des messages envoyés par composeur automatique. Le consentement n'est pas une condition d'achat. Des frais de message et de données peuvent s'appliquer. La fréquence des messages varie. Désabonnez-vous à tout moment en répondant STOP ou en cliquant sur le lien de désabonnement (où disponible). Répondez HELP pour de l'aide.",
       "privacyPolicy": "Politique de Confidentialité",
       "terms": "Termes",
       "cancel": "Annuler",
@@ -336,7 +336,7 @@
     },
     "intro": {
       "title": "Conduisez avec Confiance",
-      "description": "Votre véhicule peut être imprévisible — tout comme la couverture que vous pensez avoir. Depuis la pénurie de puces post-COVID, de nombreux concessionnaires ont réduit leurs stocks et ont cessé de certifier correctement les véhicules. Cela signifie que des milliers de conducteurs paient pour une couverture certifiée via des fournisseurs tiers sans que leur véhicule figure réellement dans les documents du concessionnaire. Apex Auto Solutions vous aide à comprendre ce pour quoi vous êtes réellement couvert et fournit une protection vraie et vérifiée qui prend le relais là où votre garantie constructeur s'arrête."
+      "description": "Votre véhicule peut être imprévisible — tout comme la couverture que vous pensez avoir. Depuis la pénurie de puces post-COVID, de nombreux concessionnaires ont réduit leurs stocks et ont cessé de certifier correctement les véhicules. Cela signifie que des milliers de conducteurs paient pour une couverture certifiée via des fournisseurs tiers sans que leur véhicule figure réellement dans les documents du concessionnaire. Drive Point Exchange vous aide à comprendre ce pour quoi vous êtes réellement couvert et fournit une protection vraie et vérifiée qui prend le relais là où votre garantie constructeur s'arrête."
     },
     "section": {
       "title": "Avantages de Couverture Complète",
@@ -376,7 +376,7 @@
     ],
     "cta": {
       "title": "Prêt à Protéger Votre Investissement ?",
-      "subtitle": "Rejoignez des milliers de clients satisfaits qui font confiance à Apex Auto Solutions pour leurs besoins de couverture véhicule.",
+      "subtitle": "Rejoignez des milliers de clients satisfaits qui font confiance à Drive Point Exchange pour leurs besoins de couverture véhicule.",
       "getCoverage": "Obtenez Votre Couverture Aujourd'hui",
       "learnMore": "En Savoir Plus sur les Services"
     }
@@ -447,15 +447,15 @@
       },
       {
         "title": "Licence d'Utilisation",
-        "content": "La permission est accordée de télécharger temporairement une copie des matériaux sur le site web d'Apex Auto Solutions pour visualisation personnelle et non commerciale transitoire uniquement."
+        "content": "La permission est accordée de télécharger temporairement une copie des matériaux sur le site web d'Drive Point Exchange pour visualisation personnelle et non commerciale transitoire uniquement."
       },
       {
         "title": "Avertissement",
-        "content": "Les matériaux sur le site web d'Apex Auto Solutions sont fournis 'en l'état'. Apex Auto Solutions ne donne aucune garantie, expresse ou implicite, et décline par la présente et nie toutes autres garanties y compris sans limitation, garanties implicites ou conditions de qualité marchande, d'adéquation à un usage particulier, ou de non-violation de propriété intellectuelle ou autre violation de droits."
+        "content": "Les matériaux sur le site web d'Drive Point Exchange sont fournis 'en l'état'. Drive Point Exchange ne donne aucune garantie, expresse ou implicite, et décline par la présente et nie toutes autres garanties y compris sans limitation, garanties implicites ou conditions de qualité marchande, d'adéquation à un usage particulier, ou de non-violation de propriété intellectuelle ou autre violation de droits."
       },
       {
         "title": "Limitations",
-        "content": "En aucun cas Apex Auto Solutions ou ses fournisseurs ne seront responsables de dommages (y compris, sans limitation, dommages pour perte de données ou profit, ou dus à une interruption d'activité) résultant de l'utilisation ou de l'impossibilité d'utiliser les matériaux sur le site web d'Apex Auto Solutions, même si Apex Auto Solutions ou un représentant autorisé a été notifié oralement ou par écrit de la possibilité de tel dommage."
+        "content": "En aucun cas Drive Point Exchange ou ses fournisseurs ne seront responsables de dommages (y compris, sans limitation, dommages pour perte de données ou profit, ou dus à une interruption d'activité) résultant de l'utilisation ou de l'impossibilité d'utiliser les matériaux sur le site web d'Drive Point Exchange, même si Drive Point Exchange ou un représentant autorisé a été notifié oralement ou par écrit de la possibilité de tel dommage."
       },
       {
         "title": "Politique de Confidentialité",
@@ -463,19 +463,19 @@
       },
       {
         "title": "Consentement Communication",
-        "content": "En soumettant vos informations, vous consentez à recevoir des communications d'Apex Auto Solutions et ses partenaires par email, appels téléphoniques, messages texte et autres formes de communication, y compris la technologie automatisée comme les composeurs automatiques et messages préenregistrés. Vous pouvez vous désinscrire de ces communications à tout moment."
+        "content": "En soumettant vos informations, vous consentez à recevoir des communications d'Drive Point Exchange et ses partenaires par email, appels téléphoniques, messages texte et autres formes de communication, y compris la technologie automatisée comme les composeurs automatiques et messages préenregistrés. Vous pouvez vous désinscrire de ces communications à tout moment."
       },
       {
         "title": "Exactitude des Matériaux",
-        "content": "Les matériaux apparaissant sur le site web d'Apex Auto Solutions pourraient inclure des erreurs techniques, typographiques ou photographiques. Apex Auto Solutions ne garantit pas que l'un des matériaux sur son site web soit exact, complet ou actuel."
+        "content": "Les matériaux apparaissant sur le site web d'Drive Point Exchange pourraient inclure des erreurs techniques, typographiques ou photographiques. Drive Point Exchange ne garantit pas que l'un des matériaux sur son site web soit exact, complet ou actuel."
       },
       {
         "title": "Liens",
-        "content": "Apex Auto Solutions n'a pas examiné tous les sites liés à notre site web et n'est pas responsable du contenu de tout site lié. L'inclusion de tout lien n'implique pas l'approbation par Apex Auto Solutions du site."
+        "content": "Drive Point Exchange n'a pas examiné tous les sites liés à notre site web et n'est pas responsable du contenu de tout site lié. L'inclusion de tout lien n'implique pas l'approbation par Drive Point Exchange du site."
       },
       {
         "title": "Modifications",
-        "content": "Apex Auto Solutions peut réviser ces termes de service pour son site web à tout moment sans préavis. En utilisant ce site web, vous acceptez d'être lié par la version actuelle de ces termes de service."
+        "content": "Drive Point Exchange peut réviser ces termes de service pour son site web à tout moment sans préavis. En utilisant ce site web, vous acceptez d'être lié par la version actuelle de ces termes de service."
       },
       {
         "title": "Loi Applicable",
@@ -492,7 +492,7 @@
   },
   "about": {
     "hero": {
-      "title": "À Propos d'Apex Auto Solutions",
+      "title": "À Propos d'Drive Point Exchange",
       "subtitle": "Votre partenaire de confiance en financement automobile depuis plus d'une décennie. Nous nous consacrons à fournir un service et une expertise sans pareil à nos clients à travers le pays.",
       "getQuote": "Obtenez Votre Devis",
       "contactTeam": "Contactez Notre Équipe"
@@ -507,7 +507,7 @@
     "story": {
       "title": "Notre Histoire",
       "subtitle": "Leader dans les solutions financières automobiles depuis 2012",
-      "paragraph1": "Fondée en 2012, Apex Auto Solutions a commencé avec une vision simple : rendre le financement automobile accessible et transparent pour tous. Ce qui a commencé comme une petite équipe de professionnels de la finance est devenu un nom de confiance dans l'industrie du prêt automobile.",
+      "paragraph1": "Fondée en 2012, Drive Point Exchange a commencé avec une vision simple : rendre le financement automobile accessible et transparent pour tous. Ce qui a commencé comme une petite équipe de professionnels de la finance est devenu un nom de confiance dans l'industrie du prêt automobile.",
       "paragraph2": "Nous avons reconnu que les institutions de prêt traditionnelles rendaient souvent le processus de financement compliqué et intimidant. Nos fondateurs se sont donné pour mission de changer cela en créant une approche centrée sur le client qui privilégie la clarté, des taux compétitifs et un service exceptionnel.",
       "paragraph3": "Aujourd'hui, nous avons aidé des milliers de clients à obtenir un financement pour leurs véhicules de rêve, des acheteurs pour la première fois aux passionnés de voitures expérimentés. Notre engagement envers l'innovation et la satisfaction client continue de stimuler notre croissance et notre succès."
     },
@@ -556,7 +556,7 @@
     },
     "cta": {
       "title": "Prêt à Travailler avec Nous ?",
-      "subtitle": "Découvrez la différence Apex Auto Solutions. Obtenez votre devis personnalisé aujourd'hui.",
+      "subtitle": "Découvrez la différence Drive Point Exchange. Obtenez votre devis personnalisé aujourd'hui.",
       "getQuote": "Obtenez Votre Devis",
       "contactTeam": "Contactez Notre Équipe"
     }

@@ -47,7 +47,7 @@ export function CookieConsent() {
             <p className="text-sm text-gray-600 leading-relaxed">
               We use cookies and similar technologies for essential site functionality
               and analytics. You can accept all or choose necessary cookies only.{' '}
-              <Link href="/privacy" className="text-apex-blue hover:underline">
+              <Link href="/privacy" className="text-dpe-blue hover:underline">
                 Privacy Policy
               </Link>
             </p>
@@ -56,14 +56,14 @@ export function CookieConsent() {
             <button
               type="button"
               onClick={handleNecessaryOnly}
-              className="px-6 py-3 rounded-xl border-2 border-apex-navy text-apex-navy font-semibold text-sm hover:bg-gray-50 transition-colors w-full sm:w-auto"
+              className="px-6 py-3 rounded-xl border-2 border-dpe-navy text-dpe-navy font-semibold text-sm hover:bg-gray-50 transition-colors w-full sm:w-auto"
             >
               Necessary Only
             </button>
             <button
               type="button"
               onClick={handleAcceptAll}
-              className="px-6 py-3 rounded-xl bg-apex-navy text-white font-semibold text-sm hover:bg-apex-navy-deep transition-colors w-full sm:w-auto"
+              className="px-6 py-3 rounded-xl bg-dpe-navy text-white font-semibold text-sm hover:bg-dpe-navy-deep transition-colors w-full sm:w-auto"
             >
               Accept All
             </button>

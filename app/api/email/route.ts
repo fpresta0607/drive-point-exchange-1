@@ -93,7 +93,7 @@ export async function POST(req: Request) {
       });
 
       const contactTextMessage = `
-${emailTranslations.contactForm.title} - Apex Auto Solutions Inc.
+${emailTranslations.contactForm.title} - Drive Point Exchange.
 
 ${emailTranslations.contactForm.fields.name}: ${name}
 ${emailTranslations.contactForm.fields.email}: ${email}
@@ -140,7 +140,7 @@ ${emailTranslations.contactForm.followUp}
           emailTranslations.contactForm.bestRegards,
           emailTranslations.contactForm.teamSignature,
         ],
-        ctaLabel: 'Visit Apex Auto Solutions',
+        ctaLabel: 'Visit Drive Point Exchange',
         ctaHref: EMAIL_BRAND.siteUrl,
       });
 
@@ -343,7 +343,7 @@ ${emailTranslations.contactForm.followUp}
       // Send notification to business owner
       const ownerHtmlMessage = renderEmailLayout({
         title: 'New Home Loan Estimate Request',
-        subtitle: 'Lead summary for Apex Auto Solutions',
+        subtitle: 'Lead summary for Drive Point Exchange',
         sections: [
           renderEmailSection({
             title: 'Customer details',

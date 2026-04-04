@@ -74,7 +74,7 @@ export default function TermsPage() {
               >
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-apex-navy rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-dpe-navy rounded-xl flex items-center justify-center">
                       <span className="text-white font-bold text-lg">{section.id}</span>
                     </div>
                   </div>
@@ -119,7 +119,7 @@ export default function TermsPage() {
                     </svg>
                   </div>
                   <p className="font-semibold">{ts('terms.contact.email')}</p>
-                  <a href="mailto:support@apexautosolutionsinc.com" className="text-blue-100 hover:text-white transition-colors">support@apexautosolutionsinc.com</a>
+                  <a href="mailto:support@drivepointexchange.com" className="text-blue-100 hover:text-white transition-colors">support@drivepointexchange.com</a>
                 </div>
                 <div>
                   <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3">

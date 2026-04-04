@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Apex Auto Solutions - Chicago Auto Financing Experts",
-  description: "Contact Apex Auto Solutions for personalized auto financing assistance. Located in Chicago, IL. Call (888) 990-7112 or email support@apexautosolutionsinc.com for expert advice.",
+  title: "Contact Drive Point Exchange - Chicago Auto Financing Experts",
+  description: "Contact Drive Point Exchange for personalized auto financing assistance. Located in Chicago, IL. Call (888) 990-7112 or email support@drivepointexchange.com for expert advice.",
   keywords: [
     "contact apex auto solutions",
     "Chicago auto financing",
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     "Chicago financial services"
   ],
   openGraph: {
-    title: "Contact Apex Auto Solutions - Chicago Auto Financing Experts",
-    description: "Contact Apex Auto Solutions for personalized auto financing assistance. Located in Chicago, IL. Call (888) 990-7112 for expert advice.",
+    title: "Contact Drive Point Exchange - Chicago Auto Financing Experts",
+    description: "Contact Drive Point Exchange for personalized auto financing assistance. Located in Chicago, IL. Call (888) 990-7112 for expert advice.",
     images: [
       {
         url: "/auto/car-loan3.jpg",
@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: "Contact Apex Auto Solutions - Chicago Auto Financing Experts",
-    description: "Contact Apex Auto Solutions for personalized auto financing assistance. Located in Chicago, IL.",
+    title: "Contact Drive Point Exchange - Chicago Auto Financing Experts",
+    description: "Contact Drive Point Exchange for personalized auto financing assistance. Located in Chicago, IL.",
   },
   alternates: {
-    canonical: "https://www.apexautosolutionsinc.com/contact",
+    canonical: "https://www.drivepointexchange.com/contact",
   },
 };
 

@@ -33,7 +33,7 @@ type EmailHighlightOptions = {
   tone?: EmailHighlightTone;
 };
 
-const DEFAULT_SITE_URL = 'https://www.apexautosolutionsinc.com';
+const DEFAULT_SITE_URL = 'https://www.drivepointexchange.com';
 
 function getSiteUrl(): string {
   return process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, '') || DEFAULT_SITE_URL;
@@ -54,13 +54,13 @@ function sanitizeHref(href: string): string {
 }
 
 export const EMAIL_BRAND = {
-  companyName: 'Apex Auto Solutions Inc.',
+  companyName: 'Drive Point Exchange.',
   siteUrl: getSiteUrl(),
-  logoUrl: `${getSiteUrl()}/logo-apex.png`,
+  logoUrl: `${getSiteUrl()}/logo.png`,
   supportPhone: '(888) 990-7112',
   supportPhoneHref: 'tel:+18889907112',
-  supportEmail: 'support@apexautosolutionsinc.com',
-  supportEmailHref: 'mailto:support@apexautosolutionsinc.com',
+  supportEmail: 'support@drivepointexchange.com',
+  supportEmailHref: 'mailto:support@drivepointexchange.com',
   colors: {
     navy: '#1a2744',
     navyDeep: '#0a1628',

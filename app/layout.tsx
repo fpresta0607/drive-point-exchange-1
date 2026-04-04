@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Saira, Outfit } from "next/font/google";
+import { Saira, Outfit, Geist } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "../lib/i18n/context";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { CookieConsent } from "@/components/CookieConsent";
 import { ConsentScripts } from "@/components/ConsentScripts";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -24,10 +27,10 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.apexautosolutionsinc.com'),
+  metadataBase: new URL('https://www.drivepointexchange.com'),
   title: {
-    default: "Apex Auto Solutions Inc - Auto Loan Calculator & Refinancing",
-    template: "%s | Apex Auto Solutions Inc"
+    default: "Drive Point Exchange - Auto Loan Calculator & Refinancing",
+    template: "%s | Drive Point Exchange"
   },
   description: "Get instant auto loan estimates with state-specific tax calculations. Competitive rates, fast approval, and exceptional service. Auto refinancing and comprehensive vehicle coverage.",
   keywords: [
@@ -45,9 +48,9 @@ export const metadata: Metadata = {
     "Detroit auto loans",
     "Michigan car financing"
   ],
-  authors: [{ name: "Apex Auto Solutions Inc" }],
-  creator: "Apex Auto Solutions Inc",
-  publisher: "Apex Auto Solutions Inc",
+  authors: [{ name: "Drive Point Exchange" }],
+  creator: "Drive Point Exchange",
+  publisher: "Drive Point Exchange",
   formatDetection: {
     email: false,
     address: false,
@@ -56,22 +59,22 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.apexautosolutionsinc.com",
-    siteName: "Apex Auto Solutions Inc",
-    title: "Apex Auto Solutions Inc - Auto Loan Calculator & Refinancing",
+    url: "https://www.drivepointexchange.com",
+    siteName: "Drive Point Exchange",
+    title: "Drive Point Exchange - Auto Loan Calculator & Refinancing",
     description: "Get instant auto loan estimates with state-specific tax calculations. Competitive rates, fast approval, and exceptional service.",
     images: [
       {
         url: "/auto/car-hero.jpg",
         width: 1200,
         height: 630,
-        alt: "Apex Auto Solutions - Professional auto financing consultation",
+        alt: "Drive Point Exchange - Professional auto financing consultation",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Apex Auto Solutions Inc - Auto Loan Calculator & Refinancing",
+    title: "Drive Point Exchange - Auto Loan Calculator & Refinancing",
     description: "Get instant auto loan estimates with state-specific tax calculations. Competitive rates, fast approval, and exceptional service.",
     images: ["/auto/car-hero.jpg"],
   },
@@ -92,7 +95,7 @@ export const metadata: Metadata = {
     yahoo: "your-yahoo-verification-code",
   },
   alternates: {
-    canonical: "https://www.apexautosolutionsinc.com",
+    canonical: "https://www.drivepointexchange.com",
   },
   category: "finance",
 };
@@ -105,9 +108,9 @@ export default function RootLayout({
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Apex Auto Solutions Inc",
-    "url": "https://www.apexautosolutionsinc.com",
-    "logo": "https://www.apexautosolutionsinc.com/logo-apex.png",
+    "name": "Drive Point Exchange",
+    "url": "https://www.drivepointexchange.com",
+    "logo": "https://www.drivepointexchange.com/logo.png",
     "description": "Professional auto financing solutions including auto loans, refinancing, and vehicle coverage services.",
     "address": {
       "@type": "PostalAddress",
@@ -121,13 +124,13 @@ export default function RootLayout({
       "@type": "ContactPoint",
       "telephone": "+1-888-990-7112",
       "contactType": "customer service",
-      "email": "support@apexautosolutionsinc.com",
+      "email": "support@drivepointexchange.com",
       "availableLanguage": ["English", "Spanish", "Polish", "Italian", "French"]
     },
     "sameAs": [
-      "https://www.facebook.com/apexautosolutions",
-      "https://www.twitter.com/apexautosolutions",
-      "https://www.linkedin.com/company/apexautosolutions"
+      "https://www.facebook.com/drivepointexchange",
+      "https://www.twitter.com/drivepointexchange",
+      "https://www.linkedin.com/company/drivepointexchange"
     ],
     "foundingDate": "2012",
     "numberOfEmployees": "50-100",
@@ -142,19 +145,19 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en-US">
+    <html lang="en-US" className={cn("font-sans", geist.variable)}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        <meta name="theme-color" content="#1a2744" />
+        <meta name="theme-color" content="#0D1B4A" />
       </head>
       <body className={`${saira.variable} ${outfit.variable} font-outfit antialiased`}>
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-white focus:text-apex-navy focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold focus:text-sm focus:ring-2 focus:ring-apex-blue focus:outline-none"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-white focus:text-dpe-navy focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold focus:text-sm focus:ring-2 focus:ring-dpe-blue focus:outline-none"
         >
           Skip to main content
         </a>

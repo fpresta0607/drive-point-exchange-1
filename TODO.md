@@ -1,6 +1,6 @@
 # Drive Point Exchange — Developer TODO
 
-This document scopes all frontend/visual work needed to rebrand from Apex Auto Solutions to Drive Point Exchange. The site structure, layout, and functionality stay identical — only the visual identity, content, and branding change.
+This document scopes all frontend/visual work needed to rebrand from Drive Point Exchange to Drive Point Exchange. The site structure, layout, and functionality stay identical — only the visual identity, content, and branding change.
 
 **Owner handles separately:** Resend API, DNS, email config, Supabase backend migration, Vercel deployment, domain setup.
 
@@ -22,56 +22,56 @@ The new brand uses **royal blue + bright green** (no red). Update all color toke
 
 ### Files to Update
 - [ ] `app/globals.css` — Rename `--color-apex-*` → `--color-dpe-*`, update all hex values
-  - `--color-apex-navy` → `--color-dpe-navy: #0D1B4A`
-  - `--color-apex-navy-deep` → `--color-dpe-navy-deep: #060F2E`
-  - `--color-apex-blue` → `--color-dpe-blue: #1934B5`
-  - `--color-apex-blue-light` → `--color-dpe-blue-light: #4A6FE0`
-  - `--color-apex-red` → `--color-dpe-green: #2DB843` (red is gone, replaced with green)
-  - `--color-apex-slate` → `--color-dpe-slate: #64748b` (keep value)
-  - `--color-apex-bg` → `--color-dpe-bg: #f8fafc` (keep value)
-  - `--color-apex-bg-alt` → `--color-dpe-bg-alt: #e8f4ec` (slight green tint)
-  - `--color-apex-card` → `--color-dpe-card` (keep value)
-  - `--color-apex-card-border` → `--color-dpe-card-border` (keep value)
+  - `--color-dpe-navy` → `--color-dpe-navy: #0D1B4A`
+  - `--color-dpe-navy-deep` → `--color-dpe-navy-deep: #060F2E`
+  - `--color-dpe-blue` → `--color-dpe-blue: #1934B5`
+  - `--color-dpe-blue-light` → `--color-dpe-blue-light: #4A6FE0`
+  - `--color-dpe-green` → `--color-dpe-green: #2DB843` (red is gone, replaced with green)
+  - `--color-dpe-slate` → `--color-dpe-slate: #64748b` (keep value)
+  - `--color-dpe-bg` → `--color-dpe-bg: #f8fafc` (keep value)
+  - `--color-dpe-bg-alt` → `--color-dpe-bg-alt: #e8f4ec` (slight green tint)
+  - `--color-dpe-card` → `--color-dpe-card` (keep value)
+  - `--color-dpe-card-border` → `--color-dpe-card-border` (keep value)
   - Update rainbow/gradient vars (lines 7-12) to match blue/green palette
 - [ ] `tailwind.config.ts` — Rename `apex` color key → `dpe`, update hex values for entire palette
-  - Rename `apex-blue` → `dpe-blue` (full 50-900 range, anchored to `#1934B5`)
+  - Rename `dpe-blue` → `dpe-blue` (full 50-900 range, anchored to `#1934B5`)
   - Rename `apex-gray` → `dpe-gray` (keep values)
   - Add `dpe-green` palette (50-900 range, anchored to `#2DB843`)
   - Remove any red palette references
-  - Rename `shadow-apex` → `shadow-dpe`, `shadow-apex-lg` → `shadow-dpe-lg`
-  - Rename `border-apex` → `border-dpe`
+  - Rename `shadow-dpe` → `shadow-dpe`, `shadow-dpe-lg` → `shadow-dpe-lg`
+  - Rename `border-dpe` → `border-dpe`
 - [ ] `app/layout.tsx` line 152 — Update `theme-color` meta tag from `#1a2744` to `#0D1B4A`
 
 ### Component Class Renames (108+ occurrences)
 Every `apex-*` Tailwind class must become `dpe-*`. Files with the most occurrences:
 
-- [ ] `components/Navigation.tsx` — 14 occurrences (`text-apex-blue`, `bg-apex-red`, `hover:text-apex-blue`, etc.)
+- [ ] `components/Navigation.tsx` — 14 occurrences (`text-dpe-blue`, `bg-dpe-green`, `hover:text-dpe-blue`, etc.)
 - [ ] `components/Footer.tsx` — 10 occurrences
-- [ ] `app/(home)/page.tsx` — 15+ occurrences (change all `bg-apex-red`/`border-apex-red`/`text-apex-red` → `bg-dpe-green`/etc.)
-- [ ] `app/about-us/page.tsx` — `bg-apex-navy`, `text-apex-blue` throughout
-- [ ] `app/benefits/page.tsx` — `bg-apex-navy`, `hover:bg-apex-navy-deep`, `text-apex-blue`
-- [ ] `app/calculator/page.tsx` — `bg-apex-navy`, `border-apex-blue`
+- [ ] `app/(home)/page.tsx` — 15+ occurrences (change all `bg-dpe-green`/`border-dpe-green`/`text-dpe-green` → `bg-dpe-green`/etc.)
+- [ ] `app/about-us/page.tsx` — `bg-dpe-navy`, `text-dpe-blue` throughout
+- [ ] `app/benefits/page.tsx` — `bg-dpe-navy`, `hover:bg-dpe-navy-deep`, `text-dpe-blue`
+- [ ] `app/calculator/page.tsx` — `bg-dpe-navy`, `border-dpe-blue`
 - [ ] `app/contact/page.tsx` — 25+ occurrences (form inputs, focus states)
 - [ ] `app/services/page.tsx` — apex color scheme throughout
 - [ ] `app/terms/page.tsx` — apex navy/blue styling
 - [ ] `app/privacy/page.tsx` — apex navy/blue styling
-- [ ] `app/layout.tsx` — `focus:text-apex-navy`, `focus:ring-apex-blue`
-- [ ] `components/calculator/SummaryCard.tsx` — `bg-apex-blue-500`
+- [ ] `app/layout.tsx` — `focus:text-dpe-navy`, `focus:ring-dpe-blue`
+- [ ] `components/calculator/SummaryCard.tsx` — `bg-dpe-blue-500`
 - [ ] `app/auth/admin/login/page.tsx` — check for apex colors
 
-**Tip:** Global find-and-replace `apex-red` → `dpe-green`, `apex-blue` → `dpe-blue`, `apex-navy` → `dpe-navy`, `apex-slate` → `dpe-slate`, `apex-bg` → `dpe-bg`, `apex-card` → `dpe-card`, `shadow-apex` → `shadow-dpe`, `border-apex` → `border-dpe`. Then verify visually.
+**Tip:** Global find-and-replace `dpe-green` → `dpe-green`, `dpe-blue` → `dpe-blue`, `dpe-navy` → `dpe-navy`, `dpe-slate` → `dpe-slate`, `dpe-bg` → `dpe-bg`, `dpe-card` → `dpe-card`, `shadow-dpe` → `shadow-dpe`, `border-dpe` → `border-dpe`. Then verify visually.
 
 ---
 
 ## 2. Logo & Favicon
 
-- [ ] Replace `public/logo-apex.png` with Drive Point Exchange logo (used in nav, footer, emails)
+- [ ] Replace `public/logo.png` with Drive Point Exchange logo (used in nav, footer, emails)
 - [ ] Update `public/logo.png` if needed (currently the DPE logo is already here)
 - [ ] Replace `app/favicon.ico` with Drive Point Exchange favicon (crop from logo or create new)
 - [ ] Update all logo `alt` text:
-  - `components/Navigation.tsx` line 74: `alt="Apex Auto Solutions Logo"` → `alt="Drive Point Exchange Logo"`
+  - `components/Navigation.tsx` line 74: `alt="Drive Point Exchange Logo"` → `alt="Drive Point Exchange Logo"`
   - `components/Footer.tsx` line 48: same change
-- [ ] Update logo image `src` if filename changes (currently `/logo-apex.png` in nav + footer + email templates)
+- [ ] Update logo image `src` if filename changes (currently `/logo.png` in nav + footer + email templates)
 
 ---
 
@@ -115,7 +115,7 @@ All images in `public/auto/` are Apex-branded and need replacement with Drive Po
 
 ## 4. Text Content — Company Name & Copy
 
-Replace all "Apex Auto Solutions" / "Apex Auto Solutions Inc" references with "Drive Point Exchange".
+Replace all "Drive Point Exchange" / "Drive Point Exchange" references with "Drive Point Exchange".
 
 ### Metadata & SEO (every layout file)
 - [ ] `app/layout.tsx` — Title, description, author, creator, publisher, OpenGraph, Twitter, Schema.org org name, URL, logo, description, address, phone, email, social links, founded date
@@ -136,7 +136,7 @@ Replace all "Apex Auto Solutions" / "Apex Auto Solutions Inc" references with "D
 - [ ] `app/benefits/page.tsx` — Benefit descriptions
 - [ ] `app/privacy/page.tsx` — Company name in privacy policy text, email references
 - [ ] `app/terms/page.tsx` — Company name in terms text, email references
-- [ ] `app/admin/page.tsx` — Dashboard title "Apex Auto Solutions Lead Management"
+- [ ] `app/admin/page.tsx` — Dashboard title "Drive Point Exchange Lead Management"
 
 ### Components
 - [ ] `components/Navigation.tsx` — Phone numbers, logo alt text
@@ -148,7 +148,7 @@ Replace all "Apex Auto Solutions" / "Apex Auto Solutions Inc" references with "D
 - [ ] `app/api/email/route.ts` — Email subject lines and content referencing company
 
 ### Domain References
-Replace `apexautosolutionsinc.com` with the new domain everywhere:
+Replace `drivepointexchange.com` with the new domain everywhere:
 - [ ] `app/sitemap.ts` line 4
 - [ ] `app/robots.ts` lines 4, 45, 46
 - [ ] `next.config.ts` line 86 (SEO redirect)
@@ -159,7 +159,7 @@ Replace `apexautosolutionsinc.com` with the new domain everywhere:
 
 ## 5. Translations (5 language files)
 
-All translation files contain "Apex Auto Solutions" references and business-specific copy.
+All translation files contain "Drive Point Exchange" references and business-specific copy.
 
 - [ ] `translations/en.json` — Primary. Update all company name refs, service descriptions, email templates, CTA text, footer description
 - [ ] `translations/es.json` — Spanish equivalent
@@ -211,19 +211,19 @@ Current fonts are **Saira** (headings) and **Outfit** (body). These were chosen 
 
 | Search | Replace With | Scope |
 |--------|-------------|-------|
-| `Apex Auto Solutions Inc` | `Drive Point Exchange` | All files |
-| `Apex Auto Solutions` | `Drive Point Exchange` | All files |
-| `Apex Auto` | `Drive Point Exchange` | All files |
-| `apex-blue` | `dpe-blue` | CSS/TSX class names |
-| `apex-navy` | `dpe-navy` | CSS/TSX class names |
-| `apex-red` | `dpe-green` | CSS/TSX class names |
-| `apex-slate` | `dpe-slate` | CSS/TSX class names |
-| `apex-bg` | `dpe-bg` | CSS/TSX class names |
-| `apex-card` | `dpe-card` | CSS/TSX class names |
-| `shadow-apex` | `shadow-dpe` | Tailwind classes |
-| `border-apex` | `border-dpe` | Tailwind classes |
-| `apexautosolutionsinc.com` | `new-domain.com` | URLs |
-| `logo-apex.png` | `logo-dpe.png` (or keep filename) | Image refs |
+| `Drive Point Exchange` | `Drive Point Exchange` | All files |
+| `Drive Point Exchange` | `Drive Point Exchange` | All files |
+| `Drive Point Exchange` | `Drive Point Exchange` | All files |
+| `dpe-blue` | `dpe-blue` | CSS/TSX class names |
+| `dpe-navy` | `dpe-navy` | CSS/TSX class names |
+| `dpe-green` | `dpe-green` | CSS/TSX class names |
+| `dpe-slate` | `dpe-slate` | CSS/TSX class names |
+| `dpe-bg` | `dpe-bg` | CSS/TSX class names |
+| `dpe-card` | `dpe-card` | CSS/TSX class names |
+| `shadow-dpe` | `shadow-dpe` | Tailwind classes |
+| `border-dpe` | `border-dpe` | Tailwind classes |
+| `drivepointexchange.com` | `new-domain.com` | URLs |
+| `logo.png` | `logo-dpe.png` (or keep filename) | Image refs |
 | `--color-apex-` | `--color-dpe-` | CSS variables |
 
 ---

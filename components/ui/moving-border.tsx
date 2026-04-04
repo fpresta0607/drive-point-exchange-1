@@ -47,7 +47,7 @@ export function MovingBorderButton({
         <MovingBorder duration={duration} rx="30%" ry="30%">
           <div
             className={cn(
-              "h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--color-apex-blue)_40%,transparent_60%)]",
+              "h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--color-dpe-blue)_40%,transparent_60%)]",
               borderClassName,
             )}
           />
@@ -56,7 +56,7 @@ export function MovingBorderButton({
 
       <div
         className={cn(
-          "relative bg-apex-navy border border-apex-navy-deep backdrop-blur-xl text-white flex items-center justify-center w-full h-full antialiased",
+          "relative bg-dpe-navy border border-dpe-navy-deep backdrop-blur-xl text-white flex items-center justify-center w-full h-full antialiased",
           className,
         )}
         style={{

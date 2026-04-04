@@ -119,7 +119,7 @@ function TikTokEmbed({ videoId, caption, url }: { videoId: string; caption: stri
           <button
             type="button"
             onClick={() => setShowCaption(!showCaption)}
-            className="text-xs text-apex-slate hover:text-[#0a1628] transition-colors flex items-center gap-1"
+            className="text-xs text-dpe-slate hover:text-[#0a1628] transition-colors flex items-center gap-1"
           >
             <svg
               className={`w-3 h-3 transition-transform duration-200 ${showCaption ? 'rotate-90' : ''}`}
@@ -132,13 +132,13 @@ function TikTokEmbed({ videoId, caption, url }: { videoId: string; caption: stri
             {showCaption ? 'Hide caption' : 'Show caption'}
           </button>
           {showCaption && (
-            <p className="text-sm text-apex-slate mt-2 leading-relaxed">
+            <p className="text-sm text-dpe-slate mt-2 leading-relaxed">
               {caption}
               <a
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block mt-2 text-apex-blue text-xs font-medium hover:underline"
+                className="block mt-2 text-dpe-blue text-xs font-medium hover:underline"
               >
                 View on TikTok →
               </a>
@@ -172,7 +172,7 @@ function YouTubeEmbed({ videoId, caption, url }: { videoId: string; caption: str
           <button
             type="button"
             onClick={() => setShowCaption(!showCaption)}
-            className="text-xs text-apex-slate hover:text-[#0a1628] transition-colors flex items-center gap-1"
+            className="text-xs text-dpe-slate hover:text-[#0a1628] transition-colors flex items-center gap-1"
           >
             <svg
               className={`w-3 h-3 transition-transform duration-200 ${showCaption ? 'rotate-90' : ''}`}
@@ -185,13 +185,13 @@ function YouTubeEmbed({ videoId, caption, url }: { videoId: string; caption: str
             {showCaption ? 'Hide caption' : 'Show caption'}
           </button>
           {showCaption && (
-            <p className="text-sm text-apex-slate mt-2 leading-relaxed">
+            <p className="text-sm text-dpe-slate mt-2 leading-relaxed">
               {caption}
               <a
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block mt-2 text-apex-blue text-xs font-medium hover:underline"
+                className="block mt-2 text-dpe-blue text-xs font-medium hover:underline"
               >
                 View on YouTube →
               </a>
@@ -285,9 +285,9 @@ function FallbackCard({ post }: { post: SocialPost }) {
       />
       <h3 className="font-saira font-bold text-[#0a1628] mb-2">{config.label}</h3>
       {post.caption && (
-        <p className="text-sm text-apex-slate mb-4 line-clamp-2">{post.caption}</p>
+        <p className="text-sm text-dpe-slate mb-4 line-clamp-2">{post.caption}</p>
       )}
-      <span className="text-apex-blue font-medium text-sm">View post →</span>
+      <span className="text-dpe-blue font-medium text-sm">View post →</span>
     </a>
   );
 }

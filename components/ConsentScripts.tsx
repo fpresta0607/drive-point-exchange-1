@@ -170,11 +170,6 @@ export function ConsentScripts() {
             strategy="lazyOnload"
           />
           <Script
-            id="tiktok-embed"
-            src="https://www.tiktok.com/embed.js"
-            strategy="lazyOnload"
-          />
-          <Script
             id="facebook-sdk"
             src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v21.0"
             strategy="lazyOnload"

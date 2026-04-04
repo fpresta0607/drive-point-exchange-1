@@ -80,7 +80,7 @@ export default function Benefits() {
             >
               <Link
                 href="/contact"
-                className="bg-apex-navy hover:bg-apex-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="bg-dpe-navy hover:bg-dpe-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
               >
                 {ts('benefits.hero.getCoverage')}
               </Link>
@@ -153,7 +153,7 @@ export default function Benefits() {
                   <div className="space-y-2">
                     {benefit.features.map((feature: string, featureIndex: number) => (
                       <div key={featureIndex} className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-apex-navy rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-dpe-navy rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm text-gray-600">{feature}</span>
                       </div>
                     ))}
@@ -166,7 +166,7 @@ export default function Benefits() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-apex-navy">
+      <section className="py-20 bg-dpe-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial="initial"
@@ -183,13 +183,13 @@ export default function Benefits() {
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-white text-apex-navy hover:bg-apex-navy-deep hover:text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="bg-white text-dpe-navy hover:bg-dpe-navy-deep hover:text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
               >
                 {ts('benefits.cta.getCoverage')}
               </Link>
               <Link
                 href="/services"
-                className="bg-apex-navy hover:bg-apex-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="bg-dpe-navy hover:bg-dpe-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
               >
                 {ts('benefits.cta.learnMore')}
               </Link>

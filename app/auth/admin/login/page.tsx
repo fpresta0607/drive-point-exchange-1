@@ -89,7 +89,7 @@ function AdminLoginForm() {
             Admin Login
           </h2>
           <p className="mt-2 text-sm text-gray-600">
-            Apex Auto Solutions Dashboard
+            Drive Point Exchange Dashboard
           </p>
         </motion.div>
 

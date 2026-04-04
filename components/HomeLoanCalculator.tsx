@@ -184,10 +184,10 @@ export default function HomeLoanCalculator() {
           {/* Down Payment Percentage Display */}
           <div className="bg-blue-50 p-4 rounded-lg">
             <p className="text-sm text-gray-600">
-              {ts('homeLoanCalculator.downPayment')}: <span className="font-semibold text-apex-blue">{downPaymentPercent.toFixed(1)}%</span>
+              {ts('homeLoanCalculator.downPayment')}: <span className="font-semibold text-dpe-blue">{downPaymentPercent.toFixed(1)}%</span>
             </p>
             {downPaymentPercent < 20 && (
-              <p className="text-xs text-apex-blue mt-1">
+              <p className="text-xs text-dpe-blue mt-1">
                 {ts('homeLoanCalculator.pmiWarning')}
               </p>
             )}
@@ -246,7 +246,7 @@ export default function HomeLoanCalculator() {
           <h3 className="text-2xl font-bold text-gray-900 mb-6">{ts('homeLoanCalculator.paymentBreakdownTitle')}</h3>
           
           {/* Monthly Payment */}
-          <div className="bg-gradient-to-br from-apex-navy to-apex-navy-deep rounded-xl p-6 text-white">
+          <div className="bg-gradient-to-br from-dpe-navy to-dpe-navy-deep rounded-xl p-6 text-white">
             <div className="text-center">
               <p className="text-blue-100 text-sm font-medium mb-2">{ts('homeLoanCalculator.estimatedMonthlyPayment')}</p>
               <p className="text-4xl font-bold">${Math.round(monthlyPayment).toLocaleString()}</p>
@@ -294,7 +294,7 @@ export default function HomeLoanCalculator() {
           {/* Get Estimate Button */}
           <button
             onClick={handleGetEstimate}
-            className="w-full bg-apex-navy hover:bg-apex-navy-deep text-white font-semibold py-4 px-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+            className="w-full bg-dpe-navy hover:bg-dpe-navy-deep text-white font-semibold py-4 px-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
           >
             {ts('homeLoanCalculator.getEstimateButton')}
           </button>

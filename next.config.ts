@@ -83,10 +83,10 @@ const nextConfig: NextConfig = {
         has: [
           {
             type: 'host',
-            value: 'apexautosolutionsinc.com',
+            value: 'drivepointexchange.com',
           },
         ],
-        destination: 'https://www.apexautosolutionsinc.com/:path*',
+        destination: 'https://www.drivepointexchange.com/:path*',
         permanent: true,
       },
     ];

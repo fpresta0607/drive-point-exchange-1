@@ -37,7 +37,7 @@ function CcpaOptOutButton() {
     <button
       type="button"
       onClick={handleOptOut}
-      className="mt-4 px-6 py-3 rounded-xl bg-apex-navy text-white font-semibold text-sm hover:bg-apex-navy-deep transition-colors"
+      className="mt-4 px-6 py-3 rounded-xl bg-dpe-navy text-white font-semibold text-sm hover:bg-dpe-navy-deep transition-colors"
     >
       Opt Out of Data Sharing
     </button>
@@ -152,7 +152,7 @@ export default function PrivacyPage() {
                     </svg>
                   </div>
                   <p className="font-semibold">{ts('privacy.contact.email')}</p>
-                  <a href="mailto:support@apexautosolutionsinc.com" className="text-blue-100 hover:text-white transition-colors">support@apexautosolutionsinc.com</a>
+                  <a href="mailto:support@drivepointexchange.com" className="text-blue-100 hover:text-white transition-colors">support@drivepointexchange.com</a>
                 </div>
                 <div>
                   <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3">
@@ -205,8 +205,8 @@ export default function PrivacyPage() {
               <p className="text-gray-600 leading-relaxed">
                 By clicking the button below, we will disable all non-essential tracking and marketing
                 cookies on this device. You can also contact us at{' '}
-                <a href="mailto:support@apexautosolutionsinc.com" className="text-blue-600 hover:underline">
-                  support@apexautosolutionsinc.com
+                <a href="mailto:support@drivepointexchange.com" className="text-blue-600 hover:underline">
+                  support@drivepointexchange.com
                 </a>{' '}
                 or call{' '}
                 <a href="tel:+18889907112" className="text-blue-600 hover:underline">

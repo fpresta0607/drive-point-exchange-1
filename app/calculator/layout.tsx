@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: "Free auto loan calculator and home loan calculator tools. Calculate monthly payments, interest rates, and loan terms.",
   },
   alternates: {
-    canonical: "https://www.apexautosolutionsinc.com/calculator",
+    canonical: "https://www.drivepointexchange.com/calculator",
   },
 };
 

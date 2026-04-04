@@ -60,7 +60,7 @@ export default function SummaryCard({
         <div className="mt-6">
           <button 
             onClick={onGetQuote}
-            className="w-full h-12 bg-apex-blue-500 hover:bg-apex-blue-600 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200"
+            className="w-full h-12 bg-dpe-blue-500 hover:bg-dpe-blue-600 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200"
           >
             Get Quote
           </button>

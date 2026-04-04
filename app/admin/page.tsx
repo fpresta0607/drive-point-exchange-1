@@ -353,7 +353,7 @@ export default function AdminDashboard() {
           <div className="flex justify-between items-center py-6">
             <div>
               <h1 className="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
-              <p className="text-gray-600 mt-1">Apex Auto Solutions Lead Management</p>
+              <p className="text-gray-600 mt-1">Drive Point Exchange Lead Management</p>
             </div>
             <div className="flex items-center gap-4">
               <div className="text-right">

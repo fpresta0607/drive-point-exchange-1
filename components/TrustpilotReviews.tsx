@@ -71,7 +71,7 @@ export default function TrustpilotReviews() {
         data-token={process.env.NEXT_PUBLIC_TRUSTPILOT_TOKEN}
         data-review-disclaimer="true"
       >
-        <a href="https://www.trustpilot.com/review/apexautosolutionsinc.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.trustpilot.com/review/drivepointexchange.com" target="_blank" rel="noopener noreferrer">
           Trustpilot
         </a>
       </div>
@@ -79,10 +79,10 @@ export default function TrustpilotReviews() {
       {showFallback && (
         <div className="text-center mt-8">
           <a
-            href="https://www.trustpilot.com/review/apexautosolutionsinc.com"
+            href="https://www.trustpilot.com/review/drivepointexchange.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-apex-blue hover:text-apex-navy font-medium"
+            className="text-dpe-blue hover:text-dpe-navy font-medium"
           >
             Read our verified reviews on Trustpilot →
           </a>

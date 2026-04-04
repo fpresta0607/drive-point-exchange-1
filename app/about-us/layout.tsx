@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Apex Auto Solutions - Trusted Auto Financing Since 2012",
-  description: "Learn about Apex Auto Solutions Inc, a trusted auto financing company serving customers nationwide since 2012. Featured in Forbes with 10,000+ satisfied customers.",
+  title: "About Drive Point Exchange - Trusted Auto Financing Since 2012",
+  description: "Learn about Drive Point Exchange, a trusted auto financing company serving customers nationwide since 2012. Featured in Forbes with 10,000+ satisfied customers.",
   keywords: [
     "about apex auto solutions",
     "auto financing company",
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     "auto loan company"
   ],
   openGraph: {
-    title: "About Apex Auto Solutions - Trusted Auto Financing Since 2012",
-    description: "Learn about Apex Auto Solutions Inc, a trusted auto financing company serving customers nationwide since 2012. Featured in Forbes with 10,000+ satisfied customers.",
+    title: "About Drive Point Exchange - Trusted Auto Financing Since 2012",
+    description: "Learn about Drive Point Exchange, a trusted auto financing company serving customers nationwide since 2012. Featured in Forbes with 10,000+ satisfied customers.",
     images: [
       {
         url: "/auto/car-loan4.jpg",
@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: "About Apex Auto Solutions - Trusted Auto Financing Since 2012",
-    description: "Learn about Apex Auto Solutions Inc, a trusted auto financing company serving customers nationwide since 2012.",
+    title: "About Drive Point Exchange - Trusted Auto Financing Since 2012",
+    description: "Learn about Drive Point Exchange, a trusted auto financing company serving customers nationwide since 2012.",
   },
   alternates: {
-    canonical: "https://www.apexautosolutionsinc.com/about-us",
+    canonical: "https://www.drivepointexchange.com/about-us",
   },
 };
 

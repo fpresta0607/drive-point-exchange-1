@@ -107,13 +107,13 @@ export default function AboutUs() {
             >
               <Link
                 href="/calculator"
-                className="bg-apex-navy hover:bg-apex-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="bg-dpe-navy hover:bg-dpe-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
               >
                 {ts('about.hero.getQuote')}
               </Link>
               <Link
                 href="/contact"
-                className="bg-apex-navy hover:bg-apex-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="bg-dpe-navy hover:bg-dpe-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
               >
                 {ts('about.hero.contactTeam')}
               </Link>
@@ -203,7 +203,7 @@ export default function AboutUs() {
             </motion.div>
           
             <motion.div variants={fadeInRight}>
-          <div className="bg-apex-navy rounded-2xl p-8 text-white">
+          <div className="bg-dpe-navy rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-6">{ts('about.statistics.title')}</h3>
             <div className="space-y-4">
               <div className="flex justify-between items-center">
@@ -309,7 +309,7 @@ export default function AboutUs() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     {member.name}
                   </h3>
-                  <p className="text-apex-blue mb-3 font-medium">
+                  <p className="text-dpe-blue mb-3 font-medium">
                     {member.title}
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">
@@ -323,7 +323,7 @@ export default function AboutUs() {
       </section>
 
         {/* CTA Section */}
-      <section className="py-20 bg-apex-navy">
+      <section className="py-20 bg-dpe-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial="initial"
@@ -340,13 +340,13 @@ export default function AboutUs() {
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/calculator"
-                className="bg-white text-apex-navy hover:bg-apex-navy-deep hover:text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="bg-white text-dpe-navy hover:bg-dpe-navy-deep hover:text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
               >
                 {ts('about.cta.getQuote')}
               </Link>
               <Link
                 href="/contact"
-                className="bg-apex-navy hover:bg-apex-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="bg-dpe-navy hover:bg-dpe-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
               >
                 {ts('about.cta.contactTeam')}
               </Link>

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Apex Auto Solutions Data Protection",
-  description: "Privacy policy for Apex Auto Solutions Inc. Learn how we collect, use, and protect your personal information when using our auto financing services.",
+  title: "Privacy Policy - Drive Point Exchange Data Protection",
+  description: "Privacy policy for Drive Point Exchange. Learn how we collect, use, and protect your personal information when using our auto financing services.",
   keywords: [
     "privacy policy",
     "data protection",
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
     "information collection"
   ],
   openGraph: {
-    title: "Privacy Policy - Apex Auto Solutions Data Protection",
-    description: "Privacy policy for Apex Auto Solutions Inc. Learn how we collect, use, and protect your personal information.",
+    title: "Privacy Policy - Drive Point Exchange Data Protection",
+    description: "Privacy policy for Drive Point Exchange. Learn how we collect, use, and protect your personal information.",
   },
   twitter: {
-    title: "Privacy Policy - Apex Auto Solutions Data Protection",
-    description: "Privacy policy for Apex Auto Solutions Inc. Learn how we collect, use, and protect your personal information.",
+    title: "Privacy Policy - Drive Point Exchange Data Protection",
+    description: "Privacy policy for Drive Point Exchange. Learn how we collect, use, and protect your personal information.",
   },
   alternates: {
-    canonical: "https://www.apexautosolutionsinc.com/privacy",
+    canonical: "https://www.drivepointexchange.com/privacy",
   },
 };
 

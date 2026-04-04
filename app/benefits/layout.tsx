@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: "Comprehensive auto protection benefits including roadside assistance, road hazard coverage, and maintenance benefits.",
   },
   alternates: {
-    canonical: "https://www.apexautosolutionsinc.com/benefits",
+    canonical: "https://www.drivepointexchange.com/benefits",
   },
 };
 

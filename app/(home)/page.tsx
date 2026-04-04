@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import Navigation from '../../components/Navigation';
-import LoanCalculator from '../../components/LoanCalculator';
+import { AutoLoanRefinanceCalculator } from '../../components/ui/auto-loan-refinance-calculator';
 import Footer from '../../components/Footer';
 import { useI18n } from '../../lib/i18n/context';
 import TrustpilotReviews from '../../components/TrustpilotReviews';
@@ -104,14 +104,14 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/85 via-[#102a4a]/50 to-transparent" />
         </div>
 
-        {/* Red lightning — subtle ambient across hero */}
+        {/* Green lightning — subtle ambient across hero */}
         <div className="absolute inset-0 z-[2] mix-blend-screen pointer-events-none animate-lightning-red">
-          <LightningBg hue={0} xOffset={0.3} intensity={0.15} speed={0.6} size={3} />
+          <LightningBg hue={140} xOffset={0.3} intensity={0.15} speed={0.6} size={3} />
         </div>
 
-        {/* Blue lightning — right column, matches apex-blue #3b82f6 (hue 217) */}
+        {/* Blue lightning — right column, matches dpe-blue #1934B5 (hue ~230) */}
         <div className="absolute top-0 right-0 bottom-0 w-1/2 z-[4] mix-blend-screen pointer-events-none opacity-90">
-          <LightningBg hue={217} xOffset={0} intensity={0.8} speed={0.35} size={3.5} />
+          <LightningBg hue={230} xOffset={0} intensity={0.8} speed={0.35} size={3.5} />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 z-10 w-full">
@@ -163,7 +163,7 @@ export default function Home() {
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/contact"
-                  className="bg-apex-red hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-xl font-saira tracking-wide transition-all duration-200 text-center shadow-lg shadow-red-900/30"
+                  className="bg-dpe-green hover:bg-green-600 text-white font-semibold py-4 px-8 rounded-xl font-saira tracking-wide transition-all duration-200 text-center shadow-lg shadow-green-900/30"
                 >
                   Get Started
                 </Link>
@@ -184,7 +184,7 @@ export default function Home() {
               className="relative hidden lg:block"
             >
               <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/40 p-6">
-                <LoanCalculator />
+                <AutoLoanRefinanceCalculator />
               </div>
             </motion.div>
           </div>
@@ -201,9 +201,9 @@ export default function Home() {
             variants={staggerChildren}
             className="text-center mb-12"
           >
-            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 border border-apex-red/20 bg-apex-red/5 rounded-full px-4 py-1.5 mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-apex-red" />
-              <span className="text-sm font-medium text-apex-red">Our Services</span>
+            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 border border-dpe-green/20 bg-dpe-green/5 rounded-full px-4 py-1.5 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-dpe-green" />
+              <span className="text-sm font-medium text-dpe-green">Our Services</span>
             </motion.div>
             <motion.h2 variants={fadeInUp} className="font-saira text-3xl sm:text-4xl font-bold text-gray-900">
               {ts('home.services.title')}
@@ -238,7 +238,7 @@ export default function Home() {
                 {/* Bottom gradient for text readability */}
                 <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/70 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
-                  <span className="inline-block text-[10px] font-semibold uppercase tracking-widest text-apex-red mb-1">
+                  <span className="inline-block text-[10px] font-semibold uppercase tracking-widest text-dpe-green mb-1">
                     {service.category}
                   </span>
                   <h3 className="font-saira text-sm md:text-base lg:text-lg font-bold text-white uppercase tracking-wide mb-0.5">
@@ -248,7 +248,7 @@ export default function Home() {
                     {service.description}
                   </p>
                   <div className="border-t border-white/15 pt-2">
-                    <span className="text-apex-red font-semibold text-xs inline-flex items-center gap-1.5 uppercase tracking-wider group-hover:gap-2.5 transition-all duration-200">
+                    <span className="text-dpe-green font-semibold text-xs inline-flex items-center gap-1.5 uppercase tracking-wider group-hover:gap-2.5 transition-all duration-200">
                       {ts('home.services.learnMore')}
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -273,8 +273,8 @@ export default function Home() {
             className="text-center mb-12"
           >
             <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 border border-slate-200 bg-slate-50 rounded-full px-4 py-1.5 mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-apex-blue" />
-              <span className="text-sm font-medium text-apex-slate">Trusted Nationwide</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-dpe-blue" />
+              <span className="text-sm font-medium text-dpe-slate">Trusted Nationwide</span>
             </motion.div>
             <motion.h2 variants={fadeInUp} className="font-saira text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               {ts('home.trust.title')}
@@ -334,9 +334,9 @@ export default function Home() {
             viewport={{ once: true }}
             variants={staggerChildren}
           >
-            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 border border-apex-red/20 bg-apex-red/5 rounded-full px-4 py-1.5 mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-apex-red animate-pulse" />
-              <span className="text-sm font-medium text-apex-red">Get Started Today</span>
+            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 border border-dpe-green/20 bg-dpe-green/5 rounded-full px-4 py-1.5 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-dpe-green animate-pulse" />
+              <span className="text-sm font-medium text-dpe-green">Get Started Today</span>
             </motion.div>
             <motion.h2 variants={fadeInUp} className="font-saira text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               {ts('home.cta.title')}
@@ -348,7 +348,7 @@ export default function Home() {
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Link
                 href="/contact"
-                className="text-center bg-apex-red hover:bg-red-700 text-white font-semibold py-3.5 px-8 rounded-xl shadow-lg shadow-red-900/15 transition-all duration-200"
+                className="text-center bg-dpe-green hover:bg-green-600 text-white font-semibold py-3.5 px-8 rounded-xl shadow-lg shadow-green-900/15 transition-all duration-200"
               >
                 {ts('home.cta.getStarted')}
               </Link>
@@ -366,14 +366,14 @@ export default function Home() {
             >
               <div className="text-center sm:text-left">
                 <p className="text-sm text-gray-400 mb-1">Main Office</p>
-                <a href="tel:+18889907112" className="text-xl font-bold text-gray-900 hover:text-apex-red transition-colors">
+                <a href="tel:+18889907112" className="text-xl font-bold text-gray-900 hover:text-dpe-green transition-colors">
                   (888) 990-7112
                 </a>
               </div>
               <div className="hidden sm:block w-px h-10 bg-gray-200" />
               <div className="text-center sm:text-left">
                 <p className="text-sm text-gray-400 mb-1">Customer Support — 24/7</p>
-                <a href="tel:+17737821005" className="text-xl font-bold text-gray-900 hover:text-apex-red transition-colors">
+                <a href="tel:+17737821005" className="text-xl font-bold text-gray-900 hover:text-dpe-green transition-colors">
                   (773) 782-1005
                 </a>
               </div>

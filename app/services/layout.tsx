@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: "Comprehensive auto financing services including auto loan refinancing and vehicle coverage.",
   },
   alternates: {
-    canonical: "https://www.apexautosolutionsinc.com/services",
+    canonical: "https://www.drivepointexchange.com/services",
   },
 };
 

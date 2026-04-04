@@ -50,7 +50,7 @@ export default function SocialFeed() {
           <h2 className="font-saira text-3xl sm:text-4xl font-bold text-[#0a1628] mb-4 tracking-wide">
             Follow Our Journey
           </h2>
-          <p className="text-lg text-apex-slate">
+          <p className="text-lg text-dpe-slate">
             Latest from our social channels
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function SocialFeed() {
                   href={PROFILE_URLS[platform]}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-2 text-[#0a1628] hover:text-apex-blue transition-colors duration-200"
+                  className="flex flex-col items-center gap-2 text-[#0a1628] hover:text-dpe-blue transition-colors duration-200"
                 >
                   <Icon />
                   <span className="text-xs font-medium">{PLATFORM_LABELS[platform]}</span>
@@ -101,7 +101,7 @@ export default function SocialFeed() {
                   href={PROFILE_URLS[platform]}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-1 text-[#0a1628] hover:text-apex-blue transition-colors duration-200"
+                  className="flex flex-col items-center gap-1 text-[#0a1628] hover:text-dpe-blue transition-colors duration-200"
                 >
                   <Icon />
                   <span className="text-xs font-medium">{PLATFORM_LABELS[platform]}</span>

@@ -1,8 +1,8 @@
-# Apex Auto Solutions — Website Rebrand Implementation Plan
+# Drive Point Exchange — Website Rebrand Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Rebrand the Apex Auto site to match the new glass-effect logo — frosted light theme, Trustpilot reviews, social media carousel with cron job.
+**Goal:** Rebrand the Drive Point Exchange site to match the new glass-effect logo — frosted light theme, Trustpilot reviews, social media carousel with cron job.
 
 **Architecture:** Replace the orange color scheme with navy/blue/red, swap Inter for Saira (headings) + Outfit (body), add Trustpilot widget replacing hardcoded testimonials, add horizontal social feed carousel backed by Supabase + Vercel cron. All new Tailwind tokens use v4 `@theme` blocks in CSS.
 
@@ -50,7 +50,7 @@ const outfit = Outfit({
 
 Update `theme-color` meta (line 141): `#f97316` → `#1a2744`
 
-Update structured data logo (line 99): `"logo": "https://www.apexautosolutionsinc.com/logo-glass.png"`
+Update structured data logo (line 99): `"logo": "https://www.drivepointexchange.com/logo-glass.png"`
 
 Add Trustpilot script inside `<head>` (after line 141):
 ```tsx
@@ -86,16 +86,16 @@ Replace entire `app/globals.css`:
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, monospace;
 
   /* Brand colors */
-  --color-apex-navy: #1a2744;
-  --color-apex-navy-deep: #0a1628;
-  --color-apex-blue: #3b82f6;
-  --color-apex-blue-light: #60a5fa;
-  --color-apex-red: #dc2626;
-  --color-apex-slate: #64748b;
-  --color-apex-bg: #f8fafc;
-  --color-apex-bg-alt: #e8edf4;
-  --color-apex-card: rgba(255,255,255,0.85);
-  --color-apex-card-border: rgba(255,255,255,0.40);
+  --color-dpe-navy: #1a2744;
+  --color-dpe-navy-deep: #0a1628;
+  --color-dpe-blue: #3b82f6;
+  --color-dpe-blue-light: #60a5fa;
+  --color-dpe-green: #dc2626;
+  --color-dpe-slate: #64748b;
+  --color-dpe-bg: #f8fafc;
+  --color-dpe-bg-alt: #e8edf4;
+  --color-dpe-card: rgba(255,255,255,0.85);
+  --color-dpe-card-border: rgba(255,255,255,0.40);
 }
 
 html {
@@ -217,7 +217,7 @@ Replace:
 ```tsx
 <Image
   src="/logo.png"
-  alt="Apex Auto Solutions Logo"
+  alt="Drive Point Exchange Logo"
   width={160}
   height={60}
   className="h-16 w-auto"
@@ -227,7 +227,7 @@ With:
 ```tsx
 <Image
   src="/logo-glass.png"
-  alt="Apex Auto Solutions Logo"
+  alt="Drive Point Exchange Logo"
   width={200}
   height={80}
   className="h-14 w-auto mix-blend-multiply"
@@ -241,7 +241,7 @@ Replace:
 ```tsx
 <Image
   src="/logo.png"
-  alt="Apex Auto Solutions Logo"
+  alt="Drive Point Exchange Logo"
   width={160}
   height={60}
   className="h-12 w-auto"
@@ -251,7 +251,7 @@ With:
 ```tsx
 <Image
   src="/logo-glass.png"
-  alt="Apex Auto Solutions Logo"
+  alt="Drive Point Exchange Logo"
   width={160}
   height={60}
   className="h-10 w-auto brightness-[2] contrast-[0.8]"
@@ -301,13 +301,13 @@ With:
 - [ ] **Step 2: Replace all orange/primary hover classes**
 
 Global replacements in Navigation.tsx:
-- `hover:text-primary-600` → `hover:text-apex-blue` (lines 52, 62, 76, 90, 167, 201, 215, 236)
-- `bg-orange-500 hover:bg-orange-600` → `bg-apex-navy hover:bg-apex-navy-deep` (lines 131, 158)
-- `bg-orange-50 text-orange-600` → `bg-blue-50 text-apex-blue` (lines 110, 235)
-- `text-orange-600` (checkmark SVGs) → `text-apex-blue` (lines 117, 242)
-- `hover:text-orange-500` → `hover:text-apex-blue` (line 142)
-- `text-orange-500` (24/7 number) → `text-apex-blue` (line 251)
-- `hover:text-orange-600` → `hover:text-apex-navy` (line 251)
+- `hover:text-primary-600` → `hover:text-dpe-blue` (lines 52, 62, 76, 90, 167, 201, 215, 236)
+- `bg-orange-500 hover:bg-orange-600` → `bg-dpe-navy hover:bg-dpe-navy-deep` (lines 131, 158)
+- `bg-orange-50 text-orange-600` → `bg-blue-50 text-dpe-blue` (lines 110, 235)
+- `text-orange-600` (checkmark SVGs) → `text-dpe-blue` (lines 117, 242)
+- `hover:text-orange-500` → `hover:text-dpe-blue` (line 142)
+- `text-orange-500` (24/7 number) → `text-dpe-blue` (line 251)
+- `hover:text-orange-600` → `hover:text-dpe-navy` (line 251)
 
 - [ ] **Step 3: Update mobile menu background (line 196)**
 
@@ -334,9 +334,9 @@ git commit -m "feat(nav): frosted glass nav bar with navy color scheme"
 - [ ] **Step 1: Replace all orange references in Footer.tsx**
 
 Global replacements:
-- `bg-orange-500` → `bg-apex-blue` (line 52, nationwide dot)
-- `hover:text-orange-400` → `hover:text-apex-blue-light` (lines 70, 87, 104, 123, 126)
-- `text-orange-500` → `text-apex-blue` (if any phone number styling)
+- `bg-orange-500` → `bg-dpe-blue` (line 52, nationwide dot)
+- `hover:text-orange-400` → `hover:text-dpe-blue-light` (lines 70, 87, 104, 123, 126)
+- `text-orange-500` → `text-dpe-blue` (if any phone number styling)
 
 - [ ] **Step 2: Update 24/7 phone link styling (line 58)**
 
@@ -346,7 +346,7 @@ Replace:
 ```
 With:
 ```tsx
-<a href="tel:+17737821005" className="text-white font-semibold hover:text-apex-blue-light transition-colors">(773) 782-1005</a>
+<a href="tel:+17737821005" className="text-white font-semibold hover:text-dpe-blue-light transition-colors">(773) 782-1005</a>
 ```
 
 - [ ] **Step 3: Verify build**
@@ -396,9 +396,9 @@ Replace the hero section. Key changes:
 - Remove the full-bleed background image + dark overlay (lines 83-92)
 - Replace with frosted light gradient background
 - Change all `text-white` → `text-[#0a1628]` (navy)
-- Change all `text-gray-200` → `text-apex-slate`
-- Change `bg-orange-500` check/dollar icons → `bg-apex-navy`
-- Change CTA button `!bg-orange-500` → `bg-apex-navy text-white hover:bg-apex-navy-deep`
+- Change all `text-gray-200` → `text-dpe-slate`
+- Change `bg-orange-500` check/dollar icons → `bg-dpe-navy`
+- Change CTA button `!bg-orange-500` → `bg-dpe-navy text-white hover:bg-dpe-navy-deep`
 - Add frosted treatment to calculator card: `bg-white/70 backdrop-blur-md rounded-2xl shadow-lg shadow-blue-500/5 border border-white/40`
 
 The hero section becomes:
@@ -442,7 +442,7 @@ git commit -m "feat(home): restyle hero to frosted light theme"
 - Section background: `bg-white` → `bg-[#f8fafc]`
 - Service cards (line 204): Replace `bg-white rounded-carvana shadow-carvana-lg` with:
   `bg-white/70 backdrop-blur-md rounded-2xl shadow-lg shadow-blue-500/5 border border-white/40 hover:bg-white/90 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200`
-- Button (line 223): `!bg-orange-500 hover:!bg-blue-600` → `bg-apex-navy hover:bg-apex-navy-deep`
+- Button (line 223): `!bg-orange-500 hover:!bg-blue-600` → `bg-dpe-navy hover:bg-dpe-navy-deep`
 
 - [ ] **Step 2: Restyle trust section (lines 237-284)**
 
@@ -451,8 +451,8 @@ git commit -m "feat(home): restyle hero to frosted light theme"
 
 - [ ] **Step 3: Restyle CTA section (lines 376-407)**
 
-- Background: `bg-gray-900` → `bg-apex-navy-deep`
-- CTA buttons (lines 394, 400): `!bg-orange-500 hover:!bg-blue-600` → `bg-apex-red hover:bg-red-700`
+- Background: `bg-gray-900` → `bg-dpe-navy-deep`
+- CTA buttons (lines 394, 400): `!bg-orange-500 hover:!bg-blue-600` → `bg-dpe-green hover:bg-red-700`
 
 - [ ] **Step 4: Commit**
 
@@ -518,7 +518,7 @@ export default function TrustpilotReviews() {
           <h2 className="font-saira text-3xl sm:text-4xl font-bold text-[#0a1628] mb-4 tracking-wide">
             What Our Customers Say
           </h2>
-          <p className="text-lg text-apex-slate">
+          <p className="text-lg text-dpe-slate">
             Verified reviews on Trustpilot
           </p>
         </div>
@@ -536,7 +536,7 @@ export default function TrustpilotReviews() {
             data-stars="1,2,3,4,5"
             data-review-languages="en"
           >
-            <a href="https://www.trustpilot.com/review/apexautosolutionsinc.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.trustpilot.com/review/drivepointexchange.com" target="_blank" rel="noopener noreferrer">
               Trustpilot
             </a>
           </div>
@@ -554,7 +554,7 @@ export default function TrustpilotReviews() {
           data-stars="1,2,3,4,5"
           data-review-languages="en"
         >
-          <a href="https://www.trustpilot.com/review/apexautosolutionsinc.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.trustpilot.com/review/drivepointexchange.com" target="_blank" rel="noopener noreferrer">
             Trustpilot
           </a>
         </div>
@@ -563,10 +563,10 @@ export default function TrustpilotReviews() {
         {showFallback && (
           <div className="text-center mt-8">
             <a
-              href="https://www.trustpilot.com/review/apexautosolutionsinc.com"
+              href="https://www.trustpilot.com/review/drivepointexchange.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-apex-blue hover:text-apex-navy font-medium"
+              className="text-dpe-blue hover:text-dpe-navy font-medium"
             >
               Read our verified reviews on Trustpilot →
             </a>
@@ -638,7 +638,7 @@ interface SocialPost {
 
 const PLATFORM_CONFIG = {
   instagram: { color: '#e1306c', label: 'Instagram', handle: '@apexautosolutionsinc' },
-  facebook: { color: '#1877f2', label: 'Facebook', handle: 'Apex Auto Solutions' },
+  facebook: { color: '#1877f2', label: 'Facebook', handle: 'Drive Point Exchange' },
   tiktok: { color: '#010101', label: 'TikTok', handle: '@apexautosolutionsinc' },
 } as const;
 
@@ -701,7 +701,7 @@ export default function SocialFeed() {
           <h2 className="font-saira text-3xl sm:text-4xl font-bold text-[#0a1628] mb-4 tracking-wide">
             Follow Our Journey
           </h2>
-          <p className="text-lg text-apex-slate">
+          <p className="text-lg text-dpe-slate">
             Latest from our social channels
           </p>
         </div>
@@ -730,10 +730,10 @@ export default function SocialFeed() {
                 <h3 className="font-saira font-bold text-[#0a1628] mb-1">
                   {PLATFORM_CONFIG[platform].label}
                 </h3>
-                <p className="text-sm text-apex-slate mb-4">
+                <p className="text-sm text-dpe-slate mb-4">
                   {PLATFORM_CONFIG[platform].handle}
                 </p>
-                <span className="text-apex-blue font-medium text-sm">
+                <span className="text-dpe-blue font-medium text-sm">
                   Follow us →
                 </span>
               </a>
@@ -766,7 +766,7 @@ export default function SocialFeed() {
                     {post.caption && (
                       <p className="text-sm text-[#0a1628] line-clamp-2 mb-3">{post.caption}</p>
                     )}
-                    <div className="flex items-center gap-2 text-xs text-apex-slate">
+                    <div className="flex items-center gap-2 text-xs text-dpe-slate">
                       <span
                         className="w-2 h-2 rounded-full"
                         style={{ backgroundColor: PLATFORM_CONFIG[post.platform].color }}
@@ -1000,7 +1000,7 @@ export async function GET(request: NextRequest) {
       platform: 'facebook' as const,
       url: 'https://www.facebook.com/apexautosolutions',
       thumbnail: null,
-      caption: 'Follow Apex Auto Solutions on Facebook',
+      caption: 'Follow Drive Point Exchange on Facebook',
       embed_html: null,
       posted_at: new Date().toISOString(),
     };
@@ -1083,18 +1083,18 @@ These are repetitive — the same pattern applies to each. Apply these global fi
 
 | Find | Replace | Scope |
 |------|---------|-------|
-| `!bg-orange-500` | `bg-apex-navy` | All buttons |
-| `hover:!bg-blue-600` | `hover:bg-apex-navy-deep` | All button hovers |
-| `!border-orange-500` | `border-apex-navy` | Hero button borders |
-| `hover:!border-blue-600` | `hover:border-apex-navy-deep` | Hero button hover borders |
-| `bg-orange-500` (non-button, e.g. CTA sections, dots) | `bg-apex-navy` | CTA sections, feature indicators |
-| `text-orange-500` | `text-apex-blue` | Link text, accents |
-| `text-primary-500` | `text-apex-blue` | Team titles, CTA text |
-| `bg-primary-500` | `bg-apex-navy` | Statistics cards |
-| `hover:text-primary-600` | `hover:text-apex-blue` | Nav-style links |
-| `focus:ring-primary-500` | `focus:ring-apex-blue` | Form focus rings |
-| `focus:ring-orange-500` | `focus:ring-apex-blue` | Input focus rings |
-| `border-orange-500` | `border-apex-blue` | Loading spinners |
+| `!bg-orange-500` | `bg-dpe-navy` | All buttons |
+| `hover:!bg-blue-600` | `hover:bg-dpe-navy-deep` | All button hovers |
+| `!border-orange-500` | `border-dpe-navy` | Hero button borders |
+| `hover:!border-blue-600` | `hover:border-dpe-navy-deep` | Hero button hover borders |
+| `bg-orange-500` (non-button, e.g. CTA sections, dots) | `bg-dpe-navy` | CTA sections, feature indicators |
+| `text-orange-500` | `text-dpe-blue` | Link text, accents |
+| `text-primary-500` | `text-dpe-blue` | Team titles, CTA text |
+| `bg-primary-500` | `bg-dpe-navy` | Statistics cards |
+| `hover:text-primary-600` | `hover:text-dpe-blue` | Nav-style links |
+| `focus:ring-primary-500` | `focus:ring-dpe-blue` | Form focus rings |
+| `focus:ring-orange-500` | `focus:ring-dpe-blue` | Input focus rings |
+| `border-orange-500` | `border-dpe-blue` | Loading spinners |
 | `border-orange-200` | `border-blue-200` | Warning borders |
 | `bg-orange-50` | `bg-blue-50` | Warning backgrounds |
 | `rounded-carvana` | `rounded-2xl` | Card borders |
@@ -1132,17 +1132,17 @@ git commit -m "feat(pages): apply frosted glass theme to all content pages"
 - [ ] **Step 1: LoanCalculator.tsx — replace orange classes**
 
 Apply same find-and-replace patterns:
-- `focus:ring-orange-500` → `focus:ring-apex-blue` (lines ~349, 374, 401, 422)
-- `text-orange-500` → `text-apex-blue` (line ~442)
+- `focus:ring-orange-500` → `focus:ring-dpe-blue` (lines ~349, 374, 401, 422)
+- `text-orange-500` → `text-dpe-blue` (line ~442)
 - `bg-orange-50` → `bg-blue-50` (line ~469)
 - `border-orange-200` → `border-blue-200`
-- `bg-orange-500` → `bg-apex-navy` (estimate button, line ~480)
+- `bg-orange-500` → `bg-dpe-navy` (estimate button, line ~480)
 
 - [ ] **Step 2: EmailModal.tsx — replace orange/primary classes**
 
-- `focus:ring-primary-500` → `focus:ring-apex-blue` (lines ~164, 178, 194, 209)
-- `text-primary-500` → `text-apex-blue` (lines ~221, 226)
-- `!bg-orange-500` → `bg-apex-navy` (submit button, line ~247)
+- `focus:ring-primary-500` → `focus:ring-dpe-blue` (lines ~164, 178, 194, 209)
+- `text-primary-500` → `text-dpe-blue` (lines ~221, 226)
+- `!bg-orange-500` → `bg-dpe-navy` (submit button, line ~247)
 - Modal backdrop already uses `bg-black/50 backdrop-blur-sm` — keep as-is
 
 - [ ] **Step 3: HomeLoanCalculator.tsx — same pattern**
@@ -1215,7 +1215,7 @@ Any remaining `orange` references must be addressed.
 grep -rn "primary-" --include="*.tsx" --include="*.ts" app/ components/ | grep -v node_modules
 ```
 
-Any remaining `primary-` class references must be replaced with `apex-navy` or `apex-blue`.
+Any remaining `primary-` class references must be replaced with `dpe-navy` or `dpe-blue`.
 
 - [ ] **Step 3: Full production build**
 

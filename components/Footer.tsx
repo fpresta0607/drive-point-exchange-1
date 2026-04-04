@@ -30,11 +30,11 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-gradient-to-b from-[#0f1d35] to-[#0a1628] text-white">
       {/* Decorative top edge — blue glow line */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-apex-blue/50 to-transparent" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-dpe-blue/50 to-transparent" />
 
       {/* Subtle background orbs */}
-      <div className="absolute top-12 left-1/4 w-72 h-72 bg-apex-blue/[0.04] rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/6 w-56 h-56 bg-apex-blue/[0.03] rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-12 left-1/4 w-72 h-72 bg-dpe-blue/[0.04] rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/6 w-56 h-56 bg-dpe-blue/[0.03] rounded-full blur-3xl pointer-events-none" />
 
       {/* Main Footer Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
@@ -43,8 +43,8 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-flex items-center rounded-lg bg-white/10 backdrop-blur-sm px-3 py-2 mb-6">
               <Image
-                src="/logo-apex.png"
-                alt="Apex Auto Solutions Logo"
+                src="/logo.png"
+                alt="Drive Point Exchange Logo"
                 width={160}
                 height={60}
                 className="h-9 w-auto"
@@ -54,14 +54,14 @@ export default function Footer() {
               {ts('footer.description')}
             </p>
             <div className="flex items-center space-x-2 mb-5">
-              <div className="w-1.5 h-1.5 bg-apex-blue rounded-full animate-pulse" />
+              <div className="w-1.5 h-1.5 bg-dpe-blue rounded-full animate-pulse" />
               <span className="text-sm text-slate-400">{ts('footer.nationwideCoverage')}</span>
             </div>
             <div className="space-y-1">
               <p className="text-xs font-medium tracking-wider uppercase text-slate-500">Customer Service — 24/7</p>
               <a
                 href="tel:+17737821005"
-                className="text-lg font-semibold text-white hover:text-apex-blue-light transition-colors"
+                className="text-lg font-semibold text-white hover:text-dpe-blue-light transition-colors"
               >
                 (773) 782-1005
               </a>
@@ -132,7 +132,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
             <p className="text-slate-500 text-sm">
-              © {currentYear} Apex Auto Solutions Inc. {ts('footer.copyright')}
+              © {currentYear} Drive Point Exchange. {ts('footer.copyright')}
             </p>
             <div className="flex items-center space-x-6 text-sm text-slate-500">
               <Link href="/terms" className="hover:text-slate-300 transition-colors duration-200">

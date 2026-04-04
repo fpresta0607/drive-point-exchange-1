@@ -9,20 +9,33 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Apex Auto Solutions brand colors from logo
-        apex: {
-          // Blue from car silhouette
+        // Drive Point Exchange brand colors
+        dpe: {
+          // Blue from car silhouette / DPE primary (#1934B5)
           blue: {
-            50: '#eff6ff',
-            100: '#dbeafe',
-            200: '#bfdbfe',
-            300: '#93c5fd',
-            400: '#60a5fa',
-            500: '#3b82f6', // Main blue
-            600: '#2563eb',
-            700: '#1d4ed8',
-            800: '#1e40af',
-            900: '#1e3a8a',
+            50: '#eef1fd',
+            100: '#e0e6fb',
+            200: '#c7d2f8',
+            300: '#a3b5f3',
+            400: '#7890ec',
+            500: '#536ae2',
+            600: '#3b4bd4',
+            700: '#2e36b8',
+            800: '#1934b5', // Anchor DPE Blue
+            900: '#182570',
+          },
+          // Green from Upward Arrows / DPE accent (#2DB843)
+          green: {
+            50: '#edfcf0',
+            100: '#d4f8db',
+            200: '#aeefbc',
+            300: '#78df92',
+            400: '#46c666',
+            500: '#2db843', // Anchor DPE Green
+            600: '#1c942f',
+            700: '#187528',
+            800: '#165d23',
+            900: '#134d1f',
           },
           // Dark gray for text
           gray: {
@@ -67,12 +80,12 @@ const config: Config = {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       boxShadow: {
-        'apex': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        'apex-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        'dpe': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'dpe-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
         'card': '0 10px 30px -10px rgba(16,24,40,.12)',
       },
       borderRadius: {
-        'apex': '12px',
+        'dpe': '12px',
       },
       animation: {
         rainbow: "rainbow var(--speed, 2s) infinite linear",

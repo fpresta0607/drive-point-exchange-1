@@ -74,7 +74,7 @@ function CalculatorContent() {
                 onClick={() => setCalculatorType('auto')}
                 className={`px-8 py-4 rounded-lg font-semibold transition-all duration-200 ${
                   calculatorType === 'auto'
-                    ? 'bg-apex-navy text-white shadow-lg'
+                    ? 'bg-dpe-navy text-white shadow-lg'
                     : 'bg-white/20 text-white hover:bg-white/30'
                 }`}
               >
@@ -84,7 +84,7 @@ function CalculatorContent() {
                 onClick={() => setCalculatorType('home')}
                 className={`px-8 py-4 rounded-lg font-semibold transition-all duration-200 ${
                   calculatorType === 'home'
-                    ? 'bg-apex-navy text-white shadow-lg'
+                    ? 'bg-dpe-navy text-white shadow-lg'
                     : 'bg-white/20 text-white hover:bg-white/30'
                 }`}
               >
@@ -142,7 +142,7 @@ function CalculatorLoading() {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="text-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-apex-blue mx-auto"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-dpe-blue mx-auto"></div>
         <p className="mt-4 text-gray-600">{ts('calculator.page.loading')}</p>
       </div>
     </div>

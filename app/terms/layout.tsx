@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions - Apex Auto Solutions Legal Terms",
-  description: "Terms and conditions for Apex Auto Solutions Inc auto financing services. Read our legal terms, disclaimers, and service agreements.",
+  title: "Terms and Conditions - Drive Point Exchange Legal Terms",
+  description: "Terms and conditions for Drive Point Exchange auto financing services. Read our legal terms, disclaimers, and service agreements.",
   keywords: [
     "terms and conditions",
     "legal terms",
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
     "user agreement"
   ],
   openGraph: {
-    title: "Terms and Conditions - Apex Auto Solutions Legal Terms",
-    description: "Terms and conditions for Apex Auto Solutions Inc auto financing services. Read our legal terms and service agreements.",
+    title: "Terms and Conditions - Drive Point Exchange Legal Terms",
+    description: "Terms and conditions for Drive Point Exchange auto financing services. Read our legal terms and service agreements.",
   },
   twitter: {
-    title: "Terms and Conditions - Apex Auto Solutions Legal Terms",
-    description: "Terms and conditions for Apex Auto Solutions Inc auto financing services.",
+    title: "Terms and Conditions - Drive Point Exchange Legal Terms",
+    description: "Terms and conditions for Drive Point Exchange auto financing services.",
   },
   alternates: {
-    canonical: "https://www.apexautosolutionsinc.com/terms",
+    canonical: "https://www.drivepointexchange.com/terms",
   },
 };
 

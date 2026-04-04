@@ -26,7 +26,7 @@
       "subtitle": "We're not just here to save you money — we're here to educate you. From understanding what your coverage really includes to lowering your rates, we help you make informed financial decisions.",
       "autoRefinance": {
         "title": "Auto Loan Refinance",
-        "description": "Take advantage of lower interest rates and flexible terms by refinancing your auto loan with Apex Auto Solutions Inc."
+        "description": "Take advantage of lower interest rates and flexible terms by refinancing your auto loan with Drive Point Exchange."
       },
       "vehicleCoverage": {
         "title": "Vehicle Coverage & Certifications",
@@ -56,7 +56,7 @@
     },
     "cta": {
       "title": "Ready to Take Control of Your Finances?",
-      "subtitle": "Join the Apex Auto Solutions Inc. family today and secure a brighter financial future.",
+      "subtitle": "Join the Drive Point Exchange. family today and secure a brighter financial future.",
       "getStarted": "Get Started Today",
       "learnMore": "Learn More"
     }
@@ -192,9 +192,9 @@
   },
   "email": {
     "autoLoanEstimate": {
-      "subject": "Your Auto Loan Estimate - Apex Auto Solutions Inc.",
+      "subject": "Your Auto Loan Estimate - Drive Point Exchange.",
       "title": "AUTO LOAN ESTIMATE",
-      "company": "Apex Auto Solutions Inc.",
+      "company": "Drive Point Exchange.",
       "subtitle": "Professional Auto Financing Services",
       "greeting": "Dear {name},",
       "thankYou": "Thank you for using our advanced auto loan calculator! Here's your personalized financing estimate:",
@@ -211,7 +211,7 @@
         "Get pre-approved and start shopping for your perfect vehicle"
       ],
       "bestRegards": "Best regards,",
-      "teamSignature": "The Apex Auto Solutions Team",
+      "teamSignature": "The Drive Point Exchange Team",
       "disclaimer": "The preapproval goals mentioned are targets based on our experience working with similar customers and are not a guarantee of specific outcomes. Actual results will vary depending on individual circumstances, credit profiles, and lender decisions. These goals are not a promise or commitment from lenders, and our role is to facilitate the refinancing process. We're committed to helping you explore options and potential savings tailored to your situation. Nothing in this document speaks for the lenders, these are just goals. We move forward with all customers because we believe our process provides value and support, helping you in multiple ways regardless of the refinancing outcome.",
       "fields": {
         "vehiclePrice": "Vehicle Price",
@@ -230,7 +230,7 @@
       }
     },
     "homeLoanEstimate": {
-      "subject": "Your Home Loan Estimate - Apex Auto Solutions Inc.",
+      "subject": "Your Home Loan Estimate - Drive Point Exchange.",
       "title": "HOME LOAN ESTIMATE",
       "greeting": "Dear {firstName} {lastName},",
       "thankYou": "Thank you for using our home loan calculator! Here are your personalized loan details:",
@@ -255,7 +255,7 @@
       }
     },
     "refinanceEstimate": {
-      "subject": "Auto Refinance Comparison - Apex Auto Solutions",
+      "subject": "Auto Refinance Comparison - Drive Point Exchange",
       "greeting": "Dear {name},",
       "thankYou": "Thank you for using our auto refinance calculator! Here's your personalized comparison:",
       "currentLoanTitle": "Your Current Loan",
@@ -265,7 +265,7 @@
       "readyToRefinance": "Ready to Refinance?",
       "teamReady": "Our team is ready to help you secure better rates and save money!",
       "bestRegards": "Best regards,",
-      "teamSignature": "The Apex Auto Solutions Team",
+      "teamSignature": "The Drive Point Exchange Team",
       "disclaimer": "The preapproval goals mentioned are targets based on our experience working with similar customers and are not a guarantee of specific outcomes. Actual results will vary depending on individual circumstances, credit profiles, and lender decisions. These goals are not a promise or commitment from lenders, and our role is to facilitate the refinancing process. We're committed to helping you explore options and potential savings tailored to your situation. Nothing in this document speaks for the lenders, these are just goals. We move forward with all customers because we believe our process provides value and support, helping you in multiple ways regardless of the refinancing outcome.",
       "fields": {
         "loanBalance": "Loan Balance",
@@ -283,11 +283,11 @@
     "contactForm": {
       "subject": "New Contact Form Submission - {name}",
       "ownerSubject": "New Contact Form Submission - {name}",
-      "customerSubject": "Thank You for Contacting Apex Auto Solutions Inc.",
+      "customerSubject": "Thank You for Contacting Drive Point Exchange.",
       "title": "NEW CONTACT FORM SUBMISSION",
       "customerTitle": "THANK YOU FOR CONTACTING US",
       "greeting": "Dear {name},",
-      "thankYou": "Thank you for reaching out to Apex Auto Solutions Inc. We have received your message and will get back to you within 24 hours.",
+      "thankYou": "Thank you for reaching out to Drive Point Exchange. We have received your message and will get back to you within 24 hours.",
       "meanwhile": "In the meantime, feel free to:",
       "meanwhileItems": [
         "Use our auto loan calculator to get an instant estimate",
@@ -296,7 +296,7 @@
       ],
       "lookForward": "We look forward to helping you achieve your financial goals!",
       "bestRegards": "Best regards,",
-      "teamSignature": "The Apex Auto Solutions Team",
+      "teamSignature": "The Drive Point Exchange Team",
       "followUp": "Please follow up with this customer within 24 hours.",
       "fields": {
         "name": "Name",
@@ -322,7 +322,7 @@
       "emailAddress": "Email Address",
       "mobileNumber": "Mobile Number",
       "mobileNumberOptional": "Mobile Number (Optional)",
-      "termsText": "By clicking 'Get Free Quote Now!' button, you certify that you have provided your legal name and your own phone number, you agree to our Terms and Conditions and Privacy Policy and authorize Apex Auto Solutions Inc and its partners to contact you by email or at the phone number you entered using automated technology including recurring auto-dialers, pre-recorded messages, and text messages, even if your phone is a mobile number or is currently listed on any state, federal, or corporate 'Do Not Call' list. You understand that your telephone company may impose charges on you for these contacts, and that you can revoke this consent at any time. For SMS campaigns Text STOP to cancel and HELP for help. Message and data rates may apply. By clicking the 'Get Free Quote Now!' button and submitting this form, I affirm that I have read and agree to this Site's Terms and Conditions (including the arbitration provision and the E-SIGN consent) and Privacy Policy.",
+      "termsText": "By clicking 'Get Free Quote Now!' button, you certify that you have provided your legal name and your own phone number, you agree to our Terms and Conditions and Privacy Policy and authorize Drive Point Exchange and its partners to contact you by email or at the phone number you entered using automated technology including recurring auto-dialers, pre-recorded messages, and text messages, even if your phone is a mobile number or is currently listed on any state, federal, or corporate 'Do Not Call' list. You understand that your telephone company may impose charges on you for these contacts, and that you can revoke this consent at any time. For SMS campaigns Text STOP to cancel and HELP for help. Message and data rates may apply. By clicking the 'Get Free Quote Now!' button and submitting this form, I affirm that I have read and agree to this Site's Terms and Conditions (including the arbitration provision and the E-SIGN consent) and Privacy Policy.",
       "privacyPolicy": "Privacy Policy",
       "terms": "Terms",
       "cancel": "Cancel",
@@ -455,7 +455,7 @@
     },
     "intro": {
       "title": "Drive with Confidence",
-      "description": "Your vehicle can be unpredictable — and so can the coverage you think you have. Since the post-COVID chip shortage, many dealerships reduced their stock and stopped properly certifying vehicles. That means thousands of drivers are paying for certified coverage through third-party providers without their vehicle actually being on the dealer's paperwork. Apex Auto Solutions helps you understand what you're really covered for and provides true, verified protection that picks up where your manufacturer warranty leaves off."
+      "description": "Your vehicle can be unpredictable — and so can the coverage you think you have. Since the post-COVID chip shortage, many dealerships reduced their stock and stopped properly certifying vehicles. That means thousands of drivers are paying for certified coverage through third-party providers without their vehicle actually being on the dealer's paperwork. Drive Point Exchange helps you understand what you're really covered for and provides true, verified protection that picks up where your manufacturer warranty leaves off."
     },
     "section": {
       "title": "Comprehensive Coverage Benefits",
@@ -495,14 +495,14 @@
     ],
     "cta": {
       "title": "Ready to Protect Your Investment?",
-      "subtitle": "Join thousands of satisfied customers who trust Apex Auto Solutions for their vehicle coverage needs.",
+      "subtitle": "Join thousands of satisfied customers who trust Drive Point Exchange for their vehicle coverage needs.",
       "getCoverage": "Get Your Coverage Today",
       "learnMore": "Learn More About Services"
     }
   },
   "about": {
     "hero": {
-      "title": "About Apex Auto Solutions",
+      "title": "About Drive Point Exchange",
       "subtitle": "Your trusted partner in automotive financing for over a decade. We're dedicated to providing unparalleled service and expertise to our clients nationwide.",
       "getQuote": "Get Your Quote",
       "contactTeam": "Contact Our Team"
@@ -517,7 +517,7 @@
     "story": {
       "title": "Our Story",
       "subtitle": "Leading the way in automotive financial solutions since 2012",
-      "paragraph1": "Founded in 2012, Apex Auto Solutions began with a simple vision: to make auto financing accessible and transparent for everyone. What started as a small team of finance professionals has grown into a trusted name in the automotive lending industry.",
+      "paragraph1": "Founded in 2012, Drive Point Exchange began with a simple vision: to make auto financing accessible and transparent for everyone. What started as a small team of finance professionals has grown into a trusted name in the automotive lending industry.",
       "paragraph2": "We recognized that traditional lending institutions often made the financing process complicated and intimidating. Our founders set out to change that by creating a customer-first approach that prioritizes clarity, competitive rates, and exceptional service.",
       "paragraph3": "Today, we've helped thousands of customers secure financing for their dream vehicles, from first-time buyers to seasoned car enthusiasts. Our commitment to innovation and customer satisfaction continues to drive our growth and success."
     },
@@ -566,7 +566,7 @@
     },
     "cta": {
       "title": "Ready to Work With Us?",
-      "subtitle": "Experience the Apex Auto Solutions difference. Get your personalized quote today.",
+      "subtitle": "Experience the Drive Point Exchange difference. Get your personalized quote today.",
       "getQuote": "Get Your Quote",
       "contactTeam": "Contact Our Team"
     }
@@ -579,7 +579,7 @@
     "sections": [
       {
         "title": "Information We Collect",
-        "content": "When you interact with Apex Auto Solutions, we may collect the following types of information: Personal Information (Name, email address, phone number, mailing address, and other contact details), Financial Information (Loan details, vehicle information, credit score if applicable, and refinancing preferences), and Technical Data (IP address, browser type, device information, and website usage data collected through cookies and analytics tools)."
+        "content": "When you interact with Drive Point Exchange, we may collect the following types of information: Personal Information (Name, email address, phone number, mailing address, and other contact details), Financial Information (Loan details, vehicle information, credit score if applicable, and refinancing preferences), and Technical Data (IP address, browser type, device information, and website usage data collected through cookies and analytics tools)."
       },
       {
         "title": "How We Use Your Information",
@@ -653,7 +653,7 @@
       },
       {
         "title": "Modifications to Terms",
-        "content": "Apex Auto Solutions may revise these terms of service for its website at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service."
+        "content": "Drive Point Exchange may revise these terms of service for its website at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service."
       },
       {
         "title": "Governing Law",

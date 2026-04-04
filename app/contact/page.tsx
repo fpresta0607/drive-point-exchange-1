@@ -177,13 +177,13 @@ export default function Contact() {
             >
               <Link
                 href="/calculator"
-                className="bg-apex-navy hover:bg-apex-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="bg-dpe-navy hover:bg-dpe-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
               >
                 {ts('contact.calculatePayment')}
               </Link>
               <Link
                 href="/services"
-                className="bg-apex-navy hover:bg-apex-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="bg-dpe-navy hover:bg-dpe-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
               >
                 {ts('contact.viewServices')}
               </Link>
@@ -212,7 +212,7 @@ export default function Contact() {
                 className="text-center py-8"
               >
                 <div className="text-6xl mb-4">✅</div>
-                <h3 className="text-2xl font-bold text-apex-blue mb-2">{ts('contact.messageSent')}</h3>
+                <h3 className="text-2xl font-bold text-dpe-blue mb-2">{ts('contact.messageSent')}</h3>
                 <p className="text-gray-600">{ts('contact.messageSentDesc')}</p>
               </motion.div>
             ) : (
@@ -226,7 +226,7 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-apex-blue focus:border-transparent ${
+                    className={`w-full px-4 py-3 border rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-dpe-blue focus:border-transparent ${
                       errors.name ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder={ts('contact.fullName')}
@@ -243,7 +243,7 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-apex-blue focus:border-transparent ${
+                    className={`w-full px-4 py-3 border rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-dpe-blue focus:border-transparent ${
                       errors.email ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder={ts('contact.emailAddress')}
@@ -260,7 +260,7 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-apex-blue focus:border-transparent ${
+                    className={`w-full px-4 py-3 border rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-dpe-blue focus:border-transparent ${
                       errors.phone ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder={ts('contact.phoneNumber')}
@@ -276,7 +276,7 @@ export default function Contact() {
                     name="loanType"
                     value={formData.loanType}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-apex-blue focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-dpe-blue focus:border-transparent"
                     aria-label={ts('contact.serviceInterest')}
                   >
                     <option value="">{ts('contact.serviceOptions.selectService')}</option>
@@ -299,7 +299,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className={`w-full px-4 py-3 border rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-apex-blue focus:border-transparent resize-none ${
+                    className={`w-full px-4 py-3 border rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-dpe-blue focus:border-transparent resize-none ${
                       errors.message ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder={ts('contact.message')}
@@ -316,7 +316,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-apex-navy hover:bg-apex-navy-deep text-white font-semibold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                  className="w-full bg-dpe-navy hover:bg-dpe-navy-deep text-white font-semibold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
                   {isSubmitting ? ts('contact.sending') : ts('contact.sendMessageButton')}
                 </button>
@@ -352,31 +352,31 @@ export default function Contact() {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">{ts('contact.getInTouch')}</h3>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <div className="text-apex-blue text-xl mr-4">📞</div>
+                  <div className="text-dpe-blue text-xl mr-4">📞</div>
                   <div>
                     <p className="text-gray-600 text-sm">{ts('contact.phone')}</p>
-                    <a href="tel:+18889907112" className="text-gray-900 font-semibold hover:text-apex-blue transition-colors">(888) 990-7112</a>
+                    <a href="tel:+18889907112" className="text-gray-900 font-semibold hover:text-dpe-blue transition-colors">(888) 990-7112</a>
                   </div>
                 </div>
 
                 <div className="flex items-center">
-                  <div className="text-apex-blue text-xl mr-4">🕐</div>
+                  <div className="text-dpe-blue text-xl mr-4">🕐</div>
                   <div>
                     <p className="text-gray-600 text-sm">Customer Service — 24/7</p>
-                    <a href="tel:+17737821005" className="text-gray-900 font-semibold hover:text-apex-blue transition-colors">(773) 782-1005</a>
+                    <a href="tel:+17737821005" className="text-gray-900 font-semibold hover:text-dpe-blue transition-colors">(773) 782-1005</a>
                   </div>
                 </div>
                 
                 <div className="flex items-center">
-                  <div className="text-apex-blue text-xl mr-4">📧</div>
+                  <div className="text-dpe-blue text-xl mr-4">📧</div>
                   <div>
                     <p className="text-gray-600 text-sm">{ts('contact.email')}</p>
-                    <a href="mailto:support@apexautosolutionsinc.com" className="text-gray-900 font-semibold hover:text-apex-blue transition-colors">support@apexautosolutionsinc.com</a>
+                    <a href="mailto:support@drivepointexchange.com" className="text-gray-900 font-semibold hover:text-dpe-blue transition-colors">support@drivepointexchange.com</a>
                   </div>
                 </div>
                 
                 <div className="flex items-center">
-                  <div className="text-apex-blue text-xl mr-4">📍</div>
+                  <div className="text-dpe-blue text-xl mr-4">📍</div>
                   <div>
                     <p className="text-gray-600 text-sm">{ts('contact.address')}</p>
                     <p className="text-gray-900 font-semibold">
@@ -401,7 +401,7 @@ export default function Contact() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Apex Auto Solutions Location - Chicago"
+                  title="Drive Point Exchange Location - Chicago"
                 ></iframe>
               </div>
             </div>

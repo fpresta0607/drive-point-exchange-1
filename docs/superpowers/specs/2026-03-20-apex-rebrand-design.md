@@ -1,4 +1,4 @@
-# Apex Auto Solutions — Website Rebrand & Feature Spec
+# Drive Point Exchange — Website Rebrand & Feature Spec
 
 **Date:** 2026-03-20
 **Status:** Draft
@@ -8,7 +8,7 @@
 
 ## Overview
 
-Holistic rebrand of the Apex Auto Solutions website to match the new glass-effect logo. Four workstreams:
+Holistic rebrand of the Drive Point Exchange website to match the new glass-effect logo. Four workstreams:
 
 1. **Logo & brand identity** — new logo, color palette, typography
 2. **Frosted Light theme** — full site restyle with glassmorphic aesthetic
@@ -46,11 +46,11 @@ Holistic rebrand of the Apex Auto Solutions website to match the new glass-effec
 **Removed:** `apex.orange` (`#f97316`) and all orange variants. Orange scrollbar styling replaced with navy/blue.
 
 **Migration — `primary` and `brand` token replacement:** The existing codebase uses `primary-600`, `text-primary-600`, `bg-orange-50`, `text-orange-600`, `focus:ring-primary-500` etc. extensively (Navigation.tsx language selector, focus rings, hover states). All `primary-*` references must be mapped to `apex.navy` equivalents and all `orange-*` references to `apex.blue` or `apex.navy`. Specific mappings:
-- `primary-600` / `text-orange-600` → `text-apex-blue` (`#3b82f6`)
+- `primary-600` / `text-orange-600` → `text-dpe-blue` (`#3b82f6`)
 - `bg-orange-50` → `bg-blue-50`
-- `focus:ring-primary-500` → `focus:ring-apex-blue`
-- `text-orange-400` (footer hover) → `text-apex-blue-light` (`#60a5fa`)
-- Language selector active state (`bg-orange-50 text-orange-600`) → `bg-blue-50 text-apex-blue`
+- `focus:ring-primary-500` → `focus:ring-dpe-blue`
+- `text-orange-400` (footer hover) → `text-dpe-blue-light` (`#60a5fa`)
+- Language selector active state (`bg-orange-50 text-orange-600`) → `bg-blue-50 text-dpe-blue`
 
 ### Typography
 
