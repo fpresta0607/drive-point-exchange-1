@@ -72,11 +72,10 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
   const currentLanguage = languages.find(lang => lang.code === language);
 
   return (
-    <nav className={`${overlay ? 'fixed' : 'sticky'} top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isTransparent
-        ? 'bg-transparent border-b border-transparent shadow-none'
+    <nav className={`${overlay ? 'fixed' : 'sticky'} top-0 left-0 right-0 z-50 transition-all duration-300 ${isTransparent
+        ? 'bg-gradient-to-b from-white via-white/80 to-transparent border-b-0 shadow-none pb-32 -mb-32'
         : 'bg-white/95 backdrop-blur-xl border-b border-white/20 shadow-md'
-    }`}>
+      }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -87,7 +86,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
                 alt="Drive Point Exchange Logo"
                 width={200}
                 height={80}
-                className={`h-14 w-auto ${isTransparent ? '' : 'mix-blend-multiply'}`}
+                className={`h-14 w-auto mix-blend-multiply`}
                 priority
               />
             </Link>
@@ -99,7 +98,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
               {/* Home Link */}
               <Link
                 href={navItems[0].href}
-                className={`${isTransparent ? 'text-white' : 'text-gray-600'} hover:text-dpe-blue px-3 py-2 text-base font-medium transition-colors`}
+                className={`text-gray-600 hover:text-dpe-blue px-3 py-2 text-base font-medium transition-colors`}
               >
                 {navItems[0].label}
               </Link>
@@ -111,7 +110,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
                   onKeyDown={(e) => handleDropdownKeyDown(e, () => setIsServicesOpen(false))}
                   aria-expanded={isServicesOpen}
                   aria-haspopup="true"
-                  className={`${isTransparent ? 'text-white' : 'text-gray-600'} hover:text-dpe-blue px-3 py-2 text-base font-medium transition-colors flex items-center`}
+                  className={`text-gray-600 hover:text-dpe-blue px-3 py-2 text-base font-medium transition-colors flex items-center`}
                 >
                   {ts('navigation.services')}
                   <svg className="ml-1 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,12 +140,12 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`${isTransparent ? 'text-white' : 'text-gray-600'} hover:text-dpe-blue px-3 py-2 text-base font-medium transition-colors`}
+                  className={`text-gray-600 hover:text-dpe-blue px-3 py-2 text-base font-medium transition-colors`}
                 >
                   {item.label}
                 </Link>
               ))}
-              
+
               {/* Calculator Dropdown */}
               <div className="relative" ref={calculatorRef}>
                 <button
@@ -154,7 +153,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
                   onKeyDown={(e) => handleDropdownKeyDown(e, () => setIsCalculatorOpen(false))}
                   aria-expanded={isCalculatorOpen}
                   aria-haspopup="true"
-                  className={`${isTransparent ? 'text-white' : 'text-gray-600'} hover:text-dpe-blue px-3 py-2 text-base font-medium transition-colors flex items-center`}
+                  className={`text-gray-600 hover:text-dpe-blue px-3 py-2 text-base font-medium transition-colors flex items-center`}
                 >
                   {ts('navigation.calculators')}
                   <svg className="ml-1 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -186,7 +185,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
                   onKeyDown={(e) => handleDropdownKeyDown(e, () => setIsLanguageOpen(false))}
                   aria-expanded={isLanguageOpen}
                   aria-haspopup="true"
-                  className={`${isTransparent ? 'text-white' : 'text-gray-600'} hover:text-dpe-blue px-3 py-2 text-base font-medium transition-colors flex items-center`}
+                  className={`text-gray-600 hover:text-dpe-blue px-3 py-2 text-base font-medium transition-colors flex items-center`}
                 >
                   <span className="mr-2">{currentLanguage?.flag}</span>
                   <span className="hidden sm:inline">{currentLanguage?.nativeName}</span>
@@ -205,11 +204,10 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
                           setLanguage(lang.code);
                           setIsLanguageOpen(false);
                         }}
-                        className={`w-full text-left px-4 py-2 text-sm transition-colors flex items-center ${
-                          language === lang.code
+                        className={`w-full text-left px-4 py-2 text-sm transition-colors flex items-center ${language === lang.code
                             ? 'bg-blue-50 text-dpe-blue'
                             : 'text-gray-700 hover:bg-gray-100'
-                        }`}
+                          }`}
                       >
                         <span className="mr-3">{lang.flag}</span>
                         <span>{lang.nativeName}</span>
@@ -238,7 +236,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
               </a>
               <a
                 href="tel:+17737821005"
-                className={`flex items-center ${isTransparent ? 'text-white/90' : 'text-gray-600'} hover:text-dpe-blue px-3 py-2 text-sm font-medium transition-colors`}
+                className={`flex items-center text-gray-600 hover:text-dpe-blue px-3 py-2 text-sm font-medium transition-colors`}
                 aria-label="Customer Service (773) 782-1005"
               >
                 <svg className="h-4 w-4 mr-1.5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -264,7 +262,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-expanded={isMenuOpen}
-              className={`${isTransparent ? 'text-white' : 'text-gray-600'} hover:text-dpe-blue inline-flex items-center justify-center p-3 rounded-md transition-colors`}
+              className={`text-gray-600 hover:text-dpe-blue inline-flex items-center justify-center p-3 rounded-md transition-colors`}
               aria-label="Toggle mobile menu"
             >
               <svg
@@ -296,14 +294,14 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
       {isMenuOpen && (
         <div className="md:hidden overflow-hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/90 backdrop-blur-xl">
-              <Link
-                href={navItems[0].href}
-                className="text-gray-600 hover:text-dpe-blue hover:bg-gray-100 block px-3 py-2 rounded-md text-lg font-medium transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {navItems[0].label}
-              </Link>
-            
+            <Link
+              href={navItems[0].href}
+              className="text-gray-600 hover:text-dpe-blue hover:bg-gray-100 block px-3 py-2 rounded-md text-lg font-medium transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {navItems[0].label}
+            </Link>
+
             {/* Mobile Services Options */}
             <div className="px-3 py-2">
               <div className="text-gray-500 text-sm font-medium mb-2">{ts('navigation.services')}</div>
@@ -329,7 +327,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
                 {item.label}
               </Link>
             ))}
-            
+
             {/* Mobile Calculator Options */}
             <div className="px-3 py-2">
               <div className="text-gray-500 text-sm font-medium mb-2">{ts('navigation.calculators')}</div>
@@ -355,11 +353,10 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
                     setLanguage(lang.code);
                     setIsMenuOpen(false);
                   }}
-                  className={`w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors ml-4 flex items-center ${
-                    language === lang.code 
-                      ? 'bg-blue-50 text-dpe-blue' 
+                  className={`w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors ml-4 flex items-center ${language === lang.code
+                      ? 'bg-blue-50 text-dpe-blue'
                       : 'text-gray-600 hover:text-dpe-blue hover:bg-gray-100'
-                  }`}
+                    }`}
                 >
                   <span className="mr-3">{lang.flag}</span>
                   <span>{lang.nativeName}</span>

@@ -10,10 +10,7 @@ import Footer from '../../components/Footer';
 import { useI18n } from '../../lib/i18n/context';
 import TrustpilotReviews from '../../components/TrustpilotReviews';
 import SocialFeed from '../../components/SocialFeed';
-import { LightningBg } from '../../components/ui/lightning-bg';
 import { HyperText } from '../../components/ui/hyper-text';
-
-const heroTerms = ['Lower Rates', 'Flexible Terms', 'Fast Approval'];
 
 export default function Home() {
   const { ts } = useI18n();
@@ -30,16 +27,6 @@ export default function Home() {
   const staggerChildren = prefersReducedMotion
     ? { animate: {} }
     : { animate: { transition: { staggerChildren: 0.12 } } };
-  const [currentTerm, setCurrentTerm] = useState(0);
-
-  useEffect(() => {
-    const animationDuration = 400;
-    const staticHold = 3000;
-    const interval = setInterval(() => {
-      setCurrentTerm((prev) => (prev + 1) % heroTerms.length);
-    }, animationDuration + staticHold);
-    return () => clearInterval(interval);
-  }, []);
 
   const services = [
     {
@@ -97,98 +84,103 @@ export default function Home() {
       <Navigation overlay />
 
       {/* ─── HERO ─── full viewport, nav overlays */}
-      <section className="relative h-screen flex items-center overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <Image src="/auto/car-hero.jpg" alt="" fill sizes="100vw" className="object-cover" priority />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/85 via-[#102a4a]/50 to-transparent" />
+      <section className="relative min-h-[100svh] w-full flex flex-col justify-center overflow-hidden pt-20 pb-40">
+        {/* Background Image Container */}
+        <div className="absolute inset-0 z-0 bg-slate-900 pointer-events-none">
+          <motion.div
+            animate={{
+              scale: [1.02, 1.12, 1.02],
+              x: ["0%", "-1%", "0%"],
+              y: ["0%", "1%", "0%"],
+            }}
+            transition={{
+              duration: 35,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="absolute inset-0 w-full h-full"
+          >
+            <Image 
+              src="/auto/final-hero.png" 
+              alt="Garage Background" 
+              fill 
+              sizes="100vw" 
+              className="object-cover opacity-100" 
+              priority 
+              unoptimized
+            />
+          </motion.div>
+          {/* Base tint matching DPE's dark identity - Lightened */}
+          <div className="absolute inset-0 bg-slate-950/40" />
+          
+          {/* Rich gradient overlay to ensure text pops without hiding the image */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-transparent to-slate-950/80" />
+          
+          {/* Mountain-like geometric overlay for subtle texture */}
+          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay" />
+          
+          {/* Dynamic lighting effect to enhance modern feel */}
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-dpe-green/20 rounded-full blur-[150px] opacity-60 mix-blend-screen translate-x-1/2 -translate-y-1/2" />
         </div>
 
-        {/* Green lightning — subtle ambient across hero */}
-        <div className="absolute inset-0 z-[2] mix-blend-screen pointer-events-none animate-lightning-red">
-          <LightningBg hue={140} xOffset={0.3} intensity={0.15} speed={0.6} size={3} />
-        </div>
+        {/* Removed foreground lighting component to make the page cleaner. */}
 
-        {/* Blue lightning — right column, matches dpe-blue #1934B5 (hue ~230) */}
-        <div className="absolute top-0 right-0 bottom-0 w-1/2 z-[4] mix-blend-screen pointer-events-none opacity-90">
-          <LightningBg hue={230} xOffset={0} intensity={0.8} speed={0.35} size={3.5} />
-        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full flex flex-col gap-8 lg:gap-12 items-center">
+          {/* Top — Text */}
+          <motion.div
+            initial="initial"
+            animate="animate"
+            variants={staggerChildren}
+            className="space-y-4 lg:space-y-6 w-full max-w-5xl mx-auto"
+          >
+            <motion.div variants={fadeInUp} className="text-center">
+              <p className="text-xs tracking-[0.25em] uppercase text-gray-300 font-medium mb-3 lg:mb-4">
+                Nationwide Coverage
+              </p>
+              <h1 className="font-saira !text-5xl md:!text-6xl lg:!text-7xl font-bold text-white tracking-tight leading-[1.1]">
+                {ts('home.hero.title')}
+              </h1>
+            </motion.div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left — Text */}
-            <motion.div
-              initial="initial"
-              animate="animate"
-              variants={staggerChildren}
-              className="space-y-8"
-            >
-              <motion.div variants={fadeInUp}>
-                <p className="text-xs tracking-[0.25em] uppercase text-gray-300 font-medium mb-6">
-                  Nationwide Coverage
-                </p>
-                <h1 className="font-saira !text-5xl md:!text-6xl lg:!text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
-                  {ts('home.hero.title')}
-                </h1>
-
-                {/* Rotating term — plain fade on mobile, scramble on desktop */}
-                <div className="h-12 flex items-center mb-3">
-                  <span className="md:hidden !text-xl font-saira font-bold text-white tracking-wide">
-                    <AnimatePresence mode="wait">
-                      <motion.span
-                        key={heroTerms[currentTerm]}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        {heroTerms[currentTerm]}
-                      </motion.span>
-                    </AnimatePresence>
-                  </span>
-                  <span className="hidden md:block">
-                    <HyperText
-                      key={heroTerms[currentTerm]}
-                      text={heroTerms[currentTerm]}
-                      duration={400}
-                      className="!text-2xl font-saira font-bold text-white tracking-wide"
-                    />
-                  </span>
-                </div>
-                <p className="!text-lg md:!text-xl text-gray-300 leading-relaxed max-w-lg">
+            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-6 sm:gap-10 mt-6 lg:mt-8 max-w-4xl mx-auto border-t border-white/10 pt-6 lg:pt-8">
+              <div className="flex-1 text-center sm:text-left">
+                <p className="!text-2xl md:!text-3xl text-white leading-relaxed font-saira font-semibold mb-2">
                   Your journey to financial freedom starts here.
                 </p>
-              </motion.div>
+                <p className="!text-sm md:!text-base text-gray-300 leading-relaxed max-w-lg mx-auto sm:mx-0">
+                  Take control of your auto loan today. We offer nationwide coverage, flexible terms, and expert guidance every step of the way.
+                </p>
+              </div>
 
-              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col gap-3 w-full sm:w-56 shrink-0">
                 <Link
                   href="/contact"
-                  className="bg-dpe-green hover:bg-green-600 text-white font-semibold py-4 px-8 rounded-xl font-saira tracking-wide transition-all duration-200 text-center shadow-lg shadow-green-900/30"
+                  className="bg-dpe-green hover:bg-green-600 text-white font-semibold py-3 lg:py-4 px-6 rounded-xl font-saira tracking-wide transition-all duration-200 text-center shadow-lg shadow-green-900/30 w-full hover:-translate-y-1"
                 >
                   Get Started
                 </Link>
                 <Link
                   href="/services"
-                  className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold py-4 px-8 rounded-xl font-saira tracking-wide transition-all duration-200 text-center border border-white/15"
+                  className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold py-3 lg:py-4 px-6 rounded-xl font-saira tracking-wide transition-all duration-200 text-center border border-white/15 w-full hover:-translate-y-1"
                 >
                   {ts('home.hero.learnMore')}
                 </Link>
-              </motion.div>
-            </motion.div>
-
-            {/* Right — Calculator */}
-            <motion.div
-              variants={fadeInRight}
-              initial="initial"
-              animate="animate"
-              className="relative hidden lg:block"
-            >
-              <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/40 p-6">
-                <AutoLoanRefinanceCalculator />
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
+      </section>
+
+      {/* ─── CALCULATOR BODY ─── (Pulled over the hero section fold) */}
+      <section className="relative z-20 w-full max-w-6xl mx-auto px-4 -mt-[112px] md:-mt-[128px] pb-24">
+        <motion.div
+          variants={fadeInUp}
+          initial="initial"
+          animate="animate"
+          className="relative w-full"
+        >
+          <AutoLoanRefinanceCalculator />
+        </motion.div>
       </section>
 
       {/* ─── SERVICES BENTO GRID ─── */}
