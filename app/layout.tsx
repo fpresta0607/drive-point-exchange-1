@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Raleway, Outfit, Geist } from "next/font/google";
+import { Montserrat, Outfit, Geist } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "../lib/i18n/context";
 import { Analytics } from "@vercel/analytics/next";
@@ -12,9 +12,9 @@ const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-const playfair = Raleway({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-saira",
+  variable: "--font-heading",
   display: "swap",
   weight: ["700", "800"],
 });
@@ -152,9 +152,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        <meta name="theme-color" content="#0D1B4A" />
+        <meta name="theme-color" content="#0E1A56" />
       </head>
-      <body className={`${playfair.variable} ${outfit.variable} font-outfit antialiased`}>
+      <body className={`${montserrat.variable} ${outfit.variable} font-outfit antialiased`}>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-white focus:text-dpe-navy focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold focus:text-sm focus:ring-2 focus:ring-dpe-blue focus:outline-none"

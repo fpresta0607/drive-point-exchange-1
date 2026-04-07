@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -83,6 +83,15 @@ export function AutoLoanRefinanceCalculator() {
   const [showQuoteForm, setShowQuoteForm] = useState(false);
   const [quoteForm, setQuoteForm] = useState<QuoteForm>(defaultQuoteForm);
 
+  useEffect(() => {
+    if (showQuoteForm) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [showQuoteForm]);
+
   const updateValue = <K extends keyof LoanInputs>(key: K, value: LoanInputs[K]) => {
     setValues((prev) => ({
       ...prev,
@@ -94,9 +103,13 @@ export function AutoLoanRefinanceCalculator() {
   const handleInputChange = <K extends keyof LoanInputs>(key: K, displayValue: string) => {
     setDisplayValues((prev) => ({ ...prev, [key]: displayValue }));
     const parsed = parseNumberInput(displayValue);
-    if (!isNaN(parsed) && parsed >= 0) {
-      updateValue(key, parsed as LoanInputs[K]);
+    if (displayValue !== "" && !isNaN(parsed) && parsed >= 0) {
+      setValues((prev) => ({ ...prev, [key]: parsed }));
     }
+  };
+
+  const handleInputBlur = <K extends keyof LoanInputs>(key: K) => {
+    setDisplayValues((prev) => ({ ...prev, [key]: undefined }));
   };
 
   const results = useMemo(() => {
@@ -144,12 +157,12 @@ export function AutoLoanRefinanceCalculator() {
     <div className="w-full flex flex-col items-center justify-center relative">
       {/* Quote Form Modal */}
       {showQuoteForm && (
-        <div className="absolute inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
           <div
-            className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm rounded-3xl"
+            className="fixed inset-0 bg-black/50"
             onClick={() => setShowQuoteForm(false)}
           />
-          <div className="relative w-full max-w-md bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl p-6 sm:p-8">
+          <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 z-10">
             {/* Header */}
             <div className="text-center mb-5">
               <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
@@ -234,15 +247,16 @@ export function AutoLoanRefinanceCalculator() {
 
             {/* Actions */}
             <div className="flex gap-3 mt-6">
-              <Button
-                variant="ghost"
+              <button
+                type="button"
                 onClick={() => setShowQuoteForm(false)}
-                className="flex-1 h-11 rounded-xl text-slate-600 font-semibold hover:bg-slate-100"
+                className="flex-1 h-11 px-4 rounded-full border border-slate-300 text-slate-600 font-semibold hover:bg-slate-100 transition-colors"
               >
                 Cancel
-              </Button>
-              <Button
-                className="flex-1 h-11 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold border-none"
+              </button>
+              <button
+                type="button"
+                className="glow-cta flex-1 h-11 px-4 text-white font-bold text-sm"
                 onClick={() => {
                   // TODO: submit form
                   setShowQuoteForm(false);
@@ -250,7 +264,7 @@ export function AutoLoanRefinanceCalculator() {
                 }}
               >
                 Get Free Quote
-              </Button>
+              </button>
             </div>
           </div>
         </div>
@@ -267,17 +281,17 @@ export function AutoLoanRefinanceCalculator() {
               Get an instant estimate for your auto loan
             </p>
           </div>
-          <Button
+          <button
             onClick={() => setShowQuoteForm(true)}
-            className="h-12 md:h-14 rounded-xl bg-dpe-green text-white font-bold px-8 shadow-lg hover:-translate-y-0.5 transition-transform text-base md:text-lg whitespace-nowrap border-none"
+            className="green-cta-pulse h-12 md:h-14 rounded-full text-white font-bold px-8 text-base md:text-lg whitespace-nowrap shadow-lg"
           >
             Get My Refinance Quote
-          </Button>
+          </button>
         </div>
 
         {/* Sliders and output body */}
         <div className="bg-white/85 backdrop-blur-xl rounded-b-3xl shadow-2xl border border-white/60 border-t-0 p-6 sm:p-10 relative z-0">
-          <div className="grid gap-6 lg:gap-10 lg:grid-cols-[1.2fr_0.8fr] auto-rows-max lg:auto-rows-fr">
+          <div className="grid gap-6 lg:gap-10 lg:grid-cols-[1fr_minmax(280px,0.8fr)] auto-rows-max lg:auto-rows-fr">
             <div className="flex flex-col bg-transparent h-full">
               <div className="flex flex-1 min-h-0 justify-between sm:justify-center gap-2 sm:gap-6 md:gap-10 lg:gap-14 w-full mt-2 mb-2">
                 <div className="flex flex-col items-center gap-3 h-full">
@@ -301,6 +315,7 @@ export function AutoLoanRefinanceCalculator() {
                         value={displayValues.currentMonthlyPayment !== undefined ? displayValues.currentMonthlyPayment : formatNumberWithCommas(values.currentMonthlyPayment)}
                         onChange={(e) => handleInputChange("currentMonthlyPayment", e.target.value)}
                         onFocus={(e) => e.target.select()}
+                        onBlur={() => handleInputBlur("currentMonthlyPayment")}
                         className="w-14 sm:w-16 text-center text-xs sm:text-sm font-extrabold text-slate-800 bg-transparent border-0 focus:ring-0 p-0 m-0"
                       />
                     </div>
@@ -333,6 +348,7 @@ export function AutoLoanRefinanceCalculator() {
                         value={displayValues.loanBalanceRemaining !== undefined ? displayValues.loanBalanceRemaining : formatNumberWithCommas(values.loanBalanceRemaining)}
                         onChange={(e) => handleInputChange("loanBalanceRemaining", e.target.value)}
                         onFocus={(e) => e.target.select()}
+                        onBlur={() => handleInputBlur("loanBalanceRemaining")}
                         className="w-20 sm:w-24 text-center text-xs sm:text-sm font-extrabold text-slate-800 bg-transparent border-0 focus:ring-0 p-0 m-0"
                       />
                     </div>
@@ -364,6 +380,7 @@ export function AutoLoanRefinanceCalculator() {
                         value={displayValues.currentAPR !== undefined ? displayValues.currentAPR : values.currentAPR.toFixed(1)}
                         onChange={(e) => handleInputChange("currentAPR", e.target.value)}
                         onFocus={(e) => e.target.select()}
+                        onBlur={() => handleInputBlur("currentAPR")}
                         className="w-10 sm:w-12 text-center text-xs sm:text-sm font-extrabold text-slate-800 bg-transparent border-0 focus:ring-0 p-0 m-0"
                       />
                       <span className="text-xs sm:text-sm font-extrabold text-slate-800">%</span>
@@ -395,6 +412,7 @@ export function AutoLoanRefinanceCalculator() {
                         value={displayValues.newAPR !== undefined ? displayValues.newAPR : values.newAPR.toFixed(1)}
                         onChange={(e) => handleInputChange("newAPR", e.target.value)}
                         onFocus={(e) => e.target.select()}
+                        onBlur={() => handleInputBlur("newAPR")}
                         className="w-10 sm:w-12 text-center text-xs sm:text-sm font-extrabold text-slate-800 bg-transparent border-0 focus:ring-0 p-0 m-0"
                       />
                       <span className="text-xs sm:text-sm font-extrabold text-slate-800">%</span>
@@ -426,6 +444,7 @@ export function AutoLoanRefinanceCalculator() {
                         value={displayValues.remainingTermYears !== undefined ? displayValues.remainingTermYears : values.remainingTermYears.toString()}
                         onChange={(e) => handleInputChange("remainingTermYears", e.target.value)}
                         onFocus={(e) => e.target.select()}
+                        onBlur={() => handleInputBlur("remainingTermYears")}
                         className="w-8 sm:w-10 text-center text-xs sm:text-sm font-extrabold text-slate-800 bg-transparent border-0 focus:ring-0 p-0 m-0"
                       />
                       <span className="text-xs sm:text-sm font-extrabold text-slate-800">yr</span>
@@ -457,6 +476,7 @@ export function AutoLoanRefinanceCalculator() {
                         value={displayValues.newTermYears !== undefined ? displayValues.newTermYears : values.newTermYears.toString()}
                         onChange={(e) => handleInputChange("newTermYears", e.target.value)}
                         onFocus={(e) => e.target.select()}
+                        onBlur={() => handleInputBlur("newTermYears")}
                         className="w-8 sm:w-10 text-center text-xs sm:text-sm font-extrabold text-slate-800 bg-transparent border-0 focus:ring-0 p-0 m-0"
                       />
                       <span className="text-xs sm:text-sm font-extrabold text-slate-800">yr</span>
@@ -477,21 +497,21 @@ export function AutoLoanRefinanceCalculator() {
                     <p className="text-sm lg:text-lg font-semibold text-slate-600">
                       New Monthly Payment
                     </p>
-                    <p className="mt-1 lg:mt-2 text-4xl lg:text-5xl font-extrabold tracking-tight text-blue-700">
+                    <p className="mt-1 lg:mt-2 text-4xl lg:text-5xl font-extrabold tracking-tight text-blue-700 whitespace-nowrap">
                       ${formatNumberWithCommas(results.estimatedNewPayment, 2)}
                     </p>
                   </div>
 
                   <div className="border-t border-slate-100 pt-4 lg:pt-6">
                     <p className="text-sm lg:text-lg text-slate-500">Monthly savings</p>
-                    <p className="mt-1 lg:mt-2 text-2xl lg:text-3xl font-bold text-emerald-600">
+                    <p className="mt-1 lg:mt-2 text-2xl lg:text-3xl font-bold text-emerald-600 whitespace-nowrap">
                       ${formatNumberWithCommas(results.monthlySavings, 2)}
                     </p>
                   </div>
 
                   <div className="border-t border-slate-100 pt-4 lg:pt-6">
                     <p className="text-sm lg:text-lg text-slate-500">Interest savings</p>
-                    <p className="mt-1 lg:mt-2 text-2xl lg:text-3xl font-bold text-emerald-600">
+                    <p className="mt-1 lg:mt-2 text-2xl lg:text-3xl font-bold text-emerald-600 whitespace-nowrap">
                       {results.interestSavings >= 0 ? '+' : ''} ${formatNumberWithCommas(Math.abs(results.interestSavings), 2)}
                     </p>
                   </div>
@@ -501,7 +521,7 @@ export function AutoLoanRefinanceCalculator() {
               <Button
                 variant="secondary"
                 onClick={resetCalculator}
-                className="h-12 lg:h-14 rounded-2xl bg-slate-100/50 text-base font-semibold text-slate-600 hover:bg-slate-200 w-full transition-transform hover:-translate-y-0.5"
+                className="h-12 lg:h-14 rounded-full bg-slate-100/50 text-base font-semibold text-slate-600 hover:bg-slate-200 w-full transition-transform hover:-translate-y-0.5"
               >
                 <RotateCcw className="mr-2 h-4 w-4" />
                 Reset Calculator

@@ -8,6 +8,7 @@ import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import { trackLeadSubmitted } from '../../lib/gtm';
 import { useI18n } from '../../lib/i18n/context';
+import { CTAButton } from '../../components/ui/cta-button';
 
 export default function Contact() {
   const prefersReducedMotion = useReducedMotion();
@@ -175,18 +176,12 @@ export default function Contact() {
               variants={fadeInUp}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Link
-                href="/calculator"
-                className="bg-dpe-navy hover:bg-dpe-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
-              >
+              <CTAButton href="/calculator">
                 {ts('contact.calculatePayment')}
-              </Link>
-              <Link
-                href="/services"
-                className="bg-dpe-navy hover:bg-dpe-navy-deep text-white font-semibold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
-              >
+              </CTAButton>
+              <CTAButton href="/services" variant="secondary">
                 {ts('contact.viewServices')}
-              </Link>
+              </CTAButton>
             </motion.div>
           </motion.div>
         </div>
@@ -313,13 +308,14 @@ export default function Contact() {
                   </div>
                 )}
 
-                <button
+                <CTAButton
                   type="submit"
+                  variant="primary-dark"
                   disabled={isSubmitting}
-                  className="w-full bg-dpe-navy hover:bg-dpe-navy-deep text-white font-semibold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                  className="w-full"
                 >
                   {isSubmitting ? ts('contact.sending') : ts('contact.sendMessageButton')}
-                </button>
+                </CTAButton>
               </form>
             )}
           </motion.div>
@@ -362,7 +358,7 @@ export default function Contact() {
                 <div className="flex items-center">
                   <div className="text-dpe-blue text-xl mr-4">🕐</div>
                   <div>
-                    <p className="text-gray-600 text-sm">Customer Service — 24/7</p>
+                    <p className="text-gray-600 text-sm">Customer Service - 24/7</p>
                     <a href="tel:+17737821005" className="text-gray-900 font-semibold hover:text-dpe-blue transition-colors">(773) 782-1005</a>
                   </div>
                 </div>

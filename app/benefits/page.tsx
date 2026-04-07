@@ -1,13 +1,13 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import { useI18n } from '../../lib/i18n/context';
 import { SparksCarousel, SparkItem } from '../../components/ui/sparks-carousel';
-import { ArrowUpRight, ShieldCheck } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
+import { CTAButton } from '../../components/ui/cta-button';
 import ShaderBackground from '../../components/ui/shader-background';
 
 interface BenefitItem {
@@ -54,12 +54,10 @@ export default function Benefits() {
       <Navigation overlay />
       
       {/* ─── PREMIUM HERO SECTION ─── */}
-      <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center pt-44 border-b border-white/5">
+      <section className="relative h-[65vh] min-h-[500px] flex items-center justify-center pt-28 border-b border-white/5">
         {/* Abstract Dark Glowing Background */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay z-[1]" />
-          
-          <motion.div 
+          <motion.div
             animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.3, 0.1] }}
             transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
             className="absolute top-0 -left-1/4 w-[700px] h-[700px] rounded-full bg-dpe-blue/20 blur-[150px] mix-blend-screen"
@@ -74,7 +72,7 @@ export default function Benefits() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center text-center">
           <motion.div initial="initial" animate="animate" variants={containerVariants} className="max-w-4xl">
 
-            <motion.h1 variants={itemVariants} className="text-6xl sm:text-7xl md:text-[8rem] text-white mb-8 leading-[0.92]">
+            <motion.h1 variants={itemVariants} className="text-5xl sm:text-6xl md:text-7xl text-white mb-8 leading-[0.95]">
               {ts('benefits.hero.titleLine1')} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-200 to-indigo-400">
                 {ts('benefits.hero.titleLine2')}
@@ -86,18 +84,9 @@ export default function Benefits() {
             </motion.p>
 
             <motion.div variants={itemVariants} className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="group relative inline-flex items-center gap-4 bg-white text-black font-semibold py-4 px-8 rounded-full overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]"
-              >
-                <div className="absolute inset-0 bg-dpe-blue translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]" />
-                <span className="relative z-10 text-overline group-hover:text-white transition-colors duration-500">
-                  {ts('benefits.hero.getCoverage')}
-                </span>
-                <div className="relative z-10 w-8 h-8 bg-black/10 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-colors duration-500">
-                  <ArrowUpRight className="w-4 h-4 group-hover:text-white transition-colors duration-500" />
-                </div>
-              </Link>
+              <CTAButton href="/contact" showArrow>
+                {ts('benefits.hero.getCoverage')}
+              </CTAButton>
             </motion.div>
           </motion.div>
         </div>
@@ -145,8 +134,8 @@ export default function Benefits() {
       {/* ─── IMMERSIVE CTA ─── */}
       <section className="relative py-32 overflow-hidden border-t border-white/5">
          <div className="absolute inset-0">
-             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center opacity-[0.1] mix-blend-luminosity" />
-             <div className="absolute inset-0 bg-gradient-to-t from-[#020813]/50 via-transparent to-[#020813]/50" />
+             <div className="absolute inset-0 bg-[url('/auto/car-hero.jpg')] bg-cover bg-center opacity-[0.1] mix-blend-luminosity" />
+             <div className="absolute inset-0 bg-gradient-to-t from-[#020720]/50 via-transparent to-[#020720]/50" />
          </div>
          
          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -164,24 +153,13 @@ export default function Benefits() {
               </motion.p>
               
               <motion.div variants={itemVariants} className="flex justify-center gap-6 flex-col sm:flex-row">
-                <Link
-                  href="/contact"
-                  className="group relative inline-flex items-center justify-center gap-4 bg-white text-black font-semibold py-5 px-10 rounded-full overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  <div className="absolute inset-0 bg-dpe-blue translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]" />
-                  <span className="relative z-10 text-overline group-hover:text-white transition-colors duration-500">
-                    {ts('benefits.cta.getCoverage')}
-                  </span>
-                </Link>
+                <CTAButton href="/contact" size="lg">
+                  {ts('benefits.cta.getCoverage')}
+                </CTAButton>
 
-                <Link
-                  href="/services"
-                  className="group relative inline-flex items-center justify-center gap-4 bg-white/5 border border-white/10 text-white font-semibold py-5 px-10 rounded-full overflow-hidden transition-all hover:bg-white/10 hover:border-white/20 active:scale-[0.98]"
-                >
-                  <span className="relative z-10 text-overline transition-colors duration-500">
-                    {ts('benefits.cta.learnMore')}
-                  </span>
-                </Link>
+                <CTAButton href="/services" variant="secondary" size="lg">
+                  {ts('benefits.cta.learnMore')}
+                </CTAButton>
               </motion.div>
             </motion.div>
          </div>

@@ -30,7 +30,7 @@ export async function GET(request: NextRequest) {
   const results: RefreshResult[] = [];
   const metaToken = process.env.META_APP_TOKEN;
 
-  // TikTok — oEmbed is unauthenticated
+  // TikTok - oEmbed is unauthenticated
   const tiktokUrls = parseCuratedUrls('SOCIAL_CURATED_URLS_TIKTOK');
   try {
     const posts = await Promise.all(tiktokUrls.map(fetchTikTokOEmbed));
@@ -46,10 +46,10 @@ export async function GET(request: NextRequest) {
     results.push({ platform: 'tiktok', success: false, count: 0, error: String(err) });
   }
 
-  // Instagram — requires Meta App token
+  // Instagram - requires Meta App token
   const igUrls = parseCuratedUrls('SOCIAL_CURATED_URLS_INSTAGRAM');
   if (!metaToken) {
-    console.warn('[social/refresh] META_APP_TOKEN not configured — skipping Instagram');
+    console.warn('[social/refresh] META_APP_TOKEN not configured - skipping Instagram');
     results.push({ platform: 'instagram', success: false, count: 0, error: 'Token not configured' });
   } else {
     try {
@@ -69,10 +69,10 @@ export async function GET(request: NextRequest) {
     }
   }
 
-  // Facebook — requires Meta App token
+  // Facebook - requires Meta App token
   const fbUrls = parseCuratedUrls('SOCIAL_CURATED_URLS_FACEBOOK');
   if (!metaToken) {
-    console.warn('[social/refresh] META_APP_TOKEN not configured — skipping Facebook');
+    console.warn('[social/refresh] META_APP_TOKEN not configured - skipping Facebook');
     results.push({ platform: 'facebook', success: false, count: 0, error: 'Token not configured' });
   } else {
     try {
@@ -92,7 +92,7 @@ export async function GET(request: NextRequest) {
     }
   }
 
-  // YouTube — oEmbed is unauthenticated
+  // YouTube - oEmbed is unauthenticated
   const ytUrls = parseCuratedUrls('SOCIAL_CURATED_URLS_YOUTUBE');
   try {
     const posts = await Promise.all(ytUrls.map(fetchYouTubeOEmbed));

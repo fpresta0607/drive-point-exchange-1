@@ -20,7 +20,7 @@ export default function Page() {
         `Seamless transition from your previous lender`,
         `Skip up to two payments during the transition`
       ]}
-      imageSrc="/auto/svc-auto-refinance.jpg"
+      imageSrc="/auto/car-loan.jpg"
     />
   );
 }

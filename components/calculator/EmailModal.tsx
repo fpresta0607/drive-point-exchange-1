@@ -10,6 +10,7 @@ interface EmailModalProps {
     lastName: string;
     email: string;
     mobileNumber: string;
+    promoCode: string;
     isAgent: boolean;
     smsConsent: boolean;
   }) => Promise<void>;
@@ -34,6 +35,7 @@ export default function EmailModal({
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
+  const [promoCode, setPromoCode] = useState('');
   const [isAgent, setIsAgent] = useState(false);
   const [smsConsent, setSmsConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -59,6 +61,7 @@ export default function EmailModal({
       setLastName('');
       setEmail('');
       setMobileNumber('');
+      setPromoCode('');
       setIsAgent(false);
       setSmsConsent(false);
       setError('');
@@ -161,6 +164,7 @@ export default function EmailModal({
         lastName: lastName.trim(),
         email: email.trim(),
         mobileNumber: mobileNumber.trim(),
+        promoCode: promoCode.trim(),
         isAgent,
         smsConsent,
       });
@@ -177,19 +181,19 @@ export default function EmailModal({
   const formContent = (
     <>
       <div className="text-center mb-6">
-        <h2 id="modal-title" className="text-2xl text-[#0a1628] mb-2">
+        <h2 id="modal-title" className="text-2xl text-dpe-navy mb-2">
           Get Your FREE {calculatorType === 'home' ? 'Home Loan' : 'Auto Loan'} Quote
         </h2>
         <p className="text-base text-dpe-slate">
           Fill out the information below and we will follow up fast with your free no-obligation quote.
         </p>
-        <p className="text-xs text-gray-500 mt-2">Fields marked with * are required.</p>
+        <p className="text-xs text-dpe-gray-500 mt-2">Fields marked with * are required.</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4" noValidate>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="firstName" className="block text-sm font-medium text-dpe-gray-700 mb-2">
                 First Name *
               </label>
               <input
@@ -198,7 +202,7 @@ export default function EmailModal({
                 type="text"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
-                className="w-full h-10 px-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-gray-900"
+                className="w-full h-10 px-3 rounded-lg border border-dpe-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-dpe-gray-900"
                 placeholder="First Name"
                 disabled={isSubmitting}
                 aria-required="true"
@@ -206,7 +210,7 @@ export default function EmailModal({
               />
             </div>
             <div>
-              <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="lastName" className="block text-sm font-medium text-dpe-gray-700 mb-2">
                 Last Name *
               </label>
               <input
@@ -214,7 +218,7 @@ export default function EmailModal({
                 type="text"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
-                className="w-full h-10 px-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-gray-900"
+                className="w-full h-10 px-3 rounded-lg border border-dpe-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-dpe-gray-900"
                 placeholder="Last Name"
                 disabled={isSubmitting}
                 aria-required="true"
@@ -224,7 +228,7 @@ export default function EmailModal({
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="email" className="block text-sm font-medium text-dpe-gray-700 mb-2">
               Email Address *
             </label>
             <input
@@ -232,7 +236,7 @@ export default function EmailModal({
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full h-10 px-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-gray-900"
+              className="w-full h-10 px-3 rounded-lg border border-dpe-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-dpe-gray-900"
               placeholder="Email Address"
               disabled={isSubmitting}
               aria-required="true"
@@ -241,7 +245,7 @@ export default function EmailModal({
           </div>
 
           <div>
-            <label htmlFor="mobileNumber" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="mobileNumber" className="block text-sm font-medium text-dpe-gray-700 mb-2">
               Mobile Number
             </label>
             <input
@@ -249,10 +253,25 @@ export default function EmailModal({
               type="tel"
               value={mobileNumber}
               onChange={(e) => setMobileNumber(e.target.value)}
-              className="w-full h-10 px-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-gray-900"
+              className="w-full h-10 px-3 rounded-lg border border-dpe-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-dpe-gray-900"
               placeholder="Mobile Number (Optional)"
               disabled={isSubmitting}
               aria-describedby="form-error"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="promoCode" className="block text-sm font-medium text-dpe-gray-700 mb-2">
+              Promo Code
+            </label>
+            <input
+              id="promoCode"
+              type="text"
+              value={promoCode}
+              onChange={(e) => setPromoCode(e.target.value)}
+              className="w-full h-10 px-3 rounded-lg border border-dpe-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-dpe-gray-900"
+              placeholder="Promo Code (Optional)"
+              disabled={isSubmitting}
             />
           </div>
 
@@ -263,10 +282,10 @@ export default function EmailModal({
               type="checkbox"
               checked={isAgent}
               onChange={(e) => handleAgentChange(e.target.checked)}
-              className="mt-1 h-4 w-4 text-dpe-blue focus:ring-dpe-blue border-gray-300 rounded"
+              className="mt-1 h-4 w-4 text-dpe-blue focus:ring-dpe-blue border-dpe-gray-300 rounded"
               disabled={isSubmitting}
             />
-            <label htmlFor="isAgent" className="text-xs text-gray-600 leading-relaxed">
+            <label htmlFor="isAgent" className="text-xs text-dpe-gray-600 leading-relaxed">
               I am an agent or authorized representative submitting this form on behalf of a client.
             </label>
           </div>
@@ -278,10 +297,10 @@ export default function EmailModal({
               type="checkbox"
               checked={smsConsent}
               onChange={(e) => setSmsConsent(e.target.checked)}
-              className="mt-1 h-4 w-4 text-dpe-blue focus:ring-dpe-blue border-gray-300 rounded"
+              className="mt-1 h-4 w-4 text-dpe-blue focus:ring-dpe-blue border-dpe-gray-300 rounded"
               disabled={isSubmitting || isAgent}
             />
-            <label htmlFor="smsConsent" className="text-xs text-gray-500 leading-relaxed">
+            <label htmlFor="smsConsent" className="text-xs text-dpe-gray-500 leading-relaxed">
               By checking this box and signing up for texts, you consent to receive Account Notification messages from Drive Point Exchange at the number provided, including messages sent by autodialer. Consent is not a condition of purchase. Msg &amp; data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP or clicking the unsubscribe link (where available). Reply HELP for help.{' '}
               <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-dpe-blue hover:text-dpe-navy underline">Privacy Policy</a>.
             </label>
@@ -303,7 +322,7 @@ export default function EmailModal({
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 h-10 px-4 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-50 transition-colors"
+              className="flex-1 h-10 px-4 rounded-full border border-dpe-gray-300 text-dpe-gray-700 hover:bg-dpe-gray-50 disabled:opacity-50 transition-colors"
               disabled={isSubmitting}
             >
               Cancel

@@ -28,8 +28,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-b from-[#0f1d35] to-[#0a1628] text-white">
-      {/* Decorative top edge — blue glow line */}
+    <footer className="relative overflow-hidden bg-gradient-to-b from-[#0F1648] to-[#0A1340] text-white">
+      {/* Decorative top edge - blue glow line */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-dpe-blue/50 to-transparent" />
 
       {/* Subtle background orbs */}
@@ -59,7 +59,7 @@ export default function Footer() {
                 <span className="text-sm text-slate-400">{ts('footer.nationwideCoverage')}</span>
               </div>
               <div className="space-y-1">
-                <p className="text-xs font-medium tracking-wider uppercase text-slate-500">Customer Service — 24/7</p>
+                <p className="text-xs font-medium tracking-wider uppercase text-slate-500">Customer Service - 24/7</p>
                 <a
                   href="tel:+17737821005"
                   className="text-lg font-semibold text-white hover:text-dpe-blue-light transition-colors"

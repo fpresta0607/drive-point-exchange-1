@@ -72,7 +72,7 @@ function CalculatorContent() {
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <button
                 onClick={() => setCalculatorType('auto')}
-                className={`px-8 py-4 rounded-lg font-semibold transition-all duration-200 ${
+                className={`px-8 py-4 rounded-full font-semibold transition-all duration-200 ${
                   calculatorType === 'auto'
                     ? 'bg-dpe-navy text-white shadow-lg'
                     : 'bg-white/20 text-white hover:bg-white/30'
@@ -82,7 +82,7 @@ function CalculatorContent() {
               </button>
               <button
                 onClick={() => setCalculatorType('home')}
-                className={`px-8 py-4 rounded-lg font-semibold transition-all duration-200 ${
+                className={`px-8 py-4 rounded-full font-semibold transition-all duration-200 ${
                   calculatorType === 'home'
                     ? 'bg-dpe-navy text-white shadow-lg'
                     : 'bg-white/20 text-white hover:bg-white/30'
@@ -96,7 +96,7 @@ function CalculatorContent() {
       </section>
 
       {/* Calculator Section */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-dpe-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="initial"
@@ -105,10 +105,10 @@ function CalculatorContent() {
             variants={staggerChildren}
             className="text-center mb-8"
           >
-            <motion.h2 variants={fadeInUp} className="text-4xl text-gray-900 mb-4">
+            <motion.h2 variants={fadeInUp} className="text-4xl text-dpe-gray-900 mb-4">
               {calculatorType === 'auto' ? ts('navigation.autoLoanCalculator') : ts('navigation.homeLoanCalculator')}
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <motion.p variants={fadeInUp} className="text-xl text-dpe-gray-600 max-w-3xl mx-auto">
               {calculatorType === 'auto' 
                 ? ts('calculator.page.autoDescription')
                 : ts('calculator.page.homeDescription')
@@ -143,7 +143,7 @@ function CalculatorLoading() {
     <div className="min-h-screen flex items-center justify-center">
       <div className="text-center">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-dpe-blue mx-auto"></div>
-        <p className="mt-4 text-gray-600">{ts('calculator.page.loading')}</p>
+        <p className="mt-4 text-dpe-gray-600">{ts('calculator.page.loading')}</p>
       </div>
     </div>
   );

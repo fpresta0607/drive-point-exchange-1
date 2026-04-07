@@ -32,7 +32,7 @@ export default function TermsPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#1a2744] via-[#1a2744] to-blue-600 py-20">
+      <section className="relative bg-gradient-to-br from-[#1A2158] via-[#1A2158] to-blue-600 py-20">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -105,7 +105,7 @@ export default function TermsPage() {
           >
             <motion.div
               variants={fadeInUp}
-              className="bg-gradient-to-r from-[#1a2744] to-blue-600 rounded-2xl p-8 text-white"
+              className="bg-gradient-to-r from-[#1A2158] to-blue-600 rounded-2xl p-8 text-white"
             >
               <h2 className="text-3xl font-bold mb-4">{ts('terms.contact.title')}</h2>
               <p className="text-xl mb-6">

@@ -33,13 +33,13 @@ export default function Select({
 
   return (
     <div className={className}>
-      <label className="block !text-xs font-medium text-gray-700 !mb-1">
+      <label className="block !text-xs font-medium text-dpe-gray-700 !mb-1">
         {label}
       </label>
       <select
         value={value}
         onChange={handleChange}
-        className="w-full !h-8 px-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent !text-sm text-gray-900 bg-white"
+        className="w-full !h-8 px-3 rounded-lg border border-dpe-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent !text-sm text-dpe-gray-900 bg-white"
         aria-label={label}
       >
         <option value="" disabled>

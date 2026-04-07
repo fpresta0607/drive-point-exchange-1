@@ -47,7 +47,7 @@ export default function SocialFeed() {
     <section className="py-20 bg-[#f8fafc]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl text-[#0a1628] mb-3">
+          <h2 className="text-3xl sm:text-4xl text-[#0A1340] mb-3">
             Follow Our Journey
           </h2>
           <p className="text-base text-dpe-slate font-light">
@@ -80,7 +80,7 @@ export default function SocialFeed() {
                   href={PROFILE_URLS[platform]}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-2 text-[#0a1628] hover:text-dpe-blue transition-colors duration-200"
+                  className="flex flex-col items-center gap-2 text-[#0A1340] hover:text-dpe-blue transition-colors duration-200"
                 >
                   <Icon />
                   <span className="text-xs font-medium">{PLATFORM_LABELS[platform]}</span>
@@ -101,7 +101,7 @@ export default function SocialFeed() {
                   href={PROFILE_URLS[platform]}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-1 text-[#0a1628] hover:text-dpe-blue transition-colors duration-200"
+                  className="flex flex-col items-center gap-1 text-[#0A1340] hover:text-dpe-blue transition-colors duration-200"
                 >
                   <Icon />
                   <span className="text-xs font-medium">{PLATFORM_LABELS[platform]}</span>

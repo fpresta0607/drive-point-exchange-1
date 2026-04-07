@@ -2,13 +2,13 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion, useReducedMotion, AnimatePresence } from 'framer-motion';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import { useI18n } from '../../lib/i18n/context';
 import { NebulaBg } from '../../components/ui/nebula-bg';
-import { ArrowUpRight, Sparkles, Shield, TrendingUp, HandCoins, Activity, Landmark } from 'lucide-react';
+import { Sparkles, Shield, TrendingUp, HandCoins, Activity, Landmark } from 'lucide-react';
+import { CTAButton } from '../../components/ui/cta-button';
 
 export default function ServicesHub() {
   const { ts } = useI18n();
@@ -28,7 +28,7 @@ export default function ServicesHub() {
       title: ts('home.services.autoRefinance.title'),
       description: ts('home.services.autoRefinance.description'),
       icon: <Activity className="w-8 h-8 md:w-12 md:h-12 text-dpe-green group-hover:text-white transition-colors duration-500" />,
-      image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=1200",
+      image: "/auto/car-loan.jpg",
       href: "/services/auto-refinance",
       category: ts('services.hub.categories.autoRefinance'),
       accent: "from-emerald-500 to-teal-700",
@@ -37,7 +37,7 @@ export default function ServicesHub() {
       title: ts('home.services.vehicleCoverage.title'),
       description: ts('home.services.vehicleCoverage.description'),
       icon: <Shield className="w-8 h-8 md:w-12 md:h-12 text-dpe-green group-hover:text-white transition-colors duration-500" />,
-      image: "https://images.unsplash.com/photo-1616423640778-28d1b53229bd?auto=format&fit=crop&q=80&w=1200",
+      image: "/auto/porsche-garage.jpg",
       href: "/services/vehicle-coverage",
       category: ts('services.hub.categories.coverage'),
       accent: "from-blue-500 to-indigo-700",
@@ -46,7 +46,7 @@ export default function ServicesHub() {
       title: ts('home.services.homeRefinance.title'),
       description: ts('home.services.homeRefinance.description'),
       icon: <Landmark className="w-8 h-8 md:w-12 md:h-12 text-dpe-green group-hover:text-white transition-colors duration-500" />,
-      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200",
+      image: "/auto/svc-home-refinance.jpg",
       href: "/services/home-refinance",
       category: ts('services.hub.categories.homeLoans'),
       accent: "from-purple-500 to-fuchsia-700",
@@ -55,7 +55,7 @@ export default function ServicesHub() {
       title: ts('home.services.insuranceConsultation.title'),
       description: ts('home.services.insuranceConsultation.description'),
       icon: <Sparkles className="w-8 h-8 md:w-12 md:h-12 text-dpe-green group-hover:text-white transition-colors duration-500" />,
-      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200",
+      image: "/auto/svc-auto-insurance.jpg",
       href: "/services/auto-insurance",
       category: ts('services.hub.categories.consulting'),
       accent: "from-amber-500 to-orange-700",
@@ -64,7 +64,7 @@ export default function ServicesHub() {
       title: ts('home.services.lifeInsurance.title'),
       description: ts('home.services.lifeInsurance.description'),
       icon: <HandCoins className="w-8 h-8 md:w-12 md:h-12 text-dpe-green group-hover:text-white transition-colors duration-500" />,
-      image: "https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?auto=format&fit=crop&q=80&w=1200",
+      image: "/auto/svc-life-insurance.jpg",
       href: "/services/life-insurance",
       category: ts('services.hub.categories.consulting'),
       accent: "from-rose-500 to-red-700",
@@ -73,7 +73,7 @@ export default function ServicesHub() {
       title: ts('home.services.creditSavings.title'),
       description: ts('home.services.creditSavings.description'),
       icon: <TrendingUp className="w-8 h-8 md:w-12 md:h-12 text-dpe-green group-hover:text-white transition-colors duration-500" />,
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200",
+      image: "/auto/car-loan3.jpg",
       href: "/services/credit-consultations",
       category: ts('services.hub.categories.financial'),
       accent: "from-cyan-500 to-blue-700",
@@ -81,7 +81,7 @@ export default function ServicesHub() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020813] selection:bg-dpe-green/30 selection:text-white">
+    <div className="min-h-screen bg-[#020720] selection:bg-dpe-green/30 selection:text-white">
       <Navigation overlay />
       
       {/* ─── PREMIUM HERO SECTION ─── */}
@@ -90,7 +90,7 @@ export default function ServicesHub() {
         <NebulaBg />
 
         {/* Bottom fade into page background */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none z-[5]" style={{ background: 'linear-gradient(to bottom, transparent, #020813)' }} />
+        <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none z-[5]" style={{ background: 'linear-gradient(to bottom, transparent, #020720)' }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center text-center mt-20">
           <motion.div initial="initial" animate="animate" variants={containerVariants} className="max-w-4xl">
@@ -136,7 +136,7 @@ export default function ServicesHub() {
                     className="object-cover scale-100 group-hover:scale-110 transition-transform duration-[1500ms] ease-out"
                   />
                   {/* Glassmorphism Dark Overlay */}
-                  <div className="absolute inset-0 bg-[#050b14]/85 group-hover:bg-black/50 transition-colors duration-700 backdrop-blur-[2px] group-hover:backdrop-blur-0" />
+                  <div className="absolute inset-0 bg-[#050928]/85 group-hover:bg-black/50 transition-colors duration-700 backdrop-blur-[2px] group-hover:backdrop-blur-0" />
                   <div className={`absolute inset-0 opacity-0 group-hover:opacity-40 bg-gradient-to-tr ${service.accent} mix-blend-overlay transition-opacity duration-700`} />
                 </div>
 
@@ -177,9 +177,9 @@ export default function ServicesHub() {
 
       {/* ─── IMMERSIVE CTA ─── */}
       <section className="relative py-32 overflow-hidden border-t border-white/5">
-         <div className="absolute inset-0 bg-[#020813]">
-             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1502877338535-34b1591b7300?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center opacity-[0.15] mix-blend-luminosity" />
-             <div className="absolute inset-0 bg-gradient-to-t from-[#020813] via-transparent to-[#020813]" />
+         <div className="absolute inset-0 bg-[#020720]">
+             <div className="absolute inset-0 bg-[url('/auto/car-hero.jpg')] bg-cover bg-center opacity-[0.15] mix-blend-luminosity" />
+             <div className="absolute inset-0 bg-gradient-to-t from-[#020720] via-transparent to-[#020720]" />
          </div>
          
          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -197,18 +197,9 @@ export default function ServicesHub() {
               </motion.p>
 
               <motion.div variants={itemVariants} className="flex justify-center">
-                <Link
-                  href="/contact"
-                  className="group relative inline-flex items-center gap-4 bg-white text-black font-semibold py-5 px-10 rounded-full overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  <div className="absolute inset-0 bg-dpe-green translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]" />
-                  <span className="relative z-10 text-overline group-hover:text-white transition-colors duration-500">
-                    {ts('services.hub.ctaButton')}
-                  </span>
-                  <div className="relative z-10 w-10 h-10 bg-black/10 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-colors duration-500">
-                    <ArrowUpRight className="w-5 h-5 group-hover:text-white transition-colors duration-500" />
-                  </div>
-                </Link>
+                <CTAButton href="/contact" size="lg" showArrow>
+                  {ts('services.hub.ctaButton')}
+                </CTAButton>
               </motion.div>
             </motion.div>
          </div>

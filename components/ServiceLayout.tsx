@@ -1,10 +1,11 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import Navigation from './Navigation';
 import ShaderBackground from './ui/shader-background';
+import { CTAButton } from './ui/cta-button';
 
 interface ServiceLayoutProps {
   title: string;
@@ -13,7 +14,7 @@ interface ServiceLayoutProps {
   imageSrc: string;
 }
 
-export default function ServiceLayout({ title, description, features }: ServiceLayoutProps) {
+export default function ServiceLayout({ title, description, features, imageSrc }: ServiceLayoutProps) {
   const prefersReducedMotion = useReducedMotion();
 
   const fadeIn = prefersReducedMotion
@@ -63,6 +64,11 @@ export default function ServiceLayout({ title, description, features }: ServiceL
 
             {/* Right: features + buttons */}
             <div className="flex flex-col">
+              {imageSrc && (
+                <motion.div variants={fadeIn} className="relative h-48 w-full rounded-xl overflow-hidden mb-4">
+                  <Image src={imageSrc} alt={title} fill className="object-cover" />
+                </motion.div>
+              )}
               <motion.h2 variants={fadeIn} className="text-sm font-semibold uppercase tracking-widest text-dpe-green mb-3">
                 Key Benefits
               </motion.h2>
@@ -76,18 +82,12 @@ export default function ServiceLayout({ title, description, features }: ServiceL
               </motion.div>
 
               <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-3 mt-auto pt-4 border-t border-dpe-blue-800/10">
-                <Link
-                  href="/calculator"
-                  className="bg-dpe-green hover:bg-dpe-green/90 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:scale-105 transition-all text-center text-base"
-                >
+                <CTAButton href="/calculator" variant="primary-dark">
                   Get a Free Quote
-                </Link>
-                <Link
-                  href="/contact"
-                  className="bg-dpe-blue-800 hover:bg-dpe-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all text-center text-base"
-                >
+                </CTAButton>
+                <CTAButton href="/contact" variant="primary-dark">
                   Contact an Expert
-                </Link>
+                </CTAButton>
               </motion.div>
             </div>
           </div>

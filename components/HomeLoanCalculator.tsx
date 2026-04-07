@@ -71,6 +71,7 @@ export default function HomeLoanCalculator() {
     lastName: string;
     email: string;
     mobileNumber: string;
+    promoCode: string;
     isAgent: boolean;
     smsConsent: boolean;
   }) => {
@@ -85,6 +86,7 @@ export default function HomeLoanCalculator() {
           language: language,
           isAgent: emailData.isAgent,
           smsConsent: emailData.smsConsent,
+          promoCode: emailData.promoCode,
           inputs: {
             homePrice,
             downPayment,
@@ -147,7 +149,7 @@ export default function HomeLoanCalculator() {
   ];
 
   return (
-    <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+    <div className="bg-white rounded-2xl shadow-2xl p-8 border border-dpe-gray-100">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Left Column - Inputs */}
         <motion.div
@@ -156,11 +158,11 @@ export default function HomeLoanCalculator() {
           transition={{ duration: 0.6 }}
           className="space-y-6"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">{ts('homeLoanCalculator.loanDetails')}</h3>
+          <h3 className="text-2xl font-bold text-dpe-gray-900 mb-6">{ts('homeLoanCalculator.loanDetails')}</h3>
           
           {/* Home Price */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-3">
+            <label className="block text-sm font-medium text-dpe-gray-700 mb-3">
               {ts('homeLoanCalculator.homePrice')}: ${homePrice.toLocaleString()}
             </label>
             <PriceSlider
@@ -182,8 +184,8 @@ export default function HomeLoanCalculator() {
           />
 
           {/* Down Payment Percentage Display */}
-          <div className="bg-blue-50 p-4 rounded-lg">
-            <p className="text-sm text-gray-600">
+          <div className="bg-dpe-blue-50 p-4 rounded-lg">
+            <p className="text-sm text-dpe-gray-600">
               {ts('homeLoanCalculator.downPayment')}: <span className="font-semibold text-dpe-blue">{downPaymentPercent.toFixed(1)}%</span>
             </p>
             {downPaymentPercent < 20 && (
@@ -243,50 +245,50 @@ export default function HomeLoanCalculator() {
           transition={{ duration: 0.6 }}
           className="space-y-6"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">{ts('homeLoanCalculator.paymentBreakdownTitle')}</h3>
+          <h3 className="text-2xl font-bold text-dpe-gray-900 mb-6">{ts('homeLoanCalculator.paymentBreakdownTitle')}</h3>
           
           {/* Monthly Payment */}
           <div className="bg-gradient-to-br from-dpe-navy to-dpe-navy-deep rounded-xl p-6 text-white">
             <div className="text-center">
-              <p className="text-blue-100 text-sm font-medium mb-2">{ts('homeLoanCalculator.estimatedMonthlyPayment')}</p>
+              <p className="text-dpe-blue-100 text-sm font-medium mb-2">{ts('homeLoanCalculator.estimatedMonthlyPayment')}</p>
               <p className="text-4xl font-bold">${Math.round(monthlyPayment).toLocaleString()}</p>
             </div>
           </div>
 
           {/* Payment Breakdown */}
           <div className="space-y-4">
-            <div className="flex justify-between items-center py-3 border-b border-gray-200">
-              <span className="text-gray-600">{ts('homeLoanCalculator.paymentBreakdown.principalInterest')}</span>
-              <span className="font-semibold text-gray-900">${Math.round(principalInterest).toLocaleString()}</span>
+            <div className="flex justify-between items-center py-3 border-b border-dpe-gray-200">
+              <span className="text-dpe-gray-600">{ts('homeLoanCalculator.paymentBreakdown.principalInterest')}</span>
+              <span className="font-semibold text-dpe-gray-900">${Math.round(principalInterest).toLocaleString()}</span>
             </div>
-            <div className="flex justify-between items-center py-3 border-b border-gray-200">
-              <span className="text-gray-600">{ts('homeLoanCalculator.paymentBreakdown.propertyTax')}</span>
-              <span className="font-semibold text-gray-900">${Math.round(propertyTax / 12).toLocaleString()}</span>
+            <div className="flex justify-between items-center py-3 border-b border-dpe-gray-200">
+              <span className="text-dpe-gray-600">{ts('homeLoanCalculator.paymentBreakdown.propertyTax')}</span>
+              <span className="font-semibold text-dpe-gray-900">${Math.round(propertyTax / 12).toLocaleString()}</span>
             </div>
-            <div className="flex justify-between items-center py-3 border-b border-gray-200">
-              <span className="text-gray-600">{ts('homeLoanCalculator.paymentBreakdown.homeInsurance')}</span>
-              <span className="font-semibold text-gray-900">${Math.round(homeInsurance / 12).toLocaleString()}</span>
+            <div className="flex justify-between items-center py-3 border-b border-dpe-gray-200">
+              <span className="text-dpe-gray-600">{ts('homeLoanCalculator.paymentBreakdown.homeInsurance')}</span>
+              <span className="font-semibold text-dpe-gray-900">${Math.round(homeInsurance / 12).toLocaleString()}</span>
             </div>
             {pmi > 0 && (
-              <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                <span className="text-gray-600">{ts('homeLoanCalculator.paymentBreakdown.pmi')}</span>
-                <span className="font-semibold text-gray-900">${Math.round(pmi / 12).toLocaleString()}</span>
+              <div className="flex justify-between items-center py-3 border-b border-dpe-gray-200">
+                <span className="text-dpe-gray-600">{ts('homeLoanCalculator.paymentBreakdown.pmi')}</span>
+                <span className="font-semibold text-dpe-gray-900">${Math.round(pmi / 12).toLocaleString()}</span>
               </div>
             )}
           </div>
 
           {/* Loan Summary */}
-          <div className="bg-gray-50 rounded-lg p-4 space-y-2">
+          <div className="bg-dpe-gray-50 rounded-lg p-4 space-y-2">
             <div className="flex justify-between">
-              <span className="text-gray-600">{ts('homeLoanCalculator.paymentBreakdown.loanAmount')}</span>
+              <span className="text-dpe-gray-600">{ts('homeLoanCalculator.paymentBreakdown.loanAmount')}</span>
               <span className="font-semibold">${loanAmount.toLocaleString()}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-600">{ts('homeLoanCalculator.paymentBreakdown.totalInterest')}</span>
+              <span className="text-dpe-gray-600">{ts('homeLoanCalculator.paymentBreakdown.totalInterest')}</span>
               <span className="font-semibold">${Math.round(totalInterest).toLocaleString()}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-600">{ts('homeLoanCalculator.paymentBreakdown.totalCost')}</span>
+              <span className="text-dpe-gray-600">{ts('homeLoanCalculator.paymentBreakdown.totalCost')}</span>
               <span className="font-semibold">${(loanAmount + totalInterest).toLocaleString()}</span>
             </div>
           </div>
@@ -294,7 +296,7 @@ export default function HomeLoanCalculator() {
           {/* Get Estimate Button */}
           <button
             onClick={handleGetEstimate}
-            className="w-full bg-dpe-navy hover:bg-dpe-navy-deep text-white font-semibold py-4 px-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+            className="glow-cta w-full text-white font-semibold py-4 px-6"
           >
             {ts('homeLoanCalculator.getEstimateButton')}
           </button>

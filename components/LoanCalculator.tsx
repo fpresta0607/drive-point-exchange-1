@@ -230,27 +230,27 @@ export default function LoanCalculator() {
   };
 
   const renderStepper = (field: keyof CalcInputs, step: number, min: number, max: number) => (
-    <div className="absolute right-0 top-0 bottom-0 flex flex-col border-l border-gray-200 rounded-r-lg overflow-hidden">
+    <div className="absolute right-0 top-0 bottom-0 flex flex-col border-l border-dpe-gray-200 rounded-r-lg overflow-hidden">
       <button
         type="button"
         onClick={() => {
           const current = Number(inputs[field]) || 0;
           handleInputChange(field, Math.min(max, +(current + step).toFixed(2)));
         }}
-        className="flex-1 flex items-center justify-center w-7 text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+        className="flex-1 flex items-center justify-center w-7 text-dpe-gray-400 hover:text-dpe-gray-600 hover:bg-dpe-gray-100 transition-colors"
         tabIndex={-1}
         aria-label={`Increase ${field}`}
       >
         <svg width="8" height="5" viewBox="0 0 8 5" fill="currentColor"><path d="M4 0l4 5H0z"/></svg>
       </button>
-      <div className="border-t border-gray-200" />
+      <div className="border-t border-dpe-gray-200" />
       <button
         type="button"
         onClick={() => {
           const current = Number(inputs[field]) || 0;
           handleInputChange(field, Math.max(min, +(current - step).toFixed(2)));
         }}
-        className="flex-1 flex items-center justify-center w-7 text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+        className="flex-1 flex items-center justify-center w-7 text-dpe-gray-400 hover:text-dpe-gray-600 hover:bg-dpe-gray-100 transition-colors"
         tabIndex={-1}
         aria-label={`Decrease ${field}`}
       >
@@ -282,6 +282,7 @@ export default function LoanCalculator() {
     lastName: string;
     email: string;
     mobileNumber: string;
+    promoCode: string;
     isAgent: boolean;
     smsConsent: boolean;
   }) => {
@@ -297,6 +298,7 @@ export default function LoanCalculator() {
           language: language,
           isAgent: data.isAgent,
           smsConsent: data.smsConsent,
+          promoCode: data.promoCode,
           inputs: {
             currentMonthlyPayment: inputs.currentMonthlyPayment,
             balanceLeft: inputs.balanceLeft,
@@ -373,7 +375,7 @@ export default function LoanCalculator() {
       ) : (
       <div className="w-full">
         <div className="text-center mb-6">
-          <h2 className="text-2xl text-[#0a1628] mb-2">
+          <h2 className="text-2xl text-dpe-navy mb-2">
             {ts('calculator.title')}
           </h2>
           <p className="text-base text-dpe-slate">
@@ -392,7 +394,7 @@ export default function LoanCalculator() {
                 max={10000}
                 placeholder="650"
               />
-              <p className="mt-1 text-xs text-gray-500">
+              <p className="mt-1 text-xs text-dpe-gray-500">
                 Principal & Interest Only
               </p>
             </div>
@@ -410,7 +412,7 @@ export default function LoanCalculator() {
             <div className="grid grid-cols-2 gap-4">
               {/* Current APR */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-dpe-gray-700 mb-2">
                   {ts('calculator.currentApr')}
                 </label>
                 <div className="relative">
@@ -418,25 +420,25 @@ export default function LoanCalculator() {
                     type="number"
                     value={inputs.currentApr}
                     onChange={(e) => handleNumberInput('currentApr', e.target.value)}
-                    className="w-full h-10 px-3 pr-14 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-gray-900"
+                    className="w-full h-10 px-3 pr-14 rounded-lg border border-dpe-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-dpe-gray-900"
                     min="0"
                     max="30"
                     step="any"
                     aria-label="Current APR input"
                   />
-                  <span className="absolute right-9 top-1/2 transform -translate-y-1/2 text-xs text-gray-500 font-medium">
+                  <span className="absolute right-9 top-1/2 transform -translate-y-1/2 text-xs text-dpe-gray-500 font-medium">
                     %
                   </span>
                   {renderStepper('currentApr', 0.25, 0, 30)}
                 </div>
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 text-xs text-dpe-gray-500">
                   Annual
                 </p>
               </div>
 
               {/* New APR */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-dpe-gray-700 mb-2">
                   {ts('calculator.newApr')}
                 </label>
                 <div className="relative">
@@ -444,18 +446,18 @@ export default function LoanCalculator() {
                     type="number"
                     value={inputs.newApr}
                     onChange={(e) => handleNumberInput('newApr', e.target.value)}
-                    className="w-full h-10 px-3 pr-14 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-gray-900"
+                    className="w-full h-10 px-3 pr-14 rounded-lg border border-dpe-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-dpe-gray-900"
                     min="0"
                     max="30"
                     step="any"
                     aria-label="New APR input"
                   />
-                  <span className="absolute right-9 top-1/2 transform -translate-y-1/2 text-xs text-gray-500 font-medium">
+                  <span className="absolute right-9 top-1/2 transform -translate-y-1/2 text-xs text-dpe-gray-500 font-medium">
                     %
                   </span>
                   {renderStepper('newApr', 0.25, 0, 30)}
                 </div>
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 text-xs text-dpe-gray-500">
                   Annual
                 </p>
               </div>
@@ -465,7 +467,7 @@ export default function LoanCalculator() {
             <div className="grid grid-cols-2 gap-4">
               {/* Remaining Term */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-dpe-gray-700 mb-2">
                   {ts('calculator.remainingTermYears') || 'Remaining Term'}
                 </label>
                 <div className="relative">
@@ -473,7 +475,7 @@ export default function LoanCalculator() {
                     type="number"
                     value={inputs.remainingTermYears}
                     onChange={(e) => handleNumberInput('remainingTermYears', e.target.value)}
-                    className="w-full h-10 px-3 pr-8 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-gray-900"
+                    className="w-full h-10 px-3 pr-8 rounded-lg border border-dpe-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-dpe-gray-900"
                     min="0.1"
                     max="30"
                     step="any"
@@ -482,14 +484,14 @@ export default function LoanCalculator() {
                   />
                   {renderStepper('remainingTermYears', 1, 0.5, 30)}
                 </div>
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 text-xs text-dpe-gray-500">
                   Years
                 </p>
               </div>
 
               {/* New Term Years */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-dpe-gray-700 mb-2">
                   {ts('calculator.newTermYears')}
                 </label>
                 <div className="relative">
@@ -497,7 +499,7 @@ export default function LoanCalculator() {
                     type="number"
                     value={inputs.newTermYears}
                     onChange={(e) => handleNumberInput('newTermYears', e.target.value)}
-                    className="w-full h-10 px-3 pr-8 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-gray-900"
+                    className="w-full h-10 px-3 pr-8 rounded-lg border border-dpe-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-base text-dpe-gray-900"
                     min="0.1"
                     max="30"
                     step="any"
@@ -506,7 +508,7 @@ export default function LoanCalculator() {
                   />
                   {renderStepper('newTermYears', 1, 0.5, 30)}
                 </div>
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 text-xs text-dpe-gray-500">
                   Years
                 </p>
               </div>
@@ -514,11 +516,11 @@ export default function LoanCalculator() {
           </div>
 
           {/* Right Column - Output Section */}
-          <div className="lg:pl-6 lg:border-l lg:border-gray-200" aria-live="polite">
+          <div className="lg:pl-6 lg:border-l lg:border-dpe-gray-200" aria-live="polite">
             {/* Main Result Card */}
-            <div className="bg-gray-50 rounded-lg p-6 border-2 border-gray-300">
+            <div className="bg-dpe-gray-50 rounded-lg p-6 border-2 border-dpe-blue-800/30">
               <div className="text-center mb-4">
-                <div className="text-sm font-medium text-gray-600 mb-2">{ts('calculator.newMonthlyPayment')}</div>
+                <div className="text-sm font-medium text-dpe-gray-600 mb-2">{ts('calculator.newMonthlyPayment')}</div>
                 <div className="text-4xl font-bold text-dpe-blue">
                   ${formatCurrency(result.newMonthlyPayment)}
                 </div>
@@ -528,16 +530,16 @@ export default function LoanCalculator() {
               <div className="mt-6 space-y-4">
                 {/* Monthly Savings */}
                 <div className="text-center">
-                  <div className="text-sm text-gray-600 mb-1">Monthly savings</div>
-                  <div className={`text-xl font-bold ${result.monthlySavings < 0 ? 'text-red-600' : 'text-green-600'}`}>
+                  <div className="text-sm text-dpe-gray-600 mb-1">Monthly savings</div>
+                  <div className={`text-xl font-bold ${result.monthlySavings < 0 ? 'text-red-600' : 'text-dpe-green-500'}`}>
                     {result.monthlySavings < 0 ? '-' : ''}${formatCurrency(Math.abs(result.monthlySavings))}
                   </div>
                 </div>
 
                 {/* Interest Savings */}
-                <div className="text-center pt-3 border-t border-gray-300">
-                  <div className="text-sm text-gray-600 mb-1">Interest savings</div>
-                  <div className={`text-xl font-bold ${result.interestSavings > 0 ? 'text-green-600' : result.interestSavings < 0 ? 'text-red-600' : 'text-gray-600'}`}>
+                <div className="text-center pt-3 border-t border-dpe-gray-300">
+                  <div className="text-sm text-dpe-gray-600 mb-1">Interest savings</div>
+                  <div className={`text-xl font-bold ${result.interestSavings > 0 ? 'text-dpe-green-500' : result.interestSavings < 0 ? 'text-red-600' : 'text-dpe-gray-600'}`}>
                     {result.interestSavings > 0 ? '+' : result.interestSavings < 0 ? '-' : ''}${formatCurrency(Math.abs(result.interestSavings))}
                   </div>
                 </div>
@@ -546,7 +548,7 @@ export default function LoanCalculator() {
 
             {/* Helper Message if Monthly Savings < 0 */}
             {result.monthlySavings < 0 && (
-              <div className="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <div className="mt-4 bg-dpe-blue-50 border border-dpe-blue-200 rounded-lg p-4">
                 <p className="text-sm text-dpe-navy">
                   {ts('calculator.monthlyPaymentWarning')}
                 </p>
@@ -563,7 +565,7 @@ export default function LoanCalculator() {
               </button>
               <button
                 onClick={handleReset}
-                className="w-full bg-gray-500 hover:bg-gray-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200"
+                className="w-full bg-dpe-gray-500 hover:bg-dpe-gray-600 text-white font-medium py-3 px-6 rounded-full transition-all duration-200"
               >
                 {ts('calculator.resetCalculator')}
               </button>

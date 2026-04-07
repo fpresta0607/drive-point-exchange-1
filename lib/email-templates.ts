@@ -62,16 +62,17 @@ export const EMAIL_BRAND = {
   supportEmail: 'support@drivepointexchange.com',
   supportEmailHref: 'mailto:support@drivepointexchange.com',
   colors: {
-    navy: '#1a2744',
-    navyDeep: '#0a1628',
-    blue: '#3b82f6',
-    blueLight: '#60a5fa',
-    red: '#dc2626',
+    navy: '#0E1A56',
+    navyDeep: '#060C38',
+    blue: '#1934B5',
+    blueLight: '#4A6FE0',
+    green: '#2DB843',
+    greenLight: '#78df92',
     slate: '#64748b',
     bg: '#f8fafc',
-    bgAlt: '#e8edf4',
+    bgAlt: '#e8f4ec',
     border: '#d9e3ef',
-    text: '#0a1628',
+    text: '#060C38',
     textSoft: '#334155',
   },
 } as const;
@@ -162,7 +163,7 @@ export function renderEmailLayout({
       border: 1px solid ${EMAIL_BRAND.colors.border};
       border-radius: 28px;
       overflow: hidden;
-      box-shadow: 0 24px 64px rgba(10, 22, 40, 0.12);
+      box-shadow: 0 24px 64px rgba(6, 15, 46, 0.12);
     }
 
     .hero {
@@ -176,9 +177,9 @@ export function renderEmailLayout({
       margin-bottom: 16px;
       padding: 8px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(255, 255, 255, 0.08);
-      color: #dbeafe;
+      border: 1px solid rgba(45, 184, 67, 0.35);
+      background: rgba(45, 184, 67, 0.12);
+      color: ${EMAIL_BRAND.colors.greenLight};
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.08em;
@@ -191,7 +192,7 @@ export function renderEmailLayout({
       padding: 16px 20px;
       border-radius: 20px;
       background: rgba(255, 255, 255, 0.96);
-      box-shadow: 0 12px 30px rgba(10, 22, 40, 0.18);
+      box-shadow: 0 12px 30px rgba(6, 15, 46, 0.18);
     }
 
     .logo {
@@ -212,7 +213,7 @@ export function renderEmailLayout({
     .subtitle {
       margin: 12px auto 0;
       max-width: 520px;
-      color: #dbeafe;
+      color: #c7d2f8;
       font-size: 15px;
       line-height: 1.6;
     }
@@ -241,8 +242,8 @@ export function renderEmailLayout({
     }
 
     .section-brand {
-      background: linear-gradient(180deg, rgba(26, 39, 68, 0.04) 0%, rgba(59, 130, 246, 0.10) 100%);
-      border-color: #bfdbfe;
+      background: linear-gradient(180deg, rgba(13, 27, 74, 0.04) 0%, rgba(25, 52, 181, 0.10) 100%);
+      border-color: #c7d2f8;
     }
 
     .section-alert {
@@ -326,12 +327,12 @@ export function renderEmailLayout({
     .highlight-brand {
       background: linear-gradient(135deg, ${EMAIL_BRAND.colors.navyDeep} 0%, ${EMAIL_BRAND.colors.navy} 55%, ${EMAIL_BRAND.colors.blue} 100%);
       color: #ffffff;
-      box-shadow: 0 18px 36px rgba(26, 39, 68, 0.18);
+      box-shadow: 0 18px 36px rgba(13, 27, 74, 0.18);
     }
 
     .highlight-neutral {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
+      background: #eef1fd;
+      border: 1px solid #c7d2f8;
       color: ${EMAIL_BRAND.colors.text};
     }
 
@@ -380,7 +381,7 @@ export function renderEmailLayout({
       display: inline-block;
       padding: 14px 20px;
       border-radius: 999px;
-      background: ${EMAIL_BRAND.colors.red};
+      background: ${EMAIL_BRAND.colors.green};
       color: #ffffff;
       font-size: 14px;
       font-weight: 700;

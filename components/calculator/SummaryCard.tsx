@@ -2,6 +2,7 @@
 
 import React from 'react';
 import BreakdownRow from './BreakdownRow';
+import { CTAButton } from '../ui/cta-button';
 
 interface BreakdownRowData {
   label: string;
@@ -31,9 +32,9 @@ export default function SummaryCard({
   };
 
   return (
-    <div className={`bg-white rounded-2xl shadow-lg border border-slate-100 ${className}`}>
+    <div className={`bg-white rounded-2xl shadow-lg border border-dpe-gray-100 ${className}`}>
       {/* Dark Header */}
-      <div className="bg-slate-800 text-white rounded-t-2xl !p-3">
+      <div className="bg-dpe-navy text-white rounded-t-2xl !p-3">
         <div className="text-center">
           <p className="!text-xs font-medium !mb-1">Your estimated monthly payment</p>
           <p className="!text-2xl md:!text-3xl font-bold">
@@ -43,7 +44,7 @@ export default function SummaryCard({
       </div>
 
       {/* White Body */}
-      <div className="rounded-b-2xl !p-4 border border-slate-100 border-t-0">
+      <div className="rounded-b-2xl !p-4 border border-dpe-gray-100 border-t-0">
         <div className="!space-y-1">
           {rows.map((row, index) => (
             <BreakdownRow
@@ -58,12 +59,9 @@ export default function SummaryCard({
         
         {/* Action Button */}
         <div className="mt-6">
-          <button 
-            onClick={onGetQuote}
-            className="w-full h-12 bg-dpe-blue-500 hover:bg-dpe-blue-600 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200"
-          >
+          <CTAButton onClick={onGetQuote} variant="primary-dark" className="w-full">
             Get Quote
-          </button>
+          </CTAButton>
         </div>
       </div>
     </div>

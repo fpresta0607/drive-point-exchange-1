@@ -85,7 +85,7 @@ export const SparksCarousel = React.forwardRef<
         <div className="relative">
           <div
             ref={carouselRef}
-            className="flex w-full space-x-4 overflow-y-visible overflow-x-auto pb-8 pt-4 items-start scrollbar-hide"
+            className="flex w-full space-x-4 overflow-y-visible overflow-x-auto pb-4 pt-4 items-stretch scrollbar-hide"
           >
             {items.map((item, index) => (
               <motion.div
@@ -137,28 +137,29 @@ export const SparksCarousel = React.forwardRef<
             ))}
           </div>
 
-          {!isAtStart && (
-            <button
-              onClick={() => scroll("left")}
-              className={cn(
-                "absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-xl transition-all hover:bg-white/20 hover:scale-110 disabled:opacity-0"
-              )}
-              aria-label="Scroll left"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-          )}
-          {!isAtEnd && (
-            <button
-              onClick={() => scroll("right")}
-              className={cn(
-                "absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-xl transition-all hover:bg-white/20 hover:scale-110 disabled:opacity-0"
-              )}
-              aria-label="Scroll right"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </button>
-          )}
+          {/* Arrow buttons - hidden on mobile (touch scroll), visible on md+ */}
+          <button
+            onClick={() => scroll("left")}
+            className={cn(
+              "hidden md:flex absolute -left-2 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white shadow-xl transition-all hover:bg-dpe-green/30 hover:border-dpe-green/40 hover:scale-110",
+              isAtStart && "opacity-30 pointer-events-none"
+            )}
+            aria-label="Scroll left"
+            disabled={isAtStart}
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            className={cn(
+              "hidden md:flex absolute -right-2 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white shadow-xl transition-all hover:bg-dpe-green/30 hover:border-dpe-green/40 hover:scale-110",
+              isAtEnd && "opacity-30 pointer-events-none"
+            )}
+            aria-label="Scroll right"
+            disabled={isAtEnd}
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
         </div>
       </div>
     </section>

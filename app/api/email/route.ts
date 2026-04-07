@@ -182,9 +182,10 @@ ${emailTranslations.contactForm.followUp}
 
     // Handle home loan estimate submissions
     if (type === 'home_loan_estimate') {
-      const { inputs, result, isAgent: rawHomeIsAgent, smsConsent: rawHomeSmsConsent } = body;
+      const { inputs, result, isAgent: rawHomeIsAgent, smsConsent: rawHomeSmsConsent, promoCode: rawHomePromoCode } = body;
       const homeIsAgent = Boolean(rawHomeIsAgent);
       const homeSmsConsent = homeIsAgent ? false : Boolean(rawHomeSmsConsent);
+      const homePromoCode = typeof rawHomePromoCode === 'string' ? rawHomePromoCode.trim() : '';
 
       // Validate required fields for home loan estimate
       if (!inputs || !result) {
@@ -351,6 +352,9 @@ ${emailTranslations.contactForm.followUp}
               { label: 'Customer', value: `${firstName} ${lastName}`.trim() },
               { label: 'Email', value: email },
               { label: 'Phone', value: mobileNumber || 'Not provided' },
+              ...(homePromoCode
+                ? [{ label: 'Promo Code', value: homePromoCode, accent: true }]
+                : []),
             ]),
           }),
           renderEmailSection({
@@ -409,6 +413,7 @@ ${emailTranslations.contactForm.followUp}
             sms_consent: homeSmsConsent || false,
             sms_consent_at: homeSmsConsent ? new Date().toISOString() : null,
             sms_consent_source: homeSmsConsent ? 'home_loan_quote_form' : null,
+            promo_code: homePromoCode || null,
             ip_address: req.headers.get('x-vercel-forwarded-for') || req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || req.headers.get('x-real-ip') || null,
             user_agent: req.headers.get('user-agent')?.slice(0, 512) || null,
           });
@@ -433,9 +438,11 @@ ${emailTranslations.contactForm.followUp}
       result,
       isAgent: rawIsAgent,
       smsConsent: rawSmsConsent,
+      promoCode: rawPromoCode,
     } = body;
     const isAgent = Boolean(rawIsAgent);
     const smsConsent = isAgent ? false : Boolean(rawSmsConsent);
+    const promoCode = typeof rawPromoCode === 'string' ? rawPromoCode.trim() : '';
 
     // Validate required fields for calculator
     if (!name || !email || !inputs || !result) {
@@ -624,7 +631,7 @@ ${emailTranslations.contactForm.followUp}
     });
 
     const textMessage = `
-🚗 AUTO REFINANCE COMPARISON FROM APEX AUTO SOLUTIONS INC.
+🚗 AUTO REFINANCE COMPARISON FROM DRIVE POINT EXCHANGE
 
 ${emailTranslations.refinanceEstimate.greeting.replace('{name}', name)}
 
@@ -681,13 +688,13 @@ ${emailTranslations.refinanceEstimate.disclaimer}
 
     // Send notification to owner
     const ownerMessage = `
-🚗 NEW AUTO REFINANCE INQUIRY - APEX AUTO SOLUTIONS INC.
+🚗 NEW AUTO REFINANCE INQUIRY - DRIVE POINT EXCHANGE
 
 CUSTOMER INFORMATION:
 • Name: ${name}
 • Email: ${email}
 • Phone: ${inputs.mobileNumber || 'Not provided'}
-
+${promoCode ? `• Promo Code: ${promoCode}\n` : ''}
 CURRENT LOAN DETAILS:
 • Current Balance: $${Math.round(resultBalanceLeft).toLocaleString()}
 • Current Monthly Payment: $${Math.round(currentMonthlyPayment).toLocaleString()}
@@ -724,6 +731,9 @@ This customer has shown interest in auto refinancing and is ready to save money 
             { label: 'Name', value: name },
             { label: 'Email', value: email },
             { label: 'Phone', value: inputs.mobileNumber || 'Not provided' },
+            ...(promoCode
+              ? [{ label: 'Promo Code', value: promoCode, accent: true }]
+              : []),
           ]),
         }),
         renderEmailSection({
@@ -817,6 +827,7 @@ This customer has shown interest in auto refinancing and is ready to save money 
           sms_consent: smsConsent || false,
           sms_consent_at: smsConsent ? new Date().toISOString() : null,
           sms_consent_source: smsConsent ? 'auto_loan_quote_form' : null,
+          promo_code: promoCode || null,
           ip_address: req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || null,
           user_agent: req.headers.get('user-agent') || null,
           // Legacy fields (for backward compatibility)

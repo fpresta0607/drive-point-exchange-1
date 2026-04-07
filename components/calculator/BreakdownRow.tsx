@@ -32,23 +32,23 @@ export default function BreakdownRow({
   const isNegative = displayAmount < 0;
   const sign = isNegative ? '-' : '';
 
-  const labelClasses = emphasis 
-    ? "font-semibold text-slate-800" 
-    : "text-slate-600";
+  const labelClasses = emphasis
+    ? "font-semibold text-dpe-gray-800"
+    : "text-dpe-gray-600";
   
   const amountClasses = emphasis 
     ? "font-semibold" 
     : "";
 
   return (
-    <div className={`!py-1 flex justify-between border-b border-dashed border-slate-200 last:border-0 ${className}`}>
+    <div className={`!py-1 flex justify-between border-b border-dashed border-dpe-gray-200 last:border-0 ${className}`}>
       <span className={`!text-xs ${labelClasses}`}>
         {label}
       </span>
-      <span className={`!text-xs tabular-nums ${amountClasses} ${isNegative ? 'text-slate-600' : ''}`}>
+      <span className={`!text-xs tabular-nums ${amountClasses} ${isNegative ? 'text-dpe-gray-600' : ''}`}>
         {sign}{formatMoney(Math.abs(displayAmount))}
-        {suffix && <span className="text-slate-500 font-normal ml-1">{suffix}</span>}
-        {emphasis && !suffix && <span className="text-slate-500 font-normal">/mo</span>}
+        {suffix && <span className="text-dpe-gray-500 font-normal ml-1">{suffix}</span>}
+        {emphasis && !suffix && <span className="text-dpe-gray-500 font-normal">/mo</span>}
       </span>
     </div>
   );

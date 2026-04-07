@@ -20,7 +20,7 @@ export default function Page() {
         `Nationwide repair facility acceptance`,
         `Coverage for high-tech electrical systems`
       ]}
-      imageSrc="/auto/svc-vehicle-coverage.jpg"
+      imageSrc="/auto/porsche-garage.jpg"
     />
   );
 }

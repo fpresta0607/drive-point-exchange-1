@@ -50,7 +50,7 @@ export default function MoneyInput({
       return;
     }
 
-    // Clamp to max only while typing — min is enforced on blur
+    // Clamp to max only while typing - min is enforced on blur
     let clampedValue = numericValue;
     if (max !== undefined && numericValue > max) {
       clampedValue = max;
@@ -66,11 +66,11 @@ export default function MoneyInput({
 
   return (
     <div className={className}>
-      <label className="block text-sm font-medium text-gray-700 mb-2">
+      <label className="block text-sm font-medium text-dpe-gray-700 mb-2">
         {label}
       </label>
       <div className="relative">
-        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 font-medium">
+        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-dpe-gray-500 font-medium">
           $
         </span>
         <input
@@ -79,7 +79,7 @@ export default function MoneyInput({
           onChange={handleChange}
           onBlur={handleBlur}
           placeholder={placeholder}
-          className="w-full h-10 pl-8 pr-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent text-gray-900 placeholder-gray-400"
+          className="w-full h-10 pl-8 pr-4 rounded-lg border border-dpe-gray-300 focus:ring-2 focus:ring-dpe-blue focus:border-transparent text-dpe-gray-900 placeholder-dpe-gray-400"
           aria-label={label}
         />
       </div>

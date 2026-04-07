@@ -32,13 +32,13 @@ export default function PriceSlider({
         step={step}
         value={value}
         onChange={handleChange}
-        className="w-full h-3 bg-gray-300 rounded-full appearance-none cursor-pointer slider focus:outline-none focus:ring-2 focus:ring-blue-600"
+        className="w-full h-3 bg-dpe-gray-300 rounded-full appearance-none cursor-pointer slider focus:outline-none focus:ring-2 focus:ring-dpe-blue"
         style={{
-          background: `linear-gradient(to right, #d1d5db 0%, #d1d5db ${((value - min) / (max - min)) * 100}%, #e5e7eb ${((value - min) / (max - min)) * 100}%, #e5e7eb 100%)`
+          background: `linear-gradient(to right, #1934B5 0%, #1934B5 ${((value - min) / (max - min)) * 100}%, #e5e7eb ${((value - min) / (max - min)) * 100}%, #e5e7eb 100%)`
         }}
         aria-label="Vehicle price slider"
       />
-      <div className="flex justify-between text-sm text-gray-500">
+      <div className="flex justify-between text-sm text-dpe-gray-500">
         <span>${min.toLocaleString()}</span>
         <span>${max.toLocaleString()}</span>
       </div>

@@ -22,7 +22,7 @@ const config: Config = {
             600: '#3b4bd4',
             700: '#2e36b8',
             800: '#1934b5', // Anchor DPE Blue
-            900: '#182570',
+            900: '#0E1A56',
           },
           // Green from Upward Arrows / DPE accent (#2DB843)
           green: {
@@ -71,8 +71,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-outfit)', 'Outfit', 'system-ui', 'sans-serif'],
-        saira: ['var(--font-saira)', 'Playfair Display', 'Georgia', 'serif'],
-        display: ['var(--font-saira)', 'Playfair Display', 'Georgia', 'serif'],
+        heading: ['var(--font-heading)', 'Montserrat', 'system-ui', 'sans-serif'],
+        display: ['var(--font-heading)', 'Montserrat', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'hero-pattern': "url('/hero-bg.jpg')",
@@ -89,11 +89,42 @@ const config: Config = {
       },
       animation: {
         rainbow: "rainbow var(--speed, 2s) infinite linear",
+        "gradient-text-sweep": "gradient-text-sweep 2s linear infinite",
       },
       keyframes: {
         rainbow: {
           "0%": { "background-position": "0%" },
           "100%": { "background-position": "200%" },
+        },
+        "gradient-border": {
+          "0%, 100%": { borderRadius: "37% 29% 27% 27% / 28% 25% 41% 37%" },
+          "25%": { borderRadius: "47% 29% 39% 49% / 61% 19% 66% 26%" },
+          "50%": { borderRadius: "57% 23% 47% 72% / 63% 17% 66% 33%" },
+          "75%": { borderRadius: "28% 49% 29% 100% / 93% 20% 64% 25%" },
+        },
+        "gradient-1": {
+          "0%, 100%": { top: "0", right: "0" },
+          "50%": { top: "50%", right: "25%" },
+          "75%": { top: "25%", right: "50%" },
+        },
+        "gradient-2": {
+          "0%, 100%": { top: "0", left: "0" },
+          "60%": { top: "75%", left: "25%" },
+          "85%": { top: "50%", left: "50%" },
+        },
+        "gradient-3": {
+          "0%, 100%": { bottom: "0", left: "0" },
+          "40%": { bottom: "50%", left: "25%" },
+          "65%": { bottom: "25%", left: "50%" },
+        },
+        "gradient-4": {
+          "0%, 100%": { bottom: "0", right: "0" },
+          "50%": { bottom: "25%", right: "40%" },
+          "90%": { bottom: "50%", right: "25%" },
+        },
+        "gradient-text-sweep": {
+          "0%": { "background-position": "100% 0" },
+          "100%": { "background-position": "-200% 0" },
         },
       },
     },

@@ -108,6 +108,7 @@ export type AutoLoanLead = {
   sms_consent: boolean;
   sms_consent_at: string | null;
   sms_consent_source: string | null;
+  promo_code: string | null;
   ip_address: string | null;
   user_agent: string | null;
   created_at?: string;
@@ -134,6 +135,7 @@ export type HomeLoanLead = {
   sms_consent: boolean;
   sms_consent_at: string | null;
   sms_consent_source: string | null;
+  promo_code: string | null;
   ip_address: string | null;
   user_agent: string | null;
   created_at?: string;

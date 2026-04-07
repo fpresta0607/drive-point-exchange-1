@@ -31,7 +31,7 @@ function getYouTubeVideoId(post: SocialPost): string | null {
   return match ? match[1] : null;
 }
 
-// Allowed domains in embed HTML — reject anything from unknown sources
+// Allowed domains in embed HTML - reject anything from unknown sources
 const ALLOWED_EMBED_DOMAINS = [
   'instagram.com',
   'facebook.com',
@@ -119,7 +119,7 @@ function TikTokEmbed({ videoId, caption, url }: { videoId: string; caption: stri
           <button
             type="button"
             onClick={() => setShowCaption(!showCaption)}
-            className="text-xs text-dpe-slate hover:text-[#0a1628] transition-colors flex items-center gap-1"
+            className="text-xs text-dpe-slate hover:text-[#0A1340] transition-colors flex items-center gap-1"
           >
             <svg
               className={`w-3 h-3 transition-transform duration-200 ${showCaption ? 'rotate-90' : ''}`}
@@ -172,7 +172,7 @@ function YouTubeEmbed({ videoId, caption, url }: { videoId: string; caption: str
           <button
             type="button"
             onClick={() => setShowCaption(!showCaption)}
-            className="text-xs text-dpe-slate hover:text-[#0a1628] transition-colors flex items-center gap-1"
+            className="text-xs text-dpe-slate hover:text-[#0A1340] transition-colors flex items-center gap-1"
           >
             <svg
               className={`w-3 h-3 transition-transform duration-200 ${showCaption ? 'rotate-90' : ''}`}
@@ -283,7 +283,7 @@ function FallbackCard({ post }: { post: SocialPost }) {
         className="w-12 h-12 rounded-full mx-auto mb-4"
         style={{ backgroundColor: config.color }}
       />
-      <h3 className="text-[#0a1628] mb-2">{config.label}</h3>
+      <h3 className="text-[#0A1340] mb-2">{config.label}</h3>
       {post.caption && (
         <p className="text-sm text-dpe-slate mb-4 line-clamp-2">{post.caption}</p>
       )}
