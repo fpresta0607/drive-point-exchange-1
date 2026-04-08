@@ -396,14 +396,14 @@ export function AutoLoanRefinanceCalculator() {
 
                   <div className="border-t border-slate-100 pt-4 lg:pt-6">
                     <p className="text-sm lg:text-lg text-slate-500">Monthly savings</p>
-                    <p className="mt-1 lg:mt-2 text-2xl lg:text-3xl font-bold text-emerald-600 whitespace-nowrap">
+                    <p className={`mt-1 lg:mt-2 text-2xl lg:text-3xl font-bold whitespace-nowrap ${results.monthlySavings >= 0 ? 'text-emerald-600' : 'text-red-500'}`}>
                       ${formatNumberWithCommas(results.monthlySavings, 2)}
                     </p>
                   </div>
 
                   <div className="border-t border-slate-100 pt-4 lg:pt-6">
                     <p className="text-sm lg:text-lg text-slate-500">Interest savings</p>
-                    <p className="mt-1 lg:mt-2 text-2xl lg:text-3xl font-bold text-emerald-600 whitespace-nowrap">
+                    <p className={`mt-1 lg:mt-2 text-2xl lg:text-3xl font-bold whitespace-nowrap ${results.interestSavings >= 0 ? 'text-emerald-600' : 'text-red-500'}`}>
                       {results.interestSavings >= 0 ? '+' : ''} ${formatNumberWithCommas(Math.abs(results.interestSavings), 2)}
                     </p>
                   </div>
