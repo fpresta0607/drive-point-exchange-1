@@ -24,14 +24,12 @@ interface NavHeaderProps {
 
 function NavHeader({ tabs, isTransparent = false, className }: NavHeaderProps) {
   const prefersReducedMotion = useReducedMotion();
-  const ulRef = useRef<HTMLUListElement>(null);
   const tabRefs = useRef<(HTMLLIElement | null)[]>([]);
 
   const activeIndex = tabs.findIndex((t) => t.isActive);
 
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [cursor, setCursor] = useState({ left: 0, width: 0, opacity: 0 });
-  const hasMounted = useRef(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
   const measureTab = useCallback(
     (index: number) => {
@@ -42,50 +40,32 @@ function NavHeader({ tabs, isTransparent = false, className }: NavHeaderProps) {
     []
   );
 
-  // Update cursor position when hovered or active tab changes
-  useEffect(() => {
-    const target = hoveredIndex ?? activeIndex;
-    if (target < 0) {
-      setCursor((prev) => ({ ...prev, opacity: 0 }));
-      return;
-    }
-    const m = measureTab(target);
-    if (m) {
-      setCursor({ left: m.left, width: m.width, opacity: 1 });
-    }
-    // Mark as mounted after first position is set
-    if (!hasMounted.current) {
-      hasMounted.current = true;
-    }
-  }, [hoveredIndex, activeIndex, measureTab]);
+  const target = hoveredIndex ?? activeIndex;
+  const measured = target >= 0 ? measureTab(target) : null;
+  const cursor = measured
+    ? { left: measured.left, width: measured.width, opacity: 1 }
+    : { left: 0, width: 0, opacity: 0 };
 
-  // Re-measure on tab label changes (i18n) by watching tab labels
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  // Re-measure on tab label changes (i18n)
   const labelsKey = tabs.map((t) => t.label).join("|");
+  const [, forceUpdate] = useState(0);
   useEffect(() => {
-    const target = hoveredIndex ?? activeIndex;
-    if (target < 0) return;
-    // Small delay to let the DOM reflow after text changes
-    const id = requestAnimationFrame(() => {
-      const m = measureTab(target);
-      if (m) setCursor({ left: m.left, width: m.width, opacity: 1 });
-    });
+    const id = requestAnimationFrame(() => forceUpdate((n) => n + 1));
     return () => cancelAnimationFrame(id);
-  }, [labelsKey, hoveredIndex, activeIndex, measureTab]);
-
-  const handleMouseLeave = () => {
-    setHoveredIndex(null);
-    // Cursor returns to active tab (handled by the effect above)
-  };
+  }, [labelsKey]);
 
   return (
     <div className={cn("relative", className)}>
       <ul
-        ref={ulRef}
         className={cn(
           "relative flex items-center p-1",
           "pill-nav-border"
         )}
-        onMouseLeave={handleMouseLeave}
+        onMouseLeave={() => setHoveredIndex(null)}
       >
         {/* Animated gradient cursor */}
         <motion.li
@@ -94,15 +74,11 @@ function NavHeader({ tabs, isTransparent = false, className }: NavHeaderProps) {
             background: "linear-gradient(to right, #1934B5, #2DB843)",
           }}
           initial={false}
-          animate={{
-            left: cursor.left,
-            width: cursor.width,
-            opacity: cursor.opacity,
-          }}
+          animate={cursor}
           transition={
-            prefersReducedMotion || !hasMounted.current
+            prefersReducedMotion || !hasMounted
               ? { duration: 0 }
-              : { type: "tween", duration: 0.12, ease: "easeOut" }
+              : { type: "tween", duration: 0.1, ease: "easeOut" }
           }
           aria-hidden
         />
@@ -118,7 +94,7 @@ function NavHeader({ tabs, isTransparent = false, className }: NavHeaderProps) {
               {tab.isDropdown && (
                 <ChevronDown
                   className={cn(
-                    "ml-1 h-3.5 w-3.5 transition-transform duration-200",
+                    "ml-1 h-3.5 w-3.5 transition-transform duration-150",
                     tab.dropdownContent ? "rotate-180" : ""
                   )}
                 />
@@ -127,7 +103,7 @@ function NavHeader({ tabs, isTransparent = false, className }: NavHeaderProps) {
           );
 
           const tabClasses = cn(
-            "relative z-10 flex items-center whitespace-nowrap px-4 py-2 text-sm font-medium transition-colors duration-150 cursor-pointer select-none",
+            "relative z-10 flex items-center whitespace-nowrap px-4 py-2 text-sm font-medium transition-colors duration-75 cursor-pointer select-none",
             showWhite
               ? "text-white"
               : isTransparent
@@ -140,7 +116,6 @@ function NavHeader({ tabs, isTransparent = false, className }: NavHeaderProps) {
               key={i}
               ref={(el) => {
                 tabRefs.current[i] = el;
-                // Also assign to the external wrapperRef if provided (for click-outside)
                 if (tab.wrapperRef && "current" in tab.wrapperRef) {
                   (tab.wrapperRef as React.MutableRefObject<HTMLLIElement | null>).current = el;
                 }

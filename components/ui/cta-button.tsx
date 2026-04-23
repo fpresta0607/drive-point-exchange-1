@@ -52,22 +52,22 @@ export function CTAButton({
       {hasSlide && (
         <div
           className={cn(
-            "absolute inset-0 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]",
+            "absolute inset-0 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-250 ease-[cubic-bezier(0.19,1,0.22,1)]",
             slideColor[variant]
           )}
         />
       )}
       <span
         className={cn(
-          "relative z-10 text-overline transition-colors duration-500",
+          "relative z-10 text-overline transition-colors duration-250",
           hasSlide && "group-hover:text-white"
         )}
       >
         {children}
       </span>
       {showArrow && (
-        <div className="relative z-10 w-8 h-8 bg-white/15 rounded-full flex items-center justify-center group-hover:bg-white/25 transition-colors duration-500">
-          <ArrowUpRight className="w-4 h-4 group-hover:text-white transition-colors duration-500" />
+        <div className="relative z-10 w-8 h-8 bg-white/15 rounded-full flex items-center justify-center group-hover:bg-white/25 transition-colors duration-250">
+          <ArrowUpRight className="w-4 h-4 group-hover:text-white transition-colors duration-250" />
         </div>
       )}
     </>
