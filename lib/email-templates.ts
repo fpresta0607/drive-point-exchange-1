@@ -57,8 +57,8 @@ export const EMAIL_BRAND = {
   companyName: 'Drive Point Exchange.',
   siteUrl: getSiteUrl(),
   logoUrl: `${getSiteUrl()}/logo.png`,
-  supportPhone: '(888) 990-7112',
-  supportPhoneHref: 'tel:+18889907112',
+  supportPhone: '(888) 351-0782',
+  supportPhoneHref: 'tel:+18883510782',
   supportEmail: 'support@drivepointexchange.com',
   supportEmailHref: 'mailto:support@drivepointexchange.com',
   colors: {

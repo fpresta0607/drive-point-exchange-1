@@ -184,7 +184,6 @@ export default function Home() {
               sizes="100vw"
               className="object-cover opacity-100"
               priority
-              unoptimized
             />
           </motion.div>
           <div className="absolute inset-0 bg-slate-950/40" />
@@ -389,31 +388,6 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Forbes Recognition */}
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center px-4 sm:px-6 w-full flex justify-center"
-          >
-            <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 w-full mix-blend-screen pt-4 border-t border-white/10" style={{ filter: 'invert(1) hue-rotate(180deg) brightness(1.2)' }}>
-              <Image
-                src="/auto/forbes.png"
-                alt="As seen in Forbes"
-                width={500}
-                height={150}
-                className="opacity-80 hover:opacity-100 transition-opacity duration-300 w-full max-w-[320px] md:max-w-[380px]"
-              />
-              <Image
-                src="/auto/Forbes-Logo-1999-present.png"
-                alt="Featured in Forbes"
-                width={500}
-                height={150}
-                className="opacity-80 hover:opacity-100 transition-opacity duration-300 w-full max-w-[320px] md:max-w-[380px]"
-              />
-            </div>
-          </motion.div>
         </div>
       </section>
 
@@ -451,15 +425,8 @@ export default function Home() {
             >
               <div className="text-center sm:text-left">
                 <p className="text-overline text-gray-400 mb-1">Main Office</p>
-                <a href="tel:+18889907112" className="text-xl font-semibold text-gray-900 hover:text-dpe-green transition-colors tracking-tight">
-                  (888) 990-7112
-                </a>
-              </div>
-              <div className="hidden sm:block w-px h-10 bg-gray-200" />
-              <div className="text-center sm:text-left">
-                <p className="text-overline text-gray-400 mb-1">Customer Support - 24/7</p>
-                <a href="tel:+17737821005" className="text-xl font-semibold text-gray-900 hover:text-dpe-green transition-colors tracking-tight">
-                  (773) 782-1005
+                <a href="tel:+18883510782" className="text-xl font-semibold text-gray-900 hover:text-dpe-green transition-colors tracking-tight">
+                  (888) 351-0782
                 </a>
               </div>
             </motion.div>

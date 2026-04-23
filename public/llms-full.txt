@@ -3,8 +3,7 @@
 
 ## Company Overview
 
-Drive Point Exchange is a financial services company headquartered at 211 W Wacker Drive Suite 120, Chicago, IL 60606. Founded in 2012, the company serves customers nationwide across all 50 states with 50-100 employees. Featured in Forbes.
-
+Drive Point Exchange is a financial services company founded in 2012 that serves customers nationwide across all 50 states with 50-100 employees. 
 Drive Point Exchange provides auto loan refinancing, vehicle coverage and certifications, home refinancing, auto and life insurance consulting, and credit consultations. The company works with a nationwide network of top-rated lenders and insurance partners.
 
 ## Services — Detailed
@@ -141,10 +140,8 @@ Initial consultations for all services — auto refinancing, vehicle coverage, h
 - Home Loan Calculator: https://www.drivepointexchange.com/calculator?type=home
 
 ## Contact
-- Phone: (888) 990-7112
-- 24/7 Customer Service: (773) 782-1005
+- Phone: (888) 351-0782
 - Email: support@drivepointexchange.com
-- Address: 211 W Wacker Drive Suite 120, Chicago, IL 60606
 - Hours: Monday-Saturday, 9:00 AM - 6:00 PM CST
 - Languages: English, Spanish, Polish, Italian, French
 

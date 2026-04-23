@@ -1,26 +1,25 @@
 "use client"
 import React from "react";
-import { motion, MotionProps } from "motion/react";
+import { motion, type MotionProps } from "framer-motion";
 
 import { cn } from "@/lib/utils";
+
+const MotionSpan = motion.create("span");
 
 interface GradientTextProps
   extends Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps> {
   className?: string;
   children: React.ReactNode;
-  as?: React.ElementType;
 }
 
 function GradientText({
   className,
   children,
-  as: Component = "span",
   ...props
 }: GradientTextProps) {
-  const MotionComponent = motion.create(Component);
 
   return (
-    <MotionComponent
+    <MotionSpan
       className={cn(
         "relative inline-block",
         className,
@@ -56,7 +55,7 @@ function GradientText({
       >
         {children}
       </span>
-    </MotionComponent>
+    </MotionSpan>
   );
 }
 

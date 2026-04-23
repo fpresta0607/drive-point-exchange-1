@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
-import { createBrowserClient } from '@/lib/supabase';
+import { createServiceClient } from '@/lib/supabase';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600;
 
 export async function GET() {
   try {
-    const supabase = createBrowserClient();
+    const supabase = createServiceClient();
     const { data, error } = await supabase
       .from('social_posts')
       .select('id, platform, url, thumbnail, caption, embed_html, posted_at')
@@ -14,14 +14,7 @@ export async function GET() {
 
     if (error) throw error;
 
-    return NextResponse.json(
-      { posts: data || [] },
-      {
-        headers: {
-          'Cache-Control': 's-maxage=3600, stale-while-revalidate=7200',
-        },
-      }
-    );
+    return NextResponse.json({ posts: data || [] });
   } catch (err) {
     console.error('[social/feed] Error fetching posts:', err);
     return NextResponse.json({ posts: [] }, { status: 200 });

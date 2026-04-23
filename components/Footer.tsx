@@ -60,15 +60,6 @@ export default function Footer() {
                 <div className="w-1.5 h-1.5 bg-dpe-blue rounded-full animate-pulse" />
                 <span className="text-sm text-slate-400">{ts('footer.nationwideCoverage')}</span>
               </div>
-              <div className="space-y-1">
-                <p className="text-xs font-medium tracking-wider uppercase text-slate-500">Customer Service - 24/7</p>
-                <a
-                  href="tel:+17737821005"
-                  className="text-lg font-semibold text-white hover:text-dpe-blue-light transition-colors"
-                >
-                  (773) 782-1005
-                </a>
-              </div>
             </div>
           </div>
 

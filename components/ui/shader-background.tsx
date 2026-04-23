@@ -1,9 +1,11 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const ShaderBackground = ({ className = "fixed top-0 left-0 w-full h-full -z-10" }: { className?: string }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   const vsSource = `
     attribute vec4 aVertexPosition;
@@ -141,6 +143,18 @@ const ShaderBackground = ({ className = "fixed top-0 left-0 w-full h-full -z-10"
   };
 
   useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { rootMargin: '200px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -203,17 +217,18 @@ const ShaderBackground = ({ className = "fixed top-0 left-0 w-full h-full -z-10"
 
     animId = requestAnimationFrame(render);
 
-    // Initial resize to ensure correct bounds on mount right after render
-    setTimeout(resizeCanvas, 0);
-
     return () => {
       window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animId);
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isVisible]);
 
-  return <canvas ref={canvasRef} className={className} />;
+  return (
+    <div ref={containerRef} className={className}>
+      {isVisible && <canvas ref={canvasRef} className="w-full h-full" />}
+    </div>
+  );
 };
 
 export default ShaderBackground;

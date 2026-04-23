@@ -340,18 +340,10 @@ export default function Contact() {
                   <div className="text-dpe-blue text-xl mr-4">📞</div>
                   <div>
                     <p className="text-gray-600 text-sm">{ts('contact.phone')}</p>
-                    <a href="tel:+18889907112" className="text-gray-900 font-semibold hover:text-dpe-blue transition-colors">(888) 990-7112</a>
+                    <a href="tel:+18883510782" className="text-gray-900 font-semibold hover:text-dpe-blue transition-colors">(888) 351-0782</a>
                   </div>
                 </div>
 
-                <div className="flex items-center">
-                  <div className="text-dpe-blue text-xl mr-4">🕐</div>
-                  <div>
-                    <p className="text-gray-600 text-sm">Customer Service - 24/7</p>
-                    <a href="tel:+17737821005" className="text-gray-900 font-semibold hover:text-dpe-blue transition-colors">(773) 782-1005</a>
-                  </div>
-                </div>
-                
                 <div className="flex items-center">
                   <div className="text-dpe-blue text-xl mr-4">📧</div>
                   <div>
@@ -361,37 +353,14 @@ export default function Contact() {
                 </div>
                 
                 <div className="flex items-center">
-                  <div className="text-dpe-blue text-xl mr-4">📍</div>
+                  <div className="text-dpe-blue text-xl mr-4">🌎</div>
                   <div>
                     <p className="text-gray-600 text-sm">{ts('contact.address')}</p>
-                    <p className="text-gray-900 font-semibold">
-                      211 W Wacker Drive<br />
-                      Suite 120<br />
-                      Chicago, IL 60606
-                    </p>
+                    <p className="text-gray-900 font-semibold">Nationwide Service</p>
                   </div>
                 </div>
               </div>
             </div>
-
-            {/* Map Embed */}
-            <div className="bg-white rounded-2xl shadow-lg shadow-blue-500/5 p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">{ts('contact.findUs')}</h3>
-              <div className="relative h-64 rounded-lg overflow-hidden">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.3!2d-87.6364!3d41.8865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2ca8b34fffff%3A0x6caeb5f721ca846!2s211%20W%20Wacker%20Dr%2C%20Chicago%2C%20IL%2060606!5e0!3m2!1sen!2sus!4v1234567890"
-                  width="100%"
-                  height="100%"
-                  className="border-0"
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Drive Point Exchange Location - Chicago"
-                ></iframe>
-              </div>
-            </div>
-
-            
           </motion.div>
         </div>
 

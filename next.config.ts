@@ -103,11 +103,6 @@ const nextConfig: NextConfig = {
   // React strict mode
   reactStrictMode: true,
   
-  // Experimental features for better performance
-  experimental: {
-    optimizeCss: true,
-  },
-  
   // Turbopack configuration - explicitly set root to this project
   turbopack: {
     root: __dirname,

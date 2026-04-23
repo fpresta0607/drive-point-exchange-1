@@ -217,31 +217,18 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
             {/* Phone Numbers */}
             <div className="flex items-center gap-1">
               <a
-                href="tel:+18889907112"
+                href="tel:+18883510782"
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
                   isTransparent
                     ? 'text-gray-500 hover:text-gray-700 hover:bg-gray-100/50'
                     : 'text-gray-600 hover:text-dpe-blue hover:bg-dpe-blue/5'
                 }`}
-                aria-label="Call (888) 990-7112"
+                aria-label="Call (888) 351-0782"
               >
                 <svg className="h-3.5 w-3.5" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span className="hidden lg:inline">(888) 990-7112</span>
-              </a>
-              <span className={`hidden xl:block text-xs ${isTransparent ? 'text-gray-300' : 'text-gray-300'}`}>|</span>
-              <a
-                href="tel:+17737821005"
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
-                  isTransparent
-                    ? 'text-gray-400 hover:text-gray-600 hover:bg-gray-100/50'
-                    : 'text-gray-400 hover:text-gray-600 hover:bg-gray-50'
-                }`}
-                aria-label="Customer Service (773) 782-1005"
-              >
-                <span className="hidden xl:inline">24/7</span>
-                <span className="hidden lg:inline">(773) 782-1005</span>
+                <span className="hidden lg:inline">(888) 351-0782</span>
               </a>
             </div>
           </div>
@@ -250,7 +237,7 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
           <div className="md:hidden flex items-center space-x-2">
             {/* Mobile Phone Button */}
             <a
-              href="tel:+18889907112"
+              href="tel:+18883510782"
               className="flex items-center justify-center text-white bg-dpe-green hover:bg-dpe-green-600 p-2.5 rounded-lg transition-colors"
               aria-label="Call us"
             >
@@ -366,10 +353,6 @@ export default function Navigation({ overlay = false }: { overlay?: boolean }) {
                   )}
                 </button>
               ))}
-            </div>
-            <div className="px-3 py-3 border-t border-gray-200 mt-2">
-              <p className="text-xs text-gray-500 mb-2">Customer Service - 24/7</p>
-              <a href="tel:+17737821005" className="text-dpe-blue font-semibold text-lg hover:text-dpe-navy">(773) 782-1005</a>
             </div>
           </div>
         </div>

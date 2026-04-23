@@ -10,9 +10,7 @@ import { RotateCcw } from "lucide-react";
 import EmailModal from "@/components/calculator/EmailModal";
 
 function useIsMobile(breakpoint = 768) {
-  const [isMobile, setIsMobile] = useState(() =>
-    typeof window !== "undefined" ? window.innerWidth < breakpoint : false
-  );
+  const [isMobile, setIsMobile] = useState(false);
   const check = useCallback(() => {
     setIsMobile(window.innerWidth < breakpoint);
   }, [breakpoint]);

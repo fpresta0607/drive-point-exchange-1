@@ -2,21 +2,20 @@ import type { Metadata } from "next";
 import { getFAQSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Contact Drive Point Exchange - Chicago Auto Financing Experts",
-  description: "Contact Drive Point Exchange for personalized auto financing assistance. Located in Chicago, IL. Call (888) 990-7112 or email support@drivepointexchange.com for expert advice.",
+  title: "Contact Drive Point Exchange - Nationwide Auto Financing Experts",
+  description: "Contact Drive Point Exchange for personalized auto financing assistance. Call (888) 351-0782 or email support@drivepointexchange.com for expert advice. Nationwide service.",
   keywords: [
     "contact drive point exchange",
-    "Chicago auto financing",
+    "auto financing assistance",
     "auto loan consultation",
-    "Chicago auto loans",
-    "Illinois car financing",
+    "nationwide auto loans",
     "auto financing experts",
     "auto loan help",
-    "Chicago financial services"
+    "auto refinancing contact"
   ],
   openGraph: {
-    title: "Contact Drive Point Exchange - Chicago Auto Financing Experts",
-    description: "Contact Drive Point Exchange for personalized auto financing assistance. Located in Chicago, IL. Call (888) 990-7112 for expert advice.",
+    title: "Contact Drive Point Exchange - Nationwide Auto Financing Experts",
+    description: "Contact Drive Point Exchange for personalized auto financing assistance. Call (888) 351-0782 for expert advice. Nationwide service.",
     images: [
       {
         url: "/auto/car-loan3.jpg",
@@ -27,8 +26,8 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: "Contact Drive Point Exchange - Chicago Auto Financing Experts",
-    description: "Contact Drive Point Exchange for personalized auto financing assistance. Located in Chicago, IL.",
+    title: "Contact Drive Point Exchange - Nationwide Auto Financing Experts",
+    description: "Contact Drive Point Exchange for personalized auto financing assistance. Nationwide service.",
   },
   alternates: {
     canonical: "https://www.drivepointexchange.com/contact",
@@ -57,7 +56,7 @@ export default function ContactLayout({
         "You'll typically need a valid driver's license, proof of income (recent pay stubs or tax returns), your current loan statement, and vehicle registration.",
     },
     {
-      question: "Do you serve customers outside of Illinois?",
+      question: "Do you serve customers in all 50 states?",
       answer:
         "Yes, Drive Point Exchange serves customers nationwide across all 50 states. Our lending network and insurance partnerships have nationwide coverage.",
     },

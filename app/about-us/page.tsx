@@ -136,16 +136,7 @@ export default function AboutUs() {
               <div className="relative h-64 sm:h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-50 to-white shadow-lg shadow-blue-500/5 flex items-center justify-center p-12">
                 <div className="text-center space-y-8">
                   <h3 className="text-2xl font-bold text-gray-900">{ts('about.trusted')}</h3>
-                  <div className="flex items-center justify-center">
-                    <Image
-                      src="/auto/Forbes-Logo-1999-present.png"
-                      alt="Featured in Forbes"
-                      width={200}
-                      height={60}
-                      className="opacity-80"
-                    />
-                  </div>
-                  <p className="text-gray-600 text-lg">{ts('about.featured')}</p>
+                  <p className="text-gray-600 text-lg">{ts('about.mission.description')}</p>
                 </div>
               </div>
             </motion.div>

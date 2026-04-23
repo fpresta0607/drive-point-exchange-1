@@ -128,7 +128,7 @@ export default function TermsPage() {
                     </svg>
                   </div>
                   <p className="font-semibold">{ts('terms.contact.phone')}</p>
-                  <a href="tel:+18889907112" className="text-blue-100 hover:text-white transition-colors">(888) 990-7112</a>
+                  <a href="tel:+18883510782" className="text-blue-100 hover:text-white transition-colors">(888) 351-0782</a>
                 </div>
                 <div>
                   <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3">

@@ -1,7 +1,7 @@
 # Drive Point Exchange
 > https://www.drivepointexchange.com
 
-Drive Point Exchange is a financial services company based in Chicago, IL (founded 2012) that provides auto loan refinancing, vehicle coverage certifications, home refinancing, auto and life insurance consulting, and credit consultations. They serve customers nationwide across all 50 states.
+Drive Point Exchange is a financial services company (founded 2012) that provides auto loan refinancing, vehicle coverage certifications, home refinancing, auto and life insurance consulting, and credit consultations. They serve customers nationwide across all 50 states.
 
 ## Services
 
@@ -34,9 +34,7 @@ Exhaustive tri-bureau (Equifax, Experian, TransUnion) analysis, aggressive dispu
 - Home Loan Calculator: https://www.drivepointexchange.com/calculator?type=home
 
 ## Contact
-- Phone: (888) 990-7112
-- 24/7 Customer Service: (773) 782-1005
+- Phone: (888) 351-0782
 - Email: support@drivepointexchange.com
-- Address: 211 W Wacker Drive Suite 120, Chicago, IL 60606
 - Hours: Monday-Saturday, 9:00 AM - 6:00 PM CST
 - Languages: English, Spanish, Polish, Italian, French

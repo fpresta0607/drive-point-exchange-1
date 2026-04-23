@@ -10,24 +10,15 @@ export function getLocalBusinessSchema() {
     image: `${BASE_URL}/logo.png`,
     logo: `${BASE_URL}/logo.png`,
     url: BASE_URL,
-    telephone: '+1-888-990-7112',
+    telephone: '+1-888-351-0782',
     email: 'support@drivepointexchange.com',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '211 W Wacker Drive Suite 120',
-      addressLocality: 'Chicago',
-      addressRegion: 'IL',
-      postalCode: '60606',
-      addressCountry: 'US',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 41.8865,
-      longitude: -87.6364,
+    areaServed: {
+      '@type': 'Country',
+      name: 'United States',
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+1-888-990-7112',
+      telephone: '+1-888-351-0782',
       contactType: 'customer service',
       email: 'support@drivepointexchange.com',
       availableLanguage: ['English', 'Spanish', 'Polish', 'Italian', 'French'],
@@ -49,7 +40,6 @@ export function getLocalBusinessSchema() {
     priceRange: '$$',
     foundingDate: '2012',
     numberOfEmployees: '50-100',
-    areaServed: 'United States',
     serviceType: [
       'Auto Loan Refinancing',
       'Vehicle Coverage',
