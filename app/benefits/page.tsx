@@ -8,6 +8,9 @@ import { useI18n } from '../../lib/i18n/context';
 import { SparksCarousel, SparkItem } from '../../components/ui/sparks-carousel';
 import { ShieldCheck } from 'lucide-react';
 import { CTAButton } from '../../components/ui/cta-button';
+import dynamic from 'next/dynamic';
+
+const ShaderBackground = dynamic(() => import('../../components/ui/shader-background'), { ssr: false });
 
 interface BenefitItem {
   title: string;
@@ -48,7 +51,8 @@ export default function Benefits() {
   }));
 
   return (
-    <div className="min-h-screen relative selection:bg-dpe-blue/30 selection:text-white bg-gradient-to-br from-[#0a1340] via-[#050928] to-[#0a1340]">
+    <div className="min-h-screen relative selection:bg-dpe-blue/30 selection:text-white">
+      <ShaderBackground />
       <Navigation overlay />
       
       {/* ─── PREMIUM HERO SECTION ─── */}

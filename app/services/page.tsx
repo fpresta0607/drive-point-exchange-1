@@ -9,6 +9,12 @@ import { useI18n } from '../../lib/i18n/context';
 import { Sparkles, Shield, TrendingUp, HandCoins, Activity, Landmark, ArrowUpRight } from 'lucide-react';
 import { CTAButton } from '../../components/ui/cta-button';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+const NebulaBg = dynamic(
+  () => import('../../components/ui/nebula-bg').then(m => ({ default: m.NebulaBg })),
+  { ssr: false }
+);
 
 export default function ServicesHub() {
   const { ts } = useI18n();
@@ -86,8 +92,8 @@ export default function ServicesHub() {
       
       {/* ─── PREMIUM HERO SECTION ─── */}
       <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-        {/* Dark gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#020720] via-[#0a0f30] to-[#020720]" />
+        {/* Nebula Shader Background */}
+        <NebulaBg />
 
         {/* Bottom fade into page background */}
         <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none z-[5]" style={{ background: 'linear-gradient(to bottom, transparent, #020720)' }} />

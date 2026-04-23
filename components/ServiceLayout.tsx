@@ -5,6 +5,9 @@ import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import Navigation from './Navigation';
 import Footer from './Footer';
+import dynamic from 'next/dynamic';
+
+const ShaderBackground = dynamic(() => import('./ui/shader-background'), { ssr: false });
 import { CTAButton } from './ui/cta-button';
 
 interface ServiceLayoutProps {
@@ -28,7 +31,8 @@ export default function ServiceLayout({ title, description, features, imageSrc }
   const descriptions = Array.isArray(description) ? description : [description];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#0a1340] via-[#050928] to-[#0a1340]">
+    <div className="min-h-screen flex flex-col bg-transparent">
+      <ShaderBackground />
       <Navigation overlay />
 
       {/* Centered layout */}

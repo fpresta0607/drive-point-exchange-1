@@ -15,6 +15,7 @@ const AutoLoanRefinanceCalculator = dynamic(
   () => import('../../components/ui/auto-loan-refinance-calculator').then(m => m.AutoLoanRefinanceCalculator),
   { ssr: false }
 );
+const ShaderBackground = dynamic(() => import('../../components/ui/shader-background'), { ssr: false });
 const TrustpilotReviews = dynamic(() => import('../../components/TrustpilotReviews'), { ssr: false });
 const SocialFeed = dynamic(() => import('../../components/SocialFeed'), { ssr: false });
 
@@ -353,7 +354,7 @@ export default function Home() {
       {/* ─── TRUST ─── */}
       <section className="relative py-24 bg-slate-950 overflow-hidden border-t border-white/10">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0a1340] via-[#050928] to-[#0a1340]" />
+          <ShaderBackground className="absolute top-0 left-0 w-full h-full opacity-80" />
           <div className="absolute inset-0 bg-dpe-blue/40 mix-blend-multiply" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-transparent to-slate-950/80" />
         </div>
