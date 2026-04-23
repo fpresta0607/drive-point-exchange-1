@@ -1,4 +1,4 @@
-# Apex Auto Solutions - Environment Variables
+# Drive Point Exchange - Environment Variables
 # Copy this file to .env.local and fill in your actual values
 
 # Site URL (for auth redirects)
@@ -10,7 +10,7 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 # Resend is the recommended email service for transactional emails
 # Get your API key at: https://resend.com/api-keys
 #
-# REQUIRED DNS RECORDS FOR RESEND (apexautosolutionsinc.com):
+# REQUIRED DNS RECORDS FOR RESEND (drivepointexchange.com):
 # --------------------------------------------------------
 # 1. SPF Record (TXT):
 #    Host: @
@@ -22,7 +22,7 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 #
 # 3. DMARC Record (TXT):
 #    Host: _dmarc
-#    Value: v=DMARC1; p=quarantine; rua=mailto:dmarc@apexautosolutionsinc.com
+#    Value: v=DMARC1; p=quarantine; rua=mailto:dmarc@drivepointexchange.com
 #
 # 4. Return-Path/Bounce Record (MX or CNAME):
 #    Host: bounces (or feedback)
@@ -35,7 +35,7 @@ RESEND_API_KEY=re_YOUR_API_KEY_HERE
 
 # The verified "From" address for Resend
 # Must be from a domain you've verified in Resend
-MAIL_FROM="Apex Auto Solutions <support@apexautosolutionsinc.com>"
+MAIL_FROM="Drive Point Exchange <noreply@contact.drivepointexchange.com>"
 
 # ============================================
 # Gmail SMTP (Fallback if Resend is not configured)
@@ -58,13 +58,13 @@ SMTP_PASS=your-app-password-here
 # Owner/Dealer Email
 # ============================================
 # This email will receive notifications when customers request estimates
-OWNER_EMAIL=support@apexautosolutionsinc.com
+OWNER_EMAIL=support@drivepointexchange.com
 
 # ============================================
 # Supabase Configuration
 # ============================================
 NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your-supabase-publishable-key
 SUPABASE_SERVICE_ROLE_KEY=your-supabase-service-role-key
 
 # ============================================

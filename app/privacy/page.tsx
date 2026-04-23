@@ -170,7 +170,7 @@ export default function PrivacyPage() {
                     </svg>
                   </div>
                   <p className="font-semibold">{ts('privacy.contact.website')}</p>
-                  <p className="text-blue-100">www.apexautosolutions.com</p>
+                  <p className="text-blue-100">www.drivepointexchange.com</p>
                 </div>
               </div>
             </motion.div>

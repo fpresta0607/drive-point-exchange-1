@@ -1,0 +1,42 @@
+# Drive Point Exchange
+> https://www.drivepointexchange.com
+
+Drive Point Exchange is a financial services company based in Chicago, IL (founded 2012) that provides auto loan refinancing, vehicle coverage certifications, home refinancing, auto and life insurance consulting, and credit consultations. They serve customers nationwide across all 50 states.
+
+## Services
+
+### Auto Loan Refinance
+URL: https://www.drivepointexchange.com/services/auto-refinance
+Refinance auto loans with lower interest rates, reduced monthly payments, flexible terms (12-84 months), no early payoff penalties, and skip up to two payments during lender transition. The team handles paying off the old lender and transferring the title.
+
+### Vehicle Coverage & Certifications
+URL: https://www.drivepointexchange.com/services/vehicle-coverage
+Audit and verification of existing vehicle coverage. Many post-COVID dealership coverage policies have gaps from invalid third-party providers. Provides genuine extended warranty options, 24/7 roadside assistance, zero-deductible options, rental car reimbursement ($50/day), trip interruption stipends, and nationwide repair facility acceptance.
+
+### Home Refinance
+URL: https://www.drivepointexchange.com/services/home-refinance
+Drop Private Mortgage Insurance (PMI), cash-out refinancing for major expenses, ARM-to-fixed-rate transitions, debt consolidation at lower rates, streamlined credit and appraisal processes. Available in 15, 20, and 30-year fixed terms.
+
+### Auto Insurance Consulting
+URL: https://www.drivepointexchange.com/services/auto-insurance
+Line-by-line policy audit, deductible optimization, multi-policy discount leveraging, uninsured/underinsured motorist safeguards, teen driver cost mitigation strategies, and direct connections to top-tier underwriters.
+
+### Life Insurance Solutions
+URL: https://www.drivepointexchange.com/services/life-insurance
+Customized term life policies (10, 20, 30 year), whole life guidance for permanent protection, living benefit riders for critical illnesses, tax-advantaged cash value accumulation, no-medical-exam approval options, and coverage calculation against major debts.
+
+### Credit Consultations
+URL: https://www.drivepointexchange.com/services/credit-consultations
+Exhaustive tri-bureau (Equifax, Experian, TransUnion) analysis, aggressive dispute of inaccuracies and collections, credit utilization optimization strategies, debt-to-income ratio improvement plans, debt negotiation assistance, and long-term wealth building roadmaps.
+
+## Tools
+- Auto Loan Calculator: https://www.drivepointexchange.com/calculator?type=auto
+- Home Loan Calculator: https://www.drivepointexchange.com/calculator?type=home
+
+## Contact
+- Phone: (888) 990-7112
+- 24/7 Customer Service: (773) 782-1005
+- Email: support@drivepointexchange.com
+- Address: 211 W Wacker Drive Suite 120, Chicago, IL 60606
+- Hours: Monday-Saturday, 9:00 AM - 6:00 PM CST
+- Languages: English, Spanish, Polish, Italian, French

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "About Drive Point Exchange - Trusted Auto Financing Since 2012",
   description: "Learn about Drive Point Exchange, a trusted auto financing company serving customers nationwide since 2012. Featured in Forbes with 10,000+ satisfied customers.",
   keywords: [
-    "about apex auto solutions",
+    "about drive point exchange",
     "auto financing company",
     "Detroit auto loans",
     "trusted auto lender",

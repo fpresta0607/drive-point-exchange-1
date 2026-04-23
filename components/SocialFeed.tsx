@@ -11,10 +11,10 @@ import { YoutubeIcon } from '@/components/ui/youtube';
 const PLATFORMS = ['instagram', 'facebook', 'tiktok', 'youtube'] as const;
 
 const PROFILE_URLS = {
-  instagram: 'https://www.instagram.com/apexautosolutionsinc',
-  facebook: 'https://www.facebook.com/apexautosolutions',
-  tiktok: 'https://www.tiktok.com/@apexautosolutionsinc',
-  youtube: 'https://www.youtube.com/@ApexAutoSolutionsinc',
+  instagram: 'https://www.instagram.com/drivepointexchange',
+  facebook: 'https://www.facebook.com/drivepointexchange',
+  tiktok: 'https://www.tiktok.com/@drivepointexchange',
+  youtube: 'https://www.youtube.com/@drivepointexchange',
 } as const;
 
 const PLATFORM_ICONS = {

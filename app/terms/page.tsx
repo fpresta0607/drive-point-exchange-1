@@ -137,7 +137,7 @@ export default function TermsPage() {
                     </svg>
                   </div>
                   <p className="font-semibold">{ts('terms.contact.website')}</p>
-                  <p className="text-blue-100">www.apexautosolutions.com</p>
+                  <p className="text-blue-100">www.drivepointexchange.com</p>
                 </div>
               </div>
             </motion.div>
