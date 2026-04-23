@@ -270,6 +270,7 @@ export default function Home() {
               <button
                 key={index}
                 onClick={() => setActiveService(index)}
+                aria-label={service.category}
                 className={`relative flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                   activeService === index
                     ? 'text-[#0A1340] bg-dpe-green shadow-[0_0_20px_rgba(34,197,94,0.4)]'

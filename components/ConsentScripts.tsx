@@ -126,7 +126,7 @@ export function ConsentScripts() {
       <Script
         id="trustpilot-bootstrap"
         src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
 
       <Script id="gtm-consent-default" strategy="beforeInteractive">
@@ -152,7 +152,7 @@ export function ConsentScripts() {
         `}
       </Script>
 
-      <Script id="gtm-container" strategy="afterInteractive">
+      <Script id="gtm-container" strategy="lazyOnload">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

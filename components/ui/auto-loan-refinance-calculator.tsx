@@ -230,13 +230,15 @@ export function AutoLoanRefinanceCalculator() {
                   {sliderConfigs.map((cfg) => (
                     <div key={cfg.key} className="flex flex-col gap-2">
                       <div className="flex items-center justify-between">
-                        <Label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                        <Label htmlFor={`calc-${cfg.key}`} className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">
                           {cfg.label.join(" ")}
                         </Label>
                         <div className="flex items-center justify-center gap-1 px-3 py-1.5 border-2 border-slate-300 hover:border-slate-400 focus-within:border-slate-600 rounded-lg bg-white/50 transition-colors">
                           {cfg.prefix && <span className="text-sm font-extrabold text-slate-800">{cfg.prefix}</span>}
                           <input
+                            id={`calc-${cfg.key}`}
                             type="text"
+                            aria-label={cfg.label.join(" ")}
                             value={displayValues[cfg.key] !== undefined ? displayValues[cfg.key] : cfg.format(values[cfg.key])}
                             onChange={(e) => handleInputChange(cfg.key, e.target.value)}
                             onFocus={(e) => e.target.select()}
@@ -282,7 +284,9 @@ export function AutoLoanRefinanceCalculator() {
                         <div className="flex items-center justify-center gap-1 px-3 py-1.5 border-2 border-slate-300 hover:border-slate-400 focus-within:border-slate-600 rounded-lg bg-white/50 transition-colors">
                           {cfg.prefix && <span className="text-xs sm:text-sm font-extrabold text-slate-800">{cfg.prefix}</span>}
                           <input
+                            id={`calc-desktop-${cfg.key}`}
                             type="text"
+                            aria-label={cfg.label.join(" ")}
                             value={displayValues[cfg.key] !== undefined ? displayValues[cfg.key] : cfg.format(values[cfg.key])}
                             onChange={(e) => handleInputChange(cfg.key, e.target.value)}
                             onFocus={(e) => e.target.select()}
@@ -291,7 +295,7 @@ export function AutoLoanRefinanceCalculator() {
                           />
                           {cfg.suffix && <span className="text-xs sm:text-sm font-extrabold text-slate-800">{cfg.suffix}</span>}
                         </div>
-                        <Label className="flex flex-col items-center text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">
+                        <Label htmlFor={`calc-desktop-${cfg.key}`} className="flex flex-col items-center text-[9px] sm:text-[10px] font-bold text-slate-600 uppercase tracking-widest mt-1">
                           {cfg.label.map((line) => <span key={line}>{line}</span>)}
                         </Label>
                       </div>
