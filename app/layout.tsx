@@ -7,6 +7,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { CookieConsent } from "@/components/CookieConsent";
 import { ConsentScripts } from "@/components/ConsentScripts";
 import { cn } from "@/lib/utils";
+import { getLocalBusinessSchema } from "@/lib/structured-data";
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -89,10 +90,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
+  icons: {
+    icon: [{ url: '/favicon.PNG', type: 'image/png' }],
+    apple: [{ url: '/favicon.PNG', type: 'image/png' }],
   },
   alternates: {
     canonical: "https://www.drivepointexchange.com",
@@ -105,51 +105,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Drive Point Exchange",
-    "url": "https://www.drivepointexchange.com",
-    "logo": "https://www.drivepointexchange.com/logo.png",
-    "description": "Professional auto financing solutions including auto loans, refinancing, and vehicle coverage services.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "211 W Wacker Drive Suite 120",
-      "addressLocality": "Chicago",
-      "addressRegion": "IL",
-      "postalCode": "60606",
-      "addressCountry": "US"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-888-990-7112",
-      "contactType": "customer service",
-      "email": "support@drivepointexchange.com",
-      "availableLanguage": ["English", "Spanish", "Polish", "Italian", "French"]
-    },
-    "sameAs": [
-      "https://www.facebook.com/drivepointexchange",
-      "https://www.twitter.com/drivepointexchange",
-      "https://www.linkedin.com/company/drivepointexchange"
-    ],
-    "foundingDate": "2012",
-    "numberOfEmployees": "50-100",
-    "areaServed": "United States",
-    "serviceType": [
-      "Auto Loan Refinancing",
-      "Vehicle Coverage",
-      "Vehicle Coverage Certifications",
-      "Home Refinancing",
-      "Insurance Consultation"
-    ]
-  };
+  const localBusinessData = getLocalBusinessSchema();
 
   return (
     <html lang="en-US" className={cn("font-sans", geist.variable)}>
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessData) }}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#0E1A56" />

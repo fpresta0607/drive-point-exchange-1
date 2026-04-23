@@ -41,6 +41,31 @@ export default function robots(): MetadataRoute.Robots {
           '/private/',
         ],
       },
+      {
+        userAgent: 'GPTBot',
+        allow: '/',
+        disallow: ['/admin/', '/api/', '/auth/', '/_next/', '/private/'],
+      },
+      {
+        userAgent: 'ChatGPT-User',
+        allow: '/',
+        disallow: ['/admin/', '/api/', '/auth/', '/_next/', '/private/'],
+      },
+      {
+        userAgent: 'anthropic-ai',
+        allow: '/',
+        disallow: ['/admin/', '/api/', '/auth/', '/_next/', '/private/'],
+      },
+      {
+        userAgent: 'Claude-Web',
+        allow: '/',
+        disallow: ['/admin/', '/api/', '/auth/', '/_next/', '/private/'],
+      },
+      {
+        userAgent: 'PerplexityBot',
+        allow: '/',
+        disallow: ['/admin/', '/api/', '/auth/', '/_next/', '/private/'],
+      },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
     host: baseUrl,

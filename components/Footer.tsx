@@ -11,10 +11,12 @@ export default function Footer() {
 
   const footerLinks = {
     services: [
-      { name: ts('home.services.autoRefinance.title'), href: '/services' },
-      { name: ts('home.services.vehicleCoverage.title'), href: '/services' },
-      { name: ts('home.services.homeRefinance.title'), href: '/services' },
-      { name: ts('home.services.insuranceConsultation.title'), href: '/services' }
+      { name: ts('home.services.autoRefinance.title'), href: '/services/auto-refinance' },
+      { name: ts('home.services.vehicleCoverage.title'), href: '/services/vehicle-coverage' },
+      { name: ts('home.services.homeRefinance.title'), href: '/services/home-refinance' },
+      { name: ts('home.services.insuranceConsultation.title'), href: '/services/auto-insurance' },
+      { name: 'Life Insurance', href: '/services/life-insurance' },
+      { name: 'Credit Consultations', href: '/services/credit-consultations' }
     ],
     calculators: [
       { name: ts('navigation.autoLoanCalculator'), href: '/calculator?type=auto' },
