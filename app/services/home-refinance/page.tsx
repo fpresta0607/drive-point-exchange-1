@@ -21,6 +21,12 @@ export default function Page() {
         `Flexible 15, 20, and 30-year fixed terms`
       ]}
       imageSrc="/auto/hero-home-refinance-v2.webp"
+      cta={{
+        kicker: "Unlock your home's value",
+        title: 'Ready to refinance your home?',
+        subtitle:
+          'Lower your rate, shorten your term, or tap into your equity — on your terms.',
+      }}
     />
   );
 }

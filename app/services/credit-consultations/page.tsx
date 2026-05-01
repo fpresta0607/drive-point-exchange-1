@@ -21,6 +21,12 @@ export default function Page() {
         `Long-term wealth building roadmaps`
       ]}
       imageSrc="/auto/hero-credit-calculator-v2.webp"
+      cta={{
+        kicker: 'Build a stronger profile',
+        title: 'Ready to take control of your credit?',
+        subtitle:
+          'One conversation with a specialist can change your trajectory — start today.',
+      }}
     />
   );
 }

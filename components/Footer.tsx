@@ -30,7 +30,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-[#01040E] text-white border-t border-white/[0.08]">
+    <footer className="relative overflow-hidden bg-slate-950 text-white border-t border-white/[0.08]">
       {/* Decorative top edge - subtle navy glow line */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-dpe-blue/30 to-transparent" />
 

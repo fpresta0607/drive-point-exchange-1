@@ -21,6 +21,12 @@ export default function Page() {
         `Skip up to two payments during the transition`
       ]}
       imageSrc="/auto/hero-auto-refinance-v2.webp"
+      cta={{
+        kicker: 'Lower your payment',
+        title: 'Ready to refinance your auto loan?',
+        subtitle:
+          'See how much you could save with a rate built for your updated credit profile.',
+      }}
     />
   );
 }

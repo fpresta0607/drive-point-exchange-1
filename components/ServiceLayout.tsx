@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import Navigation from './Navigation';
 import Footer from './Footer';
+import ServiceCTA from './ServiceCTA';
 import dynamic from 'next/dynamic';
 
 const ShaderBackground = dynamic(() => import('./ui/shader-background'), { ssr: false });
@@ -15,9 +16,14 @@ interface ServiceLayoutProps {
   description: string | string[];
   features: string[];
   imageSrc: string;
+  cta?: {
+    kicker: string;
+    title: string;
+    subtitle: string;
+  };
 }
 
-export default function ServiceLayout({ title, description, features, imageSrc }: ServiceLayoutProps) {
+export default function ServiceLayout({ title, description, features, imageSrc, cta }: ServiceLayoutProps) {
   const prefersReducedMotion = useReducedMotion();
 
   const fadeIn = prefersReducedMotion
@@ -105,6 +111,8 @@ export default function ServiceLayout({ title, description, features, imageSrc }
           </div>
         </motion.div>
       </div>
+
+      {cta && <ServiceCTA kicker={cta.kicker} title={cta.title} subtitle={cta.subtitle} />}
 
       <Footer />
     </div>

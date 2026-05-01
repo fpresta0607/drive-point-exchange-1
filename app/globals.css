@@ -560,6 +560,24 @@ input[type="range"]::-moz-range-thumb {
   }
 }
 
+/* Magic UI marquee — horizontal scroll loop */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - var(--gap, 1rem))); }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration, 40s) linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee var(--duration, 40s) linear infinite reverse;
+}
+
+.marquee-container:hover .marquee-pause-on-hover {
+  animation-play-state: paused;
+}
+
 /* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
 

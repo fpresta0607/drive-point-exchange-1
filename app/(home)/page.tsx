@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { motion, AnimatePresence, useInView, useReducedMotion } from 'framer-motion';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import { useI18n } from '../../lib/i18n/context';
@@ -16,6 +16,7 @@ const AutoLoanRefinanceCalculator = dynamic(
   { ssr: false }
 );
 const SocialFeed = dynamic(() => import('../../components/SocialFeed'), { ssr: false });
+const TrustpilotMarquee = dynamic(() => import('../../components/TrustpilotMarquee'), { ssr: false });
 
 export default function Home() {
   const { ts } = useI18n();
@@ -30,6 +31,8 @@ export default function Home() {
     : { animate: { transition: { staggerChildren: 0.05 } } };
 
   const [activeService, setActiveService] = useState(0);
+  const servicesSectionRef = useRef<HTMLElement>(null);
+  const servicesInView = useInView(servicesSectionRef, { margin: '-25% 0px -25% 0px' });
 
   const services = [
     {
@@ -105,6 +108,14 @@ export default function Home() {
       ),
     },
   ];
+
+  useEffect(() => {
+    if (!servicesInView || prefersReducedMotion) return;
+    const id = setInterval(() => {
+      setActiveService((i) => (i + 1) % services.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [servicesInView, prefersReducedMotion, services.length]);
 
   return (
     <div className="min-h-screen bg-[#f8fafc]">
@@ -226,7 +237,7 @@ export default function Home() {
       </section>
 
       {/* ─── SERVICES TABS ─── editorial dark band, sharp panels */}
-      <section className="bg-slate-950 overflow-hidden border-t border-white/[0.06]">
+      <section ref={servicesSectionRef} className="bg-slate-950 overflow-hidden border-t border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
 
           {/* Header — left-aligned, restrained */}
@@ -264,7 +275,7 @@ export default function Home() {
                 type="button"
                 onClick={() => setActiveService(index)}
                 aria-label={service.category}
-                className={`relative flex items-center gap-2 px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] transition-colors duration-200 border-r border-white/10 last:border-r-0 ${
+                className={`relative flex flex-1 items-center justify-center gap-2 px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] transition-colors duration-200 border-r border-white/10 last:border-r-0 ${
                   activeService === index
                     ? 'text-slate-950 bg-white'
                     : 'text-white/55 bg-transparent hover:text-white hover:bg-white/[0.04]'
@@ -295,7 +306,7 @@ export default function Home() {
                   alt={services[activeService].title}
                   fill
                   sizes="(min-width: 1280px) 1200px, 100vw"
-                  className="object-cover"
+                  className={`object-cover ${activeService === 5 ? 'scale-125' : ''}`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#01040E]/75 via-[#01040E]/15 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#01040E]/55 via-transparent to-transparent" />
@@ -359,70 +370,11 @@ export default function Home() {
           </div>
 
         </div>
-
-        {/* ─── TRUSTPILOT REVIEWS BAR — full bleed across bottom of section ─── */}
-        <motion.a
-          href="https://www.trustpilot.com/review/drivepointexchange.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.4 }}
-          className="group block w-full bg-slate-950 border-t border-white/[0.08] hover:bg-slate-900 transition-colors"
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-8">
-            {/* Left: Excellent + stars */}
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-0.5" aria-hidden>
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <span key={i} className="flex items-center justify-center w-6 h-6 bg-dpe-green-500">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  </span>
-                ))}
-              </div>
-              <span className="text-white text-sm font-semibold tracking-wide">Excellent</span>
-            </div>
-
-            {/* Middle: rating + count, separated by hairlines */}
-            <div className="flex flex-wrap items-center gap-4 md:gap-6 text-sm">
-              <div className="flex items-center gap-2 md:border-l md:border-white/[0.1] md:pl-6">
-                <span className="text-white font-semibold">4.9</span>
-                <span className="text-white/45">out of 5</span>
-              </div>
-              <div className="flex items-center gap-2 md:border-l md:border-white/[0.1] md:pl-6">
-                <span className="text-white/45">Based on</span>
-                <span className="text-white font-medium">1,200+ verified reviews</span>
-              </div>
-            </div>
-
-            {/* Right: Trustpilot wordmark + arrow */}
-            <div className="flex items-center gap-3 md:border-l md:border-white/[0.1] md:pl-6 text-sm">
-              <span className="text-[10px] uppercase tracking-[0.16em] font-semibold text-white/45">on</span>
-              <span className="inline-flex items-center gap-1.5 text-white font-semibold">
-                <svg className="w-4 h-4 text-dpe-green-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden>
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-                Trustpilot
-              </span>
-              <svg
-                className="w-4 h-4 text-white/55 transition-transform group-hover:translate-x-0.5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-                aria-hidden
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 5l7 7-7 7" />
-              </svg>
-            </div>
-          </div>
-        </motion.a>
       </section>
 
       <SocialFeed />
+
+      <TrustpilotMarquee />
 
       {/* ─── CTA ─── light editorial close */}
       <section className="py-28 bg-white border-t border-slate-200/70">

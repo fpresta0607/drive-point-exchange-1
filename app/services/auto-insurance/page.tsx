@@ -21,6 +21,12 @@ export default function Page() {
         `Direct connections to top-tier underwriters`
       ]}
       imageSrc="/auto/hero-auto-insurance-v2.webp"
+      cta={{
+        kicker: 'Right-size your premium',
+        title: 'Stop overpaying for auto insurance.',
+        subtitle:
+          'Compare nationwide carriers in one consultation — no obligation.',
+      }}
     />
   );
 }

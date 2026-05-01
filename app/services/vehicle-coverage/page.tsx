@@ -21,6 +21,12 @@ export default function Page() {
         `Coverage for high-tech electrical systems`
       ]}
       imageSrc="/auto/hero-vehicle-coverage-v2.webp"
+      cta={{
+        kicker: 'Protect what you drive',
+        title: 'Cover your vehicle, not your wallet.',
+        subtitle:
+          "Get protection that covers the repairs your factory warranty doesn't.",
+      }}
     />
   );
 }

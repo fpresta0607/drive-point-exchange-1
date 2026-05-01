@@ -21,6 +21,12 @@ export default function Page() {
         `Coverage calculation against major debts (mortgages)`
       ]}
       imageSrc="/auto/hero-life-insurance-v2.webp"
+      cta={{
+        kicker: 'Protect your family',
+        title: "Ready to secure your family's future?",
+        subtitle:
+          'Find the right life insurance policy without the high-pressure sales pitch.',
+      }}
     />
   );
 }
